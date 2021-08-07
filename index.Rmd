@@ -16,18 +16,15 @@ knit: (function(input, ...) {
 #####################
 ## thesis metadata ##
 #####################
-title: |
-  `oxforddown`: \
-  An Oxford University Thesis \
-  Template for R Markdown
-author: Author Name
-college: Your College
-university: University of Oxford
-university-logo: templates/beltcrest.pdf
+title: 'Bacterial filamentation: a bet for survival in stressful environments'
+author: Jesús Vélez Santiago
+college: Center for Genomic Sciences
+university: National Autonomous University of Mexico
+university-logo: figures/logos/unam.pdf
 university-logo-width: 5cm
 submitted-text: A thesis submitted for the degree of
-degree: Doctor of Philosophy
-degreedate: Michaelmas 2018
+degree: Bachelor of Science
+degreedate: 'Cuernavaca, Morelos, Mexico - `r format(Sys.Date(), "%Y-%m")`'
 abstract: |
   `r paste(readLines("front-and-back-matter/_abstract.Rmd"), collapse = '\n  ')`
 acknowledgements: |
@@ -149,7 +146,7 @@ output:
       - templates/corrections.css # remove to stop highlighting corrections
     theme:
       primary: "#274E82"
-    repo: https://github.com/ulyngs/oxforddown
+    repo: https://github.com/jvelezmagic/undergradute_research_project
     pandoc_args: "--lua-filter=scripts_and_filters/colour_and_highlight.lua"
   bookdown::gitbook:
     css: templates/style.css
