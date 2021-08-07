@@ -344,33 +344,115 @@ Quite a nice prickly friend.
 \adjustmtc
 \markboth{Introduction}{}
 
-Welcome to \texttt{oxforddown} \autocite{lyngsOxforddown2019}, a thesis template for R Markdown that I created when writing \href{https://ulyngs.github.io/phd-thesis/}{my own PhD thesis} at the University of Oxford.
-This template allows you to write in R Markdown, while formatting the PDF output with the beautiful and time-tested \href{https://github.com/mcmanigle/OxThesis}{OxThesis LaTeX template}.
-The sample content is partly adapted from \href{https://github.com/ismayc/thesisdown}{\texttt{thesisdown}} .
+\hypertarget{experiment-analysis}{%
+\chapter{Experiment analysis}\label{experiment-analysis}}
 
-Hopefully, writing your thesis in R Markdown will provide a nicer interface to the OxThesis template if you haven't used TeX or LaTeX before.
-More importantly, \emph{R Markdown} allows you to embed chunks of code within your thesis and generate plots and tables directly from the underlying data, avoiding copy-paste steps.
-This gets you into the habit of doing reproducible research, which will benefit you long-term as a researcher, and also help anyone that is trying to reproduce or build upon your results down the road.
+\minitoc 
 
-\hypertarget{why-use-it}{%
-\section*{Why use it?}\label{why-use-it}}
-\addcontentsline{toc}{section}{Why use it?}
+\hypertarget{introduction-1}{%
+\section{Introduction}\label{introduction-1}}
 
-\emph{R Markdown} creates a simple and straightforward way to interface with the beauty of LaTeX.
-Packages have been written in \textbf{R} to work directly with LaTeX to produce nicely formatting tables and paragraphs.
-In addition to creating a user friendly interface to LaTeX, \emph{R Markdown} allows you to read in your data, analyze it and to visualize it using \textbf{R}, \textbf{Python} or other languages, and provide documentation and commentary on the results of your project.\\
-Further, it allows for results of code output to be passed inline to the commentary of your results.
-You'll see more on this later, focusing on \textbf{R}. If you are more into \textbf{Python} or something else, you can still use \emph{R Markdown} - see \href{https://bookdown.org/yihui/rmarkdown/language-engines.html}{`Other language engines'} in Yihui Xie's \href{https://bookdown.org/yihui/rmarkdown/language-engines.html}{\emph{R Markdown: The Definitive Guide}}.
+\hypertarget{experiment-design}{%
+\section{Experiment design}\label{experiment-design}}
 
-Using LaTeX together with \emph{Markdown} is more consistent than the output of a word processor, much less prone to corruption or crashing, and the resulting file is smaller than a Word file.
-While you may never have had problems using Word in the past, your thesis is likely going to be about twice as large and complex as anything you've written before, taxing Word's capabilities.
+\hypertarget{exploratory-data-analysis}{%
+\section{Exploratory Data Analysis}\label{exploratory-data-analysis}}
 
-\hypertarget{who-should-use-it}{%
-\section*{Who should use it?}\label{who-should-use-it}}
-\addcontentsline{toc}{section}{Who should use it?}
+\hypertarget{discussion}{%
+\section{Discussion}\label{discussion}}
 
-Anyone who needs to use data analysis, math, tables, a lot of figures, complex cross-references, or who just cares about reproducibility in research can benefit from using \emph{R Markdown}.
-If you are working in `softer' fields, the user-friendly nature of the \emph{Markdown} syntax and its ability to keep track of and easily include figures, automatically generate a table of contents, index, references, table of figures, etc. should still make it of great benefit to your thesis project.
+\begin{savequote}
+Essentially, all models are wrong, but some are useful
+\qauthor{--- George E.P. Box.}\end{savequote}
+
+
+
+\hypertarget{rmd-basics}{%
+\chapter{Models to the rescue; filamentation abstraction}\label{rmd-basics}}
+
+\minitoc 
+
+\noindent Scientists have extensively studied the mechanisms that orchestrate the growth and division of bacterial cells. Cells adapt their shape and dimensions in response to variations in the intracellular and extracellular environments by integrating information about the presence of nutrients or harmful agents in the decision to grow or divide. Filamentation is a process that occurs when rod-shaped cells stop dividing but continue to grow, thus producing elongated cells. Some cells can naturally grow as filamentous, while others only do so under stressful conditions. Here we use mathematical modeling and computational simulations to evaluate a toxic agent's intracellular concentration as a function of cell length. We show that filamentation can act as a strategy that promotes the resilience of a bacterial population under stressful environmental conditions.
+
+\hypertarget{introduction-2}{%
+\section{Introduction}\label{introduction-2}}
+
+By integrating information from the environment, cells can alter their cell cycle. For instance, some cells arrest the cell division in the presence of toxic agents but continue to grow. Previous studies have shown that this filamentation phenomenon provides a mechanism that enables cells to cope with stress, which leads to an increase in the probability of survival {[}1{]}. For example, filamentation can be a process capable of subverting innate defenses during urinary tract infection, facilitating the transition of additional rounds of intracellular bacterial community formation {[}2{]}.
+
+Although filament growth can help mitigate environmental stress (e.g., by activating the SOS response system {[}1{]}), the evolutionary benefits of producing elongated cells that do not divide are unclear. Here, we proposed a mathematical model based on ordinary differential equations that explicitly considers the concentration of intracellular toxin as a function of the cell's length (see Equation \eqref{eq:model-equation}). The model is built based on the growth ratio of measurements of the surface area (SA) and the cell volume (V), whereby the uptake rate of the toxin depends on the SA. However, V's rate of change for SA is higher than SA for V, which results in a transient reduction in the intracellular toxin concentration (see Figure \ref{fig:cell-dimensions-relationship}). Therefore, we hypothesized that this geometric interpretation of filamentation represents a biophysical defense line to increase the probability of a bacterial population's survival in response to stressful environments.
+
+\begin{figure}[H]
+
+{\centering \includegraphics[width=1\linewidth]{downloadFigs4latex__main/cell-dimensions-relationship} 
+
+}
+
+\caption{Cell dimensions relationship.}\label{fig:cell-dimensions-relationship}
+\end{figure}
+
+\hypertarget{filamentation-model}{%
+\section{Filamentation model}\label{filamentation-model}}
+
+Let us assume the shape of cells is a cylinder with hemispherical ends. Based on this geometric structure, a nonlinear system of differential equations governing filamentation can be written as follows:
+
+\begin{equation}
+\begin{split}
+\frac{dT_{int}}{dt} &= T_{sa} \cdot (T_{ext}(t) - T_{vol}) - \alpha \cdot T_{ant} \cdot T_{int} \\
+\frac{dL}{dt} &= 
+  \begin{cases} 
+    \beta \cdot L,& \text{if } T_{int} \geq T_{sos},  t \geq \tau_{sos} + \tau_{delay} \text{ and } L < L_{max}  \\
+    0,            & \text{otherwise}
+  \end{cases}
+\end{split}
+\label{eq:model-equation}
+\end{equation}
+
+It considers the internal toxin (\(T_{int}\)) and the cell length (\(L\)) as variables. \(T_{sa}\) and \(T_{vol}\) represent the surface area and volume of the toxin in the cell, respectively. \(T_{ext}(t)\) is a function that returns the amount of toxin in the cell medium. \(T_{anti}\) and \(\alpha\) symbolize the amount of antitoxin and its efficiency rate, respectively. \(\beta\) as the rate of filamentation. \(L_{max}\) is the maximum size that the cell can reach when filamentation is on. \(T_{sos}\) and \(T_{kill}\) are thresholds for filamentation and death, respectively. Finally, \(\tau_{delay}\) is the amount of time required to activate filamentation after reaching the \(T_{sos}\) threshold.
+
+\hypertarget{results}{%
+\section{Results}\label{results}}
+
+\hypertarget{filamentation-provides-transient-resistance-under-stressful-conditions}{%
+\subsection{Filamentation provides transient resistance under stressful conditions}\label{filamentation-provides-transient-resistance-under-stressful-conditions}}
+
+When growing rod-shaped bacterial cells under constant conditions, the distribution of lengths and radii is narrow {[}3{]}. However, when growing under stress conditions, some cells produce filaments {[}4{]}. This phenomenon may depend on the SOS response system {[}5{]}, which can repair DNA damage, giving the cell greater chances of recovering and surviving under stress conditions. Besides, the SOS response has been reported to have precise temporal coordination in individual bacteria {[}6{]}. Among the stress conditions that can trigger the SOS response is exposure to beta-lactam antibiotics {[}7{]}.
+
+In general, filamentation has been studied as an unavoidable consequence of stress. However, we considered filamentation an active process that produces the first line of defense against toxic agents. Therefore, a differential equation model was proposed that assesses the change in the amount of internal toxin as a function of cell length. At the core of this model, we include the intrinsic relationship between the surface area and the capsule volume since it is vital in determining cell size {[}8{]}.
+
+In figure \ref{fig:filamentation-model-ramp-signal}, cells grow in a ramp-shaped external toxin signal without considering a toxin-antitoxin system. As time progresses, the toxin in the external environment increases, so the cell raises its internal toxin levels. At approximately time 22, any cell reaches \(T_{sos}\). The control cell (unable to filament) and the average cell (capable of filamenting) reach the death threshold, \(T_{kill}\), at times \(31\) and \(93\) (hatched and solid black lines), respectively. Therefore, under this example, the cell has increased its life span three times more than in control by growing as a filament (green shaded area versus orange shaded area). In turn, figure \ref{fig:filamentation-model-ramp-signal} also shows stochastic simulations of the system in the intake of internal toxins. Considering that cell growth and death processes are inherently stochastic, stochastic simulations would be a better approximation. However, from now on, we will continue with the study of the deterministic model.
+
+\begin{figure}[H]
+\includegraphics[width=1\linewidth]{downloadFigs4latex__main/filamentation-model-ramp-signal} \caption[Effect of filamentation on intracellular toxin concentration.]{Effect of filamentation on intracellular toxin concentration. In the presence of an extracellular toxic agent, the intracellular concentration of the toxin ($T_{int}$) increases until reaching a damage threshold that triggers filamentation ($T_{sos}$, blue point), increasing cell length ($L$). When filamentation is on, the cell decreases $T_{int}$ due to the intrinsic relationship between surface area and cell volume. When the cell reaches its maximum length, it eventually dies if the stressful stimulus is not removed ($T_{kill}$, red dot). The hatched line represents a cell that can not grow as filament. The orange shaded area is the time between stress and the non-filament cell's death, while the green shaded area represents the temporal gain for doing so. The blue background lines represent stochastic simulations of the same system.}\label{fig:filamentation-model-ramp-signal}
+\end{figure}
+
+\hypertarget{filamentation-increases-the-minimum-inhibitory-concentration}{%
+\subsection{Filamentation increases the minimum inhibitory concentration}\label{filamentation-increases-the-minimum-inhibitory-concentration}}
+
+Antimicrobial resistance (AMR) can be considered one of the most critical health problems of the century. That is, microorganisms' ability to grow despite exposure to substances designed to inhibit their growth or kill them. In April 2014, the World Health Organization (WHO) published its first global report on AMR surveillance {[}9{]}. Taking out of the darkness a common fear, a possible post-antibiotic future in which common infections or minor injuries can kill. Therefore, understanding the mechanisms of avoiding antibiotic action is essential for producing knowledge and developing strategies that reduce the generation of resistant bacteria.
+
+A classic experiment in laboratories finds the concentration that inhibits bacterial growth through exposure to different toxin doses. The concentration found is known as the minimum inhibitory concentration (MIC) {[}10{]}. Bacteria are capable of modifying their MIC through various mechanisms, for example, mutations {[}11{]}, impaired membrane permeability {[}12{]}, flux pumps {[}13{]}, toxin-inactivating enzymes {[}14{]}, and plasticity phenotypic {[}1{]}. The latter is our phenomenon of interest because it considers the change in shape and size, allowing us to study it as a strategy to promote bacterial survival.
+
+We decided to analyze the MIC change caused by filamentation through stable exposure experiments of different toxin amounts at other exposure times. Computational simulations show that when comparing cells unable to filament with those that can, there is an increase in the capacity to tolerate more generous amounts of toxin, increasing their MIC (see \href{}{Figure 2}). Therefore, it confers a gradual increase in resistance beyond filamentation's role in improving the cell's life span as the exposure time is longer.
+
+\hypertarget{heterogeneity-in-the-toxin-antitoxin-system-represents-a-double-edged-sword-in-survival-probability}{%
+\subsection{Heterogeneity in the toxin-antitoxin system represents a double-edged sword in survival probability}\label{heterogeneity-in-the-toxin-antitoxin-system-represents-a-double-edged-sword-in-survival-probability}}
+
+One of the SOS response system properties is that it presents synchronous activation times within homogeneous populations {[}6{]}. It has constant gene expression rates that help it cope with stress; however, it is possible to introduce variability by considering having multicopy resistance plasmids {[}15{]}. Therefore, the response times would have an asynchronous behavior at the global level but synchronous at the local level.
+
+To include this observation into the model, we include a negative term to the internal toxin representing a toxin-antitoxin system. Therefore, the model now has an efficiency rate of the antitoxin and a stable amount per cell. We simulate the effect of the toxin-antitoxin system variation within a \(1000\) cell population; we initialize each one with similar initial conditions, except for the amount of internal antitoxin, defined as \(T_{anti} \sim N(\mu, \sigma)\). Considering that \(T_{anti}\) values \(< 0\) are equal to \(0\). For each experiment,\(\mu = 25\), while it was evaluated in the range \([0-20]\). For the generation of pseudo-random numbers and to ensure the results' reproducibility, the number \(42\) was considered seed.
+
+As shown in \href{}{Figure 3}, when we compare heterogeneous populations in their toxin-antitoxin system, we can achieve different population dynamics, that is, changes in the final proportions of cell states; normal, stressed, and dead. This difference is because the cell sometimes has more or less antitoxin to handle the incoming stress situation.
+
+Considering that the toxin-antitoxin system's variability can modify the proportions of final cell states, a question arose about heterogeneity levels' global behavior. To answer this question, we evaluate the probability of survival for each population, defined by its distribution of antitoxin levels. In this way, we characterized the population survival probability function into three essential points according to its effect: negative, invariant, and positive (see \href{}{Figure 4}). Furthermore, these points are relative to the homogeneous population's death time in question (\(\tau_{kill}\)): when \(t < \tau_{kill}\) will represent a detrimental effect on survival, \(t = \tau_{kill}\) will be independent of variability, and \(t > \tau_{kill}\) will be a beneficial point for survival. Therefore, we concluded that the effect of heterogeneity in a toxin-antitoxin system represents a double-edged sword.
+
+\hypertarget{discussion-1}{%
+\section{Discussion}\label{discussion-1}}
+
+Today, there have been advancements in the number of techniques that have allowed it to extend quantitative analyses to individual cells' dynamic observations {[}16-20{]}. Therefore, studying their cellular behavior every day from medium to medium can be somewhat reproducible, facilitating the association of complex biological functions in simple mathematical equations {[}21{]}.
+
+Here, we proposed a mathematical model showing that filamentation could serve as a population's resilience mechanism to stress conditions. Finding that filamentation's net effect generates an additional window of time for the cell to survive, decreasing the toxin's intracellular concentration. However, we also found that a side effect of filamentation is to increase the cell's minimum inhibitory concentration. On the other hand, when we introduce variability in the amount of antitoxin in a cell population, we found that heterogeneity can be a double-edged sword, sometimes detrimental and sometimes beneficial, depending on the time of exposure to the toxic agent.
+
+Due to the above, despite being simple, the model could have the ability to recapitulate the behavior seen in nature from variables that we can calculate easily with single-cell measurements. However, in other situations, it could be helpful to consider the addition of variables such as cell wall production and peptidoglycans' accumulation, among others. Notwithstanding the lack of parameters that are a little closer to reality, confirming that the model can work under experimental conditions would represent an achievement due to its explanatory simplicity, starting, in this way, the path of the study of filamentation oriented to the ecology of stress.
 
 \startappendices
 
