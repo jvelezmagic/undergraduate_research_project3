@@ -99,8 +99,8 @@ A classic experiment in laboratories finds the concentration that inhibits bacte
 We decided to analyze the MIC change caused by filamentation through stable exposure experiments of different toxin amounts at other exposure times. Computational simulations show that when comparing cells unable to filament with those that can, there is an increase in the capacity to tolerate more generous amounts of toxin, increasing their MIC (see Figure \@ref(fig:increased-time-resistance)). Therefore, it confers a gradual increase in resistance beyond filamentation’s role in improving the cell's life span as the exposure time is longer.
   
 ```{r include=FALSE, echo=FALSE}
-increased_time_resistance_scap <- "Effect of filamentation on minimum inhibitory concentration (MIC). "
-increased_time_resistance_cap <- paste0(increased_time_resistance_scap, "By exposing a cell to different toxin concentrations with stable signals, the cell achieves a set MIC for conditions without or with filamentation (separation between stressed and dead state) for each exposure time, without representing a change for the normal state cells' points (blue zone). Thus, the green line represents a gradual MIC increase when comparing each MIC between conditions for each exposure time.")
+increased_time_resistance_scap <- "Effect of filamentation on minimum inhibitory concentration (MIC)."
+increased_time_resistance_cap <- paste0(increased_time_resistance_scap, " ", "By exposing a cell to different toxin concentrations with stable signals, the cell achieves a set MIC for conditions without or with filamentation (separation between stressed and dead state) for each exposure time, without representing a change for the normal state cells' points (blue zone). Thus, the green line represents a gradual MIC increase when comparing each MIC between conditions for each exposure time.")
 ```
   
 
@@ -119,7 +119,21 @@ One of the SOS response system properties is that it presents synchronous activa
 
 To include this observation into the model, we include a negative term to the internal toxin representing a toxin-antitoxin system. Therefore, the model now has an efficiency rate of the antitoxin and a stable amount per cell. We simulate the effect of the toxin-antitoxin system variation within a $1000$ cell population; we initialize each one with similar initial conditions, except for the amount of internal antitoxin, defined as $T_{anti} \sim N(\mu, \sigma)$. Considering that $T_{anti}$ values $< 0$ are equal to $0$. For each experiment,$\mu = 25$, while it was evaluated in the range $[0-20]$. For the generation of pseudo-random numbers and to ensure the results' reproducibility, the number $42$ was considered seed.
 
-As shown in [Figure 3](), when we compare heterogeneous populations in their toxin-antitoxin system, we can achieve different population dynamics, that is, changes in the final proportions of cell states; normal, stressed, and dead. This difference is because the cell sometimes has more or less antitoxin to handle the incoming stress situation.
+As shown in Figure \@ref(fig:variability-toxin-antitoxin), when we compare heterogeneous populations in their toxin-antitoxin system, we can achieve different population dynamics, that is, changes in the final proportions of cell states; normal, stressed, and dead. This difference is because the cell sometimes has more or less antitoxin to handle the incoming stress situation.
+
+```{r include=FALSE, echo=FALSE}
+variability_toxin_antitoxin_scap <- "Variability in the toxin-antitoxin system produces different proportions of cell states."
+variability_toxin_antitoxin_cap <- paste0(variability_toxin_antitoxin_scap, " ", "Histograms represent the distribution of antitoxin quantity, while the curves represent the population's fraction over time. The cell will start to filament after reaching a certain internal toxin threshold, $T_{sos}$. Therefore, the expected global effect on the population's response times based on the amount of antitoxin is asynchronous, while at the local level, it is synchronous. Consequently, different proportions are presented in the cellular states since some cells will activate the filamentation system before and others later.")
+```
+  
+
+```{r variability-toxin-antitoxin, fig.align='center', echo=FALSE, out.width='100%', fig.pos='H', fig.cap=variability_toxin_antitoxin_cap, fig.scap=variability_toxin_antitoxin_scap}
+if(knitr::is_html_output()){
+  knitr::include_graphics("https://raw.githubusercontent.com/jvelezmagic/CellFilamentation/main/plots/r/model/variability_toxin_antitoxin.png")
+} else {
+ linguisticsdown::include_graphics2("https://raw.githubusercontent.com/jvelezmagic/CellFilamentation/main/plots/r/model/variability_toxin_antitoxin.pdf") 
+}
+```
 
 Considering that the toxin-antitoxin system's variability can modify the proportions of final cell states, a question arose about heterogeneity levels' global behavior. To answer this question, we evaluate the probability of survival for each population, defined by its distribution of antitoxin levels. In this way, we characterized the population survival probability function into three essential points according to its effect: negative, invariant, and positive (see [Figure 4]()). Furthermore, these points are relative to the homogeneous population's death time in question ($\tau_{kill}$): when $t < \tau_{kill}$ will represent a detrimental effect on survival, $t = \tau_{kill}$ will be independent of variability, and $t > \tau_{kill}$ will be a beneficial point for survival. Therefore, we concluded that the effect of heterogeneity in a toxin-antitoxin system represents a double-edged sword.
 
