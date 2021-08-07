@@ -1,5 +1,1 @@
-This *R Markdown* template is for writing an Oxford University thesis. The template is built using Yihui Xie's `bookdown` package, with heavy inspiration from Chester Ismay's `thesisdown` and the `OxThesis` \LaTeX\ template (most recently adapted by John McManigle).
-
-This template's sample content include illustrations of how to write a thesis in R Markdown, and largely follows the structure from [this R Markdown workshop](https://ulyngs.github.io/rmarkdown-workshop-2019/).
-
-Congratulations for taking a step further into the lands of open, reproducible science by writing your thesis using a tool that allows you to transparently include tables and dynamically generated plots directly from the underlying data. Hip hooray!
+Etiam venenatis purus eu felis viverra sodales. Sed et varius ex. Nullam sit amet aliquet purus. Fusce elementum vitae est eget vulputate. Aliquam erat volutpat. Donec ac suscipit leo, sed euismod nisi. Duis malesuada elementum pulvinar. Ut et vulputate augue. In dignissim ligula at nulla feugiat cursus. Suspendisse sed diam ut ligula sollicitudin pellentesque. Etiam ut gravida velit, vitae lobortis mi. Nam congue laoreet mauris sit amet iaculis.
