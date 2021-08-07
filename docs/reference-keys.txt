@@ -1,6 +1,7 @@
 fig:cell-dimensions-relationship
 eq:model-equation
 fig:filamentation-model-ramp-signal
+fig:increased-time-resistance
 experiment-analysis
 introduction-1
 experiment-design

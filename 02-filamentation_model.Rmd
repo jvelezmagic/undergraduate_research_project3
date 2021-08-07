@@ -96,8 +96,23 @@ Antimicrobial resistance (AMR) can be considered one of the most critical health
 
 A classic experiment in laboratories finds the concentration that inhibits bacterial growth through exposure to different toxin doses. The concentration found is known as the minimum inhibitory concentration (MIC) [@andrewsDeterminationMinimumInhibitory2002]. Bacteria are capable of modifying their MIC through various mechanisms, for example, mutations [@lambertBacterialResistanceAntibiotics2005], impaired membrane permeability [@satoOuterMembranePermeability1991], flux pumps [@webberImportanceEffluxPumps2003], toxin-inactivating enzymes [@wrightBacterialResistanceAntibiotics2005], and plasticity phenotypic [@justiceMorphologicalPlasticityBacterial2008]. The latter is our phenomenon of interest because it considers the change in shape and size, allowing us to study it as a strategy to promote bacterial survival.
 
-We decided to analyze the MIC change caused by filamentation through stable exposure experiments of different toxin amounts at other exposure times. Computational simulations show that when comparing cells unable to filament with those that can, there is an increase in the capacity to tolerate more generous amounts of toxin, increasing their MIC (see [Figure 2]()). Therefore, it confers a gradual increase in resistance beyond filamentation’s role in improving the cell's life span as the exposure time is longer.
+We decided to analyze the MIC change caused by filamentation through stable exposure experiments of different toxin amounts at other exposure times. Computational simulations show that when comparing cells unable to filament with those that can, there is an increase in the capacity to tolerate more generous amounts of toxin, increasing their MIC (see Figure \@ref(fig:increased-time-resistance)). Therefore, it confers a gradual increase in resistance beyond filamentation’s role in improving the cell's life span as the exposure time is longer.
+  
+```{r include=FALSE, echo=FALSE}
+increased_time_resistance_scap <- "Effect of filamentation on minimum inhibitory concentration (MIC). "
+increased_time_resistance_cap <- paste0(increased_time_resistance_scap, "By exposing a cell to different toxin concentrations with stable signals, the cell achieves a set MIC for conditions without or with filamentation (separation between stressed and dead state) for each exposure time, without representing a change for the normal state cells' points (blue zone). Thus, the green line represents a gradual MIC increase when comparing each MIC between conditions for each exposure time.")
+```
+  
 
+```{r increased-time-resistance, fig.align='center', echo=FALSE, out.width='100%', fig.pos='H', fig.cap=increased_time_resistance_cap, fig.scap=increased_time_resistance_scap}
+if(knitr::is_html_output()){
+  knitr::include_graphics("https://raw.githubusercontent.com/jvelezmagic/CellFilamentation/main/plots/r/model/incresed_time_resistance.png")
+} else {
+ linguisticsdown::include_graphics2("https://raw.githubusercontent.com/jvelezmagic/CellFilamentation/main/plots/r/model/incresed_time_resistance.pdf") 
+}
+```
+
+  
 ### Heterogeneity in the toxin-antitoxin system represents a double-edged sword in survival probability
 
 One of the SOS response system properties is that it presents synchronous activation times within homogeneous populations [@friedmanPreciseTemporalModulation2005]. It has constant gene expression rates that help it cope with stress; however, it is possible to introduce variability by considering having multicopy resistance plasmids [@million-weaverMechanismsPlasmidSegregation2014]. Therefore, the response times would have an asynchronous behavior at the global level but synchronous at the local level. 
