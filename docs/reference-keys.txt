@@ -9,7 +9,7 @@ introduction-1
 experiment-design
 exploratory-data-analysis
 discussion
-rmd-basics
+filamentation-abstraction
 introduction-2
 filamentation-model
 results
