@@ -2,13 +2,13 @@
 
 ::: {.row}
 :::::: {.col-sm-6}
-Welcome to the `bs4` output from the [`oxforddown`](https://github.com/ulyngs/oxforddown) thesis template for [R Markdown](https://rmarkdown.rstudio.com). 
+Welcome to my undergraduate research project. 
 To view/download the PDF output, [click here](_main.pdf) (or click the cover image).
 Enjoy!
 
 ::::::::: {.byline}
-Ulrik Lyngs \
-4 January 2021
+Jesús Vélez Santiago \
+`r format(Sys.Date(), "%Y-%m")`
 :::::::::
 ::::::
 
