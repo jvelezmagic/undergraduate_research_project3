@@ -135,7 +135,21 @@ if(knitr::is_html_output()){
 }
 ```
 
-Considering that the toxin-antitoxin system's variability can modify the proportions of final cell states, a question arose about heterogeneity levels' global behavior. To answer this question, we evaluate the probability of survival for each population, defined by its distribution of antitoxin levels. In this way, we characterized the population survival probability function into three essential points according to its effect: negative, invariant, and positive (see [Figure 4]()). Furthermore, these points are relative to the homogeneous population's death time in question ($\tau_{kill}$): when $t < \tau_{kill}$ will represent a detrimental effect on survival, $t = \tau_{kill}$ will be independent of variability, and $t > \tau_{kill}$ will be a beneficial point for survival. Therefore, we concluded that the effect of heterogeneity in a toxin-antitoxin system represents a double-edged sword.
+Considering that the toxin-antitoxin system's variability can modify the proportions of final cell states, a question arose about heterogeneity levels' global behavior. To answer this question, we evaluate the probability of survival for each population, defined by its distribution of antitoxin levels. In this way, we characterized the population survival probability function into three essential points according to its effect: negative, invariant, and positive (see Figure \@ref(fig:survival-probability)). Furthermore, these points are relative to the homogeneous population's death time in question ($\tau_{kill}$): when $t < \tau_{kill}$ will represent a detrimental effect on survival, $t = \tau_{kill}$ will be independent of variability, and $t > \tau_{kill}$ will be a beneficial point for survival. Therefore, we concluded that the effect of heterogeneity in a toxin-antitoxin system represents a double-edged sword.
+
+```{r include=FALSE, echo=FALSE}
+survival_probability_scap <- "Effect of variability on the toxin-antitoxin system."
+survival_probability_cap <- paste0(survival_probability_scap, " ", "The color of the heatmap is representative of the fraction of living cells at exposure time. The white vertical line represents the death time of the homogeneous population ($\\tau_{kill}$). At $t < \\tau_{kill}$, it is shown that the fraction of survivors decreases as the variability in the population increases. When $t = \\tau_{kill}$, the variability does not affect the fraction of survivors, but it represents a percentage improvement for the homogeneous population. Finally, when $t > \\tau_{kill}$, the heterogeneity of the population favors survival.")
+```
+  
+
+```{r survival-probability, fig.align='center', echo=FALSE, out.width='100%', fig.pos='H', fig.cap=survival_probability_cap, fig.scap=survival_probability_scap}
+if(knitr::is_html_output()){
+  knitr::include_graphics("https://raw.githubusercontent.com/jvelezmagic/CellFilamentation/main/plots/r/model/survival_probability.png")
+} else {
+ linguisticsdown::include_graphics2("https://raw.githubusercontent.com/jvelezmagic/CellFilamentation/main/plots/r/model/survival_probability.pdf") 
+}
+```
 
 ## Discussion
 

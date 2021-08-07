@@ -3,6 +3,7 @@ eq:model-equation
 fig:filamentation-model-ramp-signal
 fig:increased-time-resistance
 fig:variability-toxin-antitoxin
+fig:survival-probability
 experiment-analysis
 introduction-1
 experiment-design
