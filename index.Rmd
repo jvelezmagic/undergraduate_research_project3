@@ -159,6 +159,7 @@ output:
         all: false
   bookdown::word_document2:
     toc: true   
+favicon: figures/logos/icons_dna.png
 link-citations: true
 documentclass: book
 always_allow_html: true #this allows html stuff in word (.docx) output
