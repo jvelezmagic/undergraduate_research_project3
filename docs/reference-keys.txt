@@ -10,6 +10,13 @@ fig:03-see-datasets-individualy-pca-plasmid-points-in-new-coordinates-1
 fig:03-see-datasets-individualy-pca-plasmid-variable-contribution-1
 fig:03-see-datasets-individualy-umap-chromosome-points-in-new-coordinates-1
 fig:3-see-datasets-individualy-umap-plasmid-points-in-new-coordinates-1
+fig:03-temporal-metric-distribution-ds-red-1
+fig:03-temporal-metric-distribution-gfp-1
+fig:03-temporal-metric-distribution-length-1
+fig:03-time-to-filamentation-all-1
+fig:03-time-to-filamentation-filamented-once-experiment-start-1
+fig:03-time-to-filamentation-include-time-to-filamentation-in-initial-exploration-diff-values-1
+fig:03-time-to-filamentation-include-time-to-filamentation-in-initial-exploration-initial-values-1
 fig:cell-dimensions-relationship
 eq:model-equation
 fig:filamentation-model-ramp-signal

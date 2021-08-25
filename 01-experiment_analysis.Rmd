@@ -132,31 +132,45 @@ include_cells_image("03-see-datasets-individualy-umap-chromosome-points-in-new-c
 include_cells_image("03-see-datasets-individualy-umap-plasmid-points-in-new-coordinates-1")
 ```
 
-```{r}
+(ref:03-temporal-metric-distribution-ds-red-1) **DS-red temporal distribution.**
+
+```{r 03-temporal-metric-distribution-ds-red-1, fig.cap='(ref:03-temporal-metric-distribution-ds-red-1)'}
 include_cells_image("03-temporal-metric-distribution-ds-red-1")
 ```
 
-```{r}
+(ref:03-temporal-metric-distribution-gfp-1) **GFP temporal distribution.**
+
+```{r 03-temporal-metric-distribution-gfp-1, fig.cap='(ref:03-temporal-metric-distribution-gfp-1)'}
 include_cells_image("03-temporal-metric-distribution-gfp-1")
 ```
 
-```{r}
+(ref:03-temporal-metric-distribution-length-1) **Length temporal distribution.**
+
+```{r 03-temporal-metric-distribution-length-1, fig.cap='(ref:03-temporal-metric-distribution-length-1)'}
 include_cells_image("03-temporal-metric-distribution-length-1")
 ```
 
-```{r}
+(ref:03-time-to-filamentation-all-1) **Time to filamentation without filters.**
+
+```{r 03-time-to-filamentation-all-1, fig.cap='(ref:03-time-to-filamentation-all-1)'}
 include_cells_image("03-time-to-filamentation-all-1")
 ```
 
-```{r}
+(ref:03-time-to-filamentation-filamented-once-experiment-start-1) **Time to filamentation filtered.**
+
+```{r 03-time-to-filamentation-filamented-once-experiment-start-1, fig.cap='(ref:03-time-to-filamentation-filamented-once-experiment-start-1)'}
 include_cells_image("03-time-to-filamentation-filamented-once-experiment-start-1")
 ```
 
-```{r}
+(ref:03-time-to-filamentation-include-time-to-filamentation-in-initial-exploration-diff-values-1) **Experiment initial values differences with time.**
+
+```{r 03-time-to-filamentation-include-time-to-filamentation-in-initial-exploration-diff-values-1, fig.cap='(ref:03-time-to-filamentation-include-time-to-filamentation-in-initial-exploration-diff-values-1)'}
 include_cells_image("03-time-to-filamentation-include-time-to-filamentation-in-initial-exploration-diff-values-1")
 ```
 
-```{r}
+(ref:03-time-to-filamentation-include-time-to-filamentation-in-initial-exploration-initial-values-1) **Experiment initial values with time.**
+
+```{r 03-time-to-filamentation-include-time-to-filamentation-in-initial-exploration-initial-values-1, fig.cap='(ref:03-time-to-filamentation-include-time-to-filamentation-in-initial-exploration-initial-values-1)'}
 include_cells_image("03-time-to-filamentation-include-time-to-filamentation-in-initial-exploration-initial-values-1")
 ```
 
