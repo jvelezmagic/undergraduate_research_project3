@@ -16,10 +16,153 @@ documentclass: book
 
 \minitoc <!-- this will include a mini table of contents-->
 
+```{r 01-setup, echo=FALSE, message=FALSE}
+include_image <- function(url_web, url_latex) {
+  
+  url_file <- ifelse(
+    test = knitr::is_latex_output(),
+    yes = url_latex,
+    no = url_web
+  )
+  
+  linguisticsdown::include_graphics2(path = url_file)
+}
+
+custom_include <- function(url_base, file_name, web_type = ".png", latex_type = ".pdf") {
+  include_image(
+    url_web = paste0(url_base, "figure-html/", file_name, web_type),
+    url_latex = paste0(url_base, "figure-latex/", file_name, latex_type)
+  )
+}
+
+main_url <- "https://raw.githubusercontent.com/jvelezmagic/CellFilamentationAnalysis/main/_bookdown_files/"
+include_cells_image <- purrr::partial(
+  .f = custom_include,
+  url_base = paste0(main_url, "03-jvelezmagic-cell-eda_files/")
+)
+
+tracks_url <- paste0(main_url, "")
+
+knitr::opts_chunk$set(
+  fig.pos = "H",
+  out.width = "100%",
+  echo = FALSE,
+  message = FALSE
+)
+```
+
+
 ## Introduction
 
 ## Experiment design
 
 ## Exploratory Data Analysis
+
+### Cells level
+
+(ref:03-cells-distribution-across-experiments-1) **Cell distribution across experiments.**
+
+```{r 03-cells-distribution-across-experiments, fig.cap='(ref:03-cells-distribution-across-experiments-1)'}
+include_cells_image("03-cells-distribution-across-experiments-1")
+```
+
+(ref:03-cells-life-time-classes-distribution-1) **Cells life time classes distribution.**
+
+```{r 03-cells-life-time-classes-distribution-1, fig.cap='(ref:03-cells-life-time-classes-distribution-1)'}
+include_cells_image("03-cells-life-time-classes-distribution-1")
+```
+
+(ref:03-division-number-divisions-1) **Cell's number of divisions.**
+
+```{r 03-division-number-divisions-1, fig.cap='(ref:03-division-number-divisions-1)'}
+include_cells_image("03-division-number-divisions-1")
+```
+
+(ref:03-division-time-since-last-division-1) **Time since last division**
+
+```{r 03-division-time-since-last-division-1, fig.cap='(ref:03-division-time-since-last-division-1)'}
+include_cells_image("03-division-time-since-last-division-1")
+```
+
+(ref:03-focus-just-in-initial-values-1) **Experiment initial values**
+
+```{r 03-focus-just-in-initial-values-1, fig.cap='(ref:03-focus-just-in-initial-values-1)'}
+include_cells_image("03-focus-just-in-initial-values-1")
+```
+
+(ref:03-metric-differences-1) **Experiment initial values differences.**
+
+```{r 03-metric-differences-1, fig.cap='(ref:03-metric-differences-1)'}
+include_cells_image("03-metric-differences-1")
+```
+
+(ref:03-see-datasets-individualy-pca-chromosome-points-in-new-coordinates-1) **Chromosome PCA.**
+
+```{r 03-see-datasets-individualy-pca-chromosome-points-in-new-coordinates-1, fig.cap='(ref:03-see-datasets-individualy-pca-chromosome-points-in-new-coordinates-1)'}
+include_cells_image("03-see-datasets-individualy-pca-chromosome-points-in-new-coordinates-1")
+```
+
+(ref:03-see-datasets-individualy-pca-chromosome-variable-contribution-1) **Chromosome PCA variables contribution.**
+
+```{r 03-see-datasets-individualy-pca-chromosome-variable-contribution-1, fig.cap='(ref:03-see-datasets-individualy-pca-chromosome-variable-contribution-1)'}
+include_cells_image("03-see-datasets-individualy-pca-chromosome-variable-contribution-1")
+```
+
+(ref:03-see-datasets-individualy-pca-plasmid-points-in-new-coordinates-1) **Plasmid PCA**
+
+```{r 03-see-datasets-individualy-pca-plasmid-points-in-new-coordinates-1, fig.cap='(ref:03-see-datasets-individualy-pca-plasmid-points-in-new-coordinates-1)'}
+include_cells_image("03-see-datasets-individualy-pca-plasmid-points-in-new-coordinates-1")
+```
+
+(ref:03-see-datasets-individualy-pca-plasmid-variable-contribution-1) **Plasmid PCA variables contribution.**
+
+```{r 03-see-datasets-individualy-pca-plasmid-variable-contribution-1, fig.cap='(ref:03-see-datasets-individualy-pca-plasmid-variable-contribution-1)'}
+include_cells_image("03-see-datasets-individualy-pca-plasmid-variable-contribution-1")
+```
+
+(ref:03-see-datasets-individualy-umap-chromosome-points-in-new-coordinates-1) **UMAP of Chromosome experiment.**
+
+```{r 03-see-datasets-individualy-umap-chromosome-points-in-new-coordinates-1, fig.cap='(ref:03-see-datasets-individualy-umap-chromosome-points-in-new-coordinates-1)'}
+include_cells_image("03-see-datasets-individualy-umap-chromosome-points-in-new-coordinates-1")
+```
+
+(ref:3-see-datasets-individualy-umap-plasmid-points-in-new-coordinates-1) **UMAP of Plasmid experiment.**
+
+```{r 3-see-datasets-individualy-umap-plasmid-points-in-new-coordinates-1, fig.cap='(ref:3-see-datasets-individualy-umap-plasmid-points-in-new-coordinates-1)'}
+include_cells_image("03-see-datasets-individualy-umap-plasmid-points-in-new-coordinates-1")
+```
+
+```{r}
+include_cells_image("03-temporal-metric-distribution-ds-red-1")
+```
+
+```{r}
+include_cells_image("03-temporal-metric-distribution-gfp-1")
+```
+
+```{r}
+include_cells_image("03-temporal-metric-distribution-length-1")
+```
+
+```{r}
+include_cells_image("03-time-to-filamentation-all-1")
+```
+
+```{r}
+include_cells_image("03-time-to-filamentation-filamented-once-experiment-start-1")
+```
+
+```{r}
+include_cells_image("03-time-to-filamentation-include-time-to-filamentation-in-initial-exploration-diff-values-1")
+```
+
+```{r}
+include_cells_image("03-time-to-filamentation-include-time-to-filamentation-in-initial-exploration-initial-values-1")
+```
+
+
+
+
+### Tracks level
 
 ## Discussion

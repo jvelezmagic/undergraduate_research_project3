@@ -17,9 +17,9 @@
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><link rel="shortcut icon" href="figures/logos/jvelezmagic.ico">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><link rel="stylesheet" href="templates/bs4_style.css">
 <link rel="stylesheet" href="templates/corrections.css">
-<meta name="description" content="1.1 Introduction   1.2 Experiment design   1.3 Exploratory Data Analysis   1.4 Discussion">
-<meta property="og:description" content="1.1 Introduction   1.2 Experiment design   1.3 Exploratory Data Analysis   1.4 Discussion">
-<meta name="twitter:description" content="1.1 Introduction   1.2 Experiment design   1.3 Exploratory Data Analysis   1.4 Discussion">
+<meta name="description" content="1.1 Introduction   1.2 Experiment design   1.3 Exploratory Data Analysis  1.3.1 Cells level   Figure 1.1: Cell distribution across experiments.    Figure 1.2: Cells life time classes distribution....">
+<meta property="og:description" content="1.1 Introduction   1.2 Experiment design   1.3 Exploratory Data Analysis  1.3.1 Cells level   Figure 1.1: Cell distribution across experiments.    Figure 1.2: Cells life time classes distribution....">
+<meta name="twitter:description" content="1.1 Introduction   1.2 Experiment design   1.3 Exploratory Data Analysis  1.3.1 Cells level   Figure 1.1: Cell distribution across experiments.    Figure 1.2: Cells life time classes distribution....">
 </head>
 <body data-spy="scroll" data-target="#toc">
 
@@ -75,6 +75,107 @@
 <h2>
 <span class="header-section-number">1.3</span> Exploratory Data Analysis<a class="anchor" aria-label="anchor" href="#exploratory-data-analysis"><i class="fas fa-link"></i></a>
 </h2>
+<div id="cells-level" class="section level3" number="1.3.1">
+<h3>
+<span class="header-section-number">1.3.1</span> Cells level<a class="anchor" aria-label="anchor" href="#cells-level"><i class="fas fa-link"></i></a>
+</h3>
+
+<div class="figure">
+<span style="display:block;" id="fig:03-cells-distribution-across-experiments"></span>
+<img src="https://raw.githubusercontent.com/jvelezmagic/CellFilamentationAnalysis/main/_bookdown_files/03-jvelezmagic-cell-eda_files/figure-html/03-cells-distribution-across-experiments-1.png" alt="Cell distribution across experiments." width="100%"><p class="caption">
+Figure 1.1: <strong>Cell distribution across experiments.</strong>
+</p>
+</div>
+
+<div class="figure">
+<span style="display:block;" id="fig:03-cells-life-time-classes-distribution-1"></span>
+<img src="https://raw.githubusercontent.com/jvelezmagic/CellFilamentationAnalysis/main/_bookdown_files/03-jvelezmagic-cell-eda_files/figure-html/03-cells-life-time-classes-distribution-1.png" alt="Cells life time classes distribution." width="100%"><p class="caption">
+Figure 1.2: <strong>Cells life time classes distribution.</strong>
+</p>
+</div>
+
+<div class="figure">
+<span style="display:block;" id="fig:03-division-number-divisions-1"></span>
+<img src="https://raw.githubusercontent.com/jvelezmagic/CellFilamentationAnalysis/main/_bookdown_files/03-jvelezmagic-cell-eda_files/figure-html/03-division-number-divisions-1.png" alt="Cell’s number of divisions." width="100%"><p class="caption">
+Figure 1.3: <strong>Cell’s number of divisions.</strong>
+</p>
+</div>
+
+<div class="figure">
+<span style="display:block;" id="fig:03-division-time-since-last-division-1"></span>
+<img src="https://raw.githubusercontent.com/jvelezmagic/CellFilamentationAnalysis/main/_bookdown_files/03-jvelezmagic-cell-eda_files/figure-html/03-division-time-since-last-division-1.png" alt="Time since last division" width="100%"><p class="caption">
+Figure 1.4: <strong>Time since last division</strong>
+</p>
+</div>
+
+<div class="figure">
+<span style="display:block;" id="fig:03-focus-just-in-initial-values-1"></span>
+<img src="https://raw.githubusercontent.com/jvelezmagic/CellFilamentationAnalysis/main/_bookdown_files/03-jvelezmagic-cell-eda_files/figure-html/03-focus-just-in-initial-values-1.png" alt="Experiment initial values" width="100%"><p class="caption">
+Figure 1.5: <strong>Experiment initial values</strong>
+</p>
+</div>
+
+<div class="figure">
+<span style="display:block;" id="fig:03-metric-differences-1"></span>
+<img src="https://raw.githubusercontent.com/jvelezmagic/CellFilamentationAnalysis/main/_bookdown_files/03-jvelezmagic-cell-eda_files/figure-html/03-metric-differences-1.png" alt="Experiment initial values differences." width="100%"><p class="caption">
+Figure 1.6: <strong>Experiment initial values differences.</strong>
+</p>
+</div>
+
+<div class="figure">
+<span style="display:block;" id="fig:03-see-datasets-individualy-pca-chromosome-points-in-new-coordinates-1"></span>
+<img src="https://raw.githubusercontent.com/jvelezmagic/CellFilamentationAnalysis/main/_bookdown_files/03-jvelezmagic-cell-eda_files/figure-html/03-see-datasets-individualy-pca-chromosome-points-in-new-coordinates-1.png" alt="Chromosome PCA." width="100%"><p class="caption">
+Figure 1.7: <strong>Chromosome PCA.</strong>
+</p>
+</div>
+
+<div class="figure">
+<span style="display:block;" id="fig:03-see-datasets-individualy-pca-chromosome-variable-contribution-1"></span>
+<img src="https://raw.githubusercontent.com/jvelezmagic/CellFilamentationAnalysis/main/_bookdown_files/03-jvelezmagic-cell-eda_files/figure-html/03-see-datasets-individualy-pca-chromosome-variable-contribution-1.png" alt="Chromosome PCA variables contribution." width="100%"><p class="caption">
+Figure 1.8: <strong>Chromosome PCA variables contribution.</strong>
+</p>
+</div>
+
+<div class="figure">
+<span style="display:block;" id="fig:03-see-datasets-individualy-pca-plasmid-points-in-new-coordinates-1"></span>
+<img src="https://raw.githubusercontent.com/jvelezmagic/CellFilamentationAnalysis/main/_bookdown_files/03-jvelezmagic-cell-eda_files/figure-html/03-see-datasets-individualy-pca-plasmid-points-in-new-coordinates-1.png" alt="Plasmid PCA" width="100%"><p class="caption">
+Figure 1.9: <strong>Plasmid PCA</strong>
+</p>
+</div>
+
+<div class="figure">
+<span style="display:block;" id="fig:03-see-datasets-individualy-pca-plasmid-variable-contribution-1"></span>
+<img src="https://raw.githubusercontent.com/jvelezmagic/CellFilamentationAnalysis/main/_bookdown_files/03-jvelezmagic-cell-eda_files/figure-html/03-see-datasets-individualy-pca-plasmid-variable-contribution-1.png" alt="Plasmid PCA variables contribution." width="100%"><p class="caption">
+Figure 1.10: <strong>Plasmid PCA variables contribution.</strong>
+</p>
+</div>
+
+<div class="figure">
+<span style="display:block;" id="fig:03-see-datasets-individualy-umap-chromosome-points-in-new-coordinates-1"></span>
+<img src="https://raw.githubusercontent.com/jvelezmagic/CellFilamentationAnalysis/main/_bookdown_files/03-jvelezmagic-cell-eda_files/figure-html/03-see-datasets-individualy-umap-chromosome-points-in-new-coordinates-1.png" alt="UMAP of Chromosome experiment." width="100%"><p class="caption">
+Figure 1.11: <strong>UMAP of Chromosome experiment.</strong>
+</p>
+</div>
+
+<div class="figure">
+<span style="display:block;" id="fig:3-see-datasets-individualy-umap-plasmid-points-in-new-coordinates-1"></span>
+<img src="https://raw.githubusercontent.com/jvelezmagic/CellFilamentationAnalysis/main/_bookdown_files/03-jvelezmagic-cell-eda_files/figure-html/03-see-datasets-individualy-umap-plasmid-points-in-new-coordinates-1.png" alt="UMAP of Plasmid experiment." width="100%"><p class="caption">
+Figure 1.12: <strong>UMAP of Plasmid experiment.</strong>
+</p>
+</div>
+<div class="inline-figure"><img src="https://raw.githubusercontent.com/jvelezmagic/CellFilamentationAnalysis/main/_bookdown_files/03-jvelezmagic-cell-eda_files/figure-html/03-temporal-metric-distribution-ds-red-1.png" width="100%"></div>
+<div class="inline-figure"><img src="https://raw.githubusercontent.com/jvelezmagic/CellFilamentationAnalysis/main/_bookdown_files/03-jvelezmagic-cell-eda_files/figure-html/03-temporal-metric-distribution-gfp-1.png" width="100%"></div>
+<div class="inline-figure"><img src="https://raw.githubusercontent.com/jvelezmagic/CellFilamentationAnalysis/main/_bookdown_files/03-jvelezmagic-cell-eda_files/figure-html/03-temporal-metric-distribution-length-1.png" width="100%"></div>
+<div class="inline-figure"><img src="https://raw.githubusercontent.com/jvelezmagic/CellFilamentationAnalysis/main/_bookdown_files/03-jvelezmagic-cell-eda_files/figure-html/03-time-to-filamentation-all-1.png" width="100%"></div>
+<div class="inline-figure"><img src="https://raw.githubusercontent.com/jvelezmagic/CellFilamentationAnalysis/main/_bookdown_files/03-jvelezmagic-cell-eda_files/figure-html/03-time-to-filamentation-filamented-once-experiment-start-1.png" width="100%"></div>
+<div class="inline-figure"><img src="https://raw.githubusercontent.com/jvelezmagic/CellFilamentationAnalysis/main/_bookdown_files/03-jvelezmagic-cell-eda_files/figure-html/03-time-to-filamentation-include-time-to-filamentation-in-initial-exploration-diff-values-1.png" width="100%"></div>
+<div class="inline-figure"><img src="https://raw.githubusercontent.com/jvelezmagic/CellFilamentationAnalysis/main/_bookdown_files/03-jvelezmagic-cell-eda_files/figure-html/03-time-to-filamentation-include-time-to-filamentation-in-initial-exploration-initial-values-1.png" width="100%"></div>
+</div>
+<div id="tracks-level" class="section level3" number="1.3.2">
+<h3>
+<span class="header-section-number">1.3.2</span> Tracks level<a class="anchor" aria-label="anchor" href="#tracks-level"><i class="fas fa-link"></i></a>
+</h3>
+</div>
 </div>
 <div id="discussion" class="section level2" number="1.4">
 <h2>
@@ -99,7 +200,12 @@ iii) You can't use markdown syntax inside chunk options, so if you want to e.g. 
 <li><a class="nav-link" href="#experiment-analysis"><span class="header-section-number">1</span> Experiment analysis</a></li>
 <li><a class="nav-link" href="#introduction-1"><span class="header-section-number">1.1</span> Introduction</a></li>
 <li><a class="nav-link" href="#experiment-design"><span class="header-section-number">1.2</span> Experiment design</a></li>
-<li><a class="nav-link" href="#exploratory-data-analysis"><span class="header-section-number">1.3</span> Exploratory Data Analysis</a></li>
+<li>
+<a class="nav-link" href="#exploratory-data-analysis"><span class="header-section-number">1.3</span> Exploratory Data Analysis</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#cells-level"><span class="header-section-number">1.3.1</span> Cells level</a></li>
+<li><a class="nav-link" href="#tracks-level"><span class="header-section-number">1.3.2</span> Tracks level</a></li>
+</ul>
+</li>
 <li><a class="nav-link" href="#discussion"><span class="header-section-number">1.4</span> Discussion</a></li>
 </ul>
 

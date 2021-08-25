@@ -1,3 +1,15 @@
+fig:03-cells-distribution-across-experiments
+fig:03-cells-life-time-classes-distribution-1
+fig:03-division-number-divisions-1
+fig:03-division-time-since-last-division-1
+fig:03-focus-just-in-initial-values-1
+fig:03-metric-differences-1
+fig:03-see-datasets-individualy-pca-chromosome-points-in-new-coordinates-1
+fig:03-see-datasets-individualy-pca-chromosome-variable-contribution-1
+fig:03-see-datasets-individualy-pca-plasmid-points-in-new-coordinates-1
+fig:03-see-datasets-individualy-pca-plasmid-variable-contribution-1
+fig:03-see-datasets-individualy-umap-chromosome-points-in-new-coordinates-1
+fig:3-see-datasets-individualy-umap-plasmid-points-in-new-coordinates-1
 fig:cell-dimensions-relationship
 eq:model-equation
 fig:filamentation-model-ramp-signal
@@ -8,6 +20,8 @@ experiment-analysis
 introduction-1
 experiment-design
 exploratory-data-analysis
+cells-level
+tracks-level
 discussion
 filamentation-abstraction
 introduction-2
