@@ -61,11 +61,21 @@ knitr::opts_chunk$set(
 
 ## Exploratory Data Analysis
 
+### General preprocessing of data
+
+The processing of the raw data consisted mainly of creating two levels of observation for the cells of both chromosomal strains and multicopy plasmids. The first level is at a cell granularity, that is, point properties. The second level consists of the cells over time, thus observing properties at the population level. We did this because it would allow us to understand what factors are affecting filamentation and why.
+
+We decided to normalize the fluorescence values of DS-Red and GFP for both experiments based on the values observed before the start of the experiment. It allowed us to have a basis to work with and compare the expressions between cells. In the case of DS-Red, we also applied a logarithmic transformation to observe subtle changes that would allow us to dig deeper.
+
+Ultimately, we decided to classify cells into four fundamental groups based on whether the cell was filamented and survived (see \@ref(fig:03-cells-distribution-across-experiments)). We define a _filamented cell_ as a cell that is more than two standard deviations from the mean concerning the lengths observed before antibiotic entry into the system []. On the other hand, although there are multiple ways to define death in a cell context [], we decided to consider a _cell dead or missing_ when we stopped having information about it, either because of its fluorescence levels or because it left the field of experimental tracking. Therefore, a _surviving cell_ is one that existed before and after the exposure to the antibiotic.
+
 ### Cells level
 
-(ref:03-cells-distribution-across-experiments-1) **Cell distribution across experiments.**
+(ref:03-cells-distribution-across-experiments-1-scap) Cell classification and its distribution across experiments.
 
-```{r 03-cells-distribution-across-experiments, fig.cap='(ref:03-cells-distribution-across-experiments-1)'}
+(ref:3-cells-distribution-across-experiments-1-cap) **Cell classification and its distribution across experiments.** We define a _filamented cell_ as a cell whose length exceeded two standard deviations from the mean at any time during the experiment. A _surviving cell_ is a cell that existed before and after exposure to the antibiotic. We removed from the analysis those cells that died before or were born after the exposure of the experiment. Therefore, we delimit the effect caused by the exposure to the antibiotic.
+
+```{r 03-cells-distribution-across-experiments, fig.cap='(ref:3-cells-distribution-across-experiments-1-cap)', fig.scap='(ref:03-cells-distribution-across-experiments-1-scap)'}
 include_cells_image("03-cells-distribution-across-experiments-1")
 ```
 
