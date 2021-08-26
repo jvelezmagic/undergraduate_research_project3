@@ -62,11 +62,11 @@ Although filament growth can help mitigate environmental stress (e.g., by activa
 
 (ref:cell-dimensions-relationship-scap) Cell dimensions relationship.
 
-(ref:cell-dimensions-relationship-cap) **Cell dimensions relationship.**
+(ref:cell-dimensions-relationship-cap) **Cell dimensions relationship.** We evaluated the resulting geometric properties on a grid of side lengths and radii with a pill-shaped cell. We can see that by maintaining a constant radius (typical case in bacteria such as _E. coli_) and increasing the side length, the surface area / volume  relationship ($SA/V$) tends to decline since the $V$ will grow at a higher rate than the $SA$.
 
 ```{r cell-dimensions-relationship, fig.cap='(ref:cell-dimensions-relationship-cap)', fig.scap='(ref:cell-dimensions-relationship-scap)'}
 if(knitr::is_html_output()){
-  knitr::include_graphics("https://raw.githubusercontent.com/jvelezmagic/CellFilamentation/main/plots/cell_dimensions_relationship.svg")
+  knitr::include_graphics("https://raw.githubusercontent.com/jvelezmagic/CellFilamentation/main/plots/cell_dimensions_relationship.png")
 } else {
  linguisticsdown::include_graphics2("https://raw.githubusercontent.com/jvelezmagic/CellFilamentation/main/plots/cell_dimensions_relationship.pdf") 
 }
