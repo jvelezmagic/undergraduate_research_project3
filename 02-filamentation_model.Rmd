@@ -12,15 +12,47 @@ documentclass: book
 #bibliography: [bibliography/references.bib, bibliography/additional-references.bib]
 ---
 
-```{r setup, include=FALSE, echo=FALSE}
+```{r 02-setup, echo=FALSE, message=FALSE}
 library(here)
+
+include_image <- function(url_web, url_latex) {
+  
+  url_file <- ifelse(
+    test = knitr::is_latex_output(),
+    yes = url_latex,
+    no = url_web
+  )
+  
+  linguisticsdown::include_graphics2(path = url_file)
+}
+
+custom_include <- function(url_base, file_name, web_type = ".png", latex_type = ".pdf") {
+  include_image(
+    url_web = paste0(url_base, "figure-html/", file_name, web_type),
+    url_latex = paste0(url_base, "figure-latex/", file_name, latex_type)
+  )
+}
+
+main_url <- "https://raw.githubusercontent.com/jvelezmagic/CellFilamentationAnalysis/main/_bookdown_files/"
+
+include_book_model_image <- purrr::partial(
+  .f = custom_include,
+  url_base = paste0(main_url, "05-jvelezmagic-toy-model-plots_files/")
+)
+
+knitr::opts_chunk$set(
+  fig.pos = "H",
+  out.width = "100%",
+  echo = FALSE,
+  message = FALSE
+)
 ```
 
 
+(ref:george-ep) --- George E.P. Box.
 ```{block type='savequote', quote_author='(ref:george-ep)', include=knitr::is_latex_output()}
 Essentially, all models are wrong, but some are useful
 ```
-(ref:george-ep) --- George E.P. Box.
 
 <!-- 
 Notes for adding an opening quote in PDF output:
@@ -40,6 +72,7 @@ iii) You can't use markdown syntax inside chunk options, so if you want to e.g. 
 By integrating information from the environment, cells can alter their cell cycle. For instance, some cells arrest the cell division in the presence of toxic agents but continue to grow. Previous studies have shown that this filamentation phenomenon provides a mechanism that enables cells to cope with stress, which leads to an increase in the probability of survival [@justiceMorphologicalPlasticityBacterial2008]. For example, filamentation can be a process capable of subverting innate defenses during urinary tract infection, facilitating the transition of additional rounds of intracellular bacterial community formation [@justiceFilamentationEscherichiaColi2006].
 
 Although filament growth can help mitigate environmental stress (e.g., by activating the SOS response system [@justiceMorphologicalPlasticityBacterial2008]), the evolutionary benefits of producing elongated cells that do not divide are unclear. Here, we proposed a mathematical model based on ordinary differential equations that explicitly considers the concentration of intracellular toxin as a function of the cell’s length (see Equation \@ref(eq:model-equation)). The model is built based on the growth ratio of measurements of the surface area ($SA$) and the cell volume ($V$), whereby the uptake rate of the toxin depends on the $SA$. However, $V's$ rate of change for $SA$ is higher than $SA$ for $V$, which results in a transient reduction in the intracellular toxin concentration (see Figure \@ref(fig:cell-dimensions-relationship)). Therefore, we hypothesized that this geometric interpretation of filamentation represents a biophysical defense line to increase the probability of a bacterial population’s survival in response to stressful environments.
+
 
 ```{r cell-dimensions-relationship, fig.align='center', echo=FALSE, fig.cap="Cell dimensions relationship.", out.width='100%', fig.pos='H'}
 if(knitr::is_html_output()){
@@ -81,8 +114,7 @@ In figure \@ref(fig:filamentation-model-ramp-signal), cells grow in a ramp-shape
 filamentation_model_ramp_signal_cap <- "Effect of filamentation on intracellular toxin concentration. In the presence of an extracellular toxic agent, the intracellular concentration of the toxin ($T_{int}$) increases until reaching a damage threshold that triggers filamentation ($T_{sos}$, blue point), increasing cell length ($L$). When filamentation is on, the cell decreases $T_{int}$ due to the intrinsic relationship between surface area and cell volume. When the cell reaches its maximum length, it eventually dies if the stressful stimulus is not removed ($T_{kill}$, red dot). The hatched line represents a cell that can not grow as filament. The orange shaded area is the time between stress and the non-filament cell's death, while the green shaded area represents the temporal gain for doing so. The blue background lines represent stochastic simulations of the same system."
 ```
 
-```{r filamentation-model-ramp-signal, fig.pos='H', out.width="100%", echo=FALSE, fig.cap=filamentation_model_ramp_signal_cap, fig.scap="Effect of filamentation on intracellular toxin concentration."}
-
+```{r filamentation-model-ramp-signal, fig.cap=filamentation_model_ramp_signal_cap, fig.scap="Effect of filamentation on intracellular toxin concentration."}
 if(knitr::is_html_output()){
   knitr::include_graphics("https://raw.githubusercontent.com/jvelezmagic/CellFilamentation/main/plots/filamentation_model_ramp_signal.png")
 } else {
@@ -100,16 +132,14 @@ We decided to analyze the MIC change caused by filamentation through stable expo
   
 ```{r include=FALSE, echo=FALSE}
 increased_time_resistance_scap <- "Effect of filamentation on minimum inhibitory concentration (MIC)."
-increased_time_resistance_cap <- paste0(increased_time_resistance_scap, " ", "By exposing a cell to different toxin concentrations with stable signals, the cell achieves a set MIC for conditions without or with filamentation (separation between stressed and dead state) for each exposure time, without representing a change for the normal state cells' points (blue zone). Thus, the green line represents a gradual MIC increase when comparing each MIC between conditions for each exposure time.")
+increased_time_resistance_cap <- paste0("**", increased_time_resistance_scap, "**", " ", "By exposing a cell to different toxin concentrations with stable signals, the cell achieves a set MIC for conditions without or with filamentation (separation between stressed and dead state) for each exposure time, without representing a change for the normal state cells' points (blue zone). Thus, the green line represents a gradual MIC increase when comparing each MIC between conditions for each exposure time.")
 ```
   
-
-```{r increased-time-resistance, fig.align='center', echo=FALSE, out.width='100%', fig.pos='H', fig.cap=increased_time_resistance_cap, fig.scap=increased_time_resistance_scap}
-if(knitr::is_html_output()){
-  knitr::include_graphics("https://raw.githubusercontent.com/jvelezmagic/CellFilamentation/main/plots/r/model/incresed_time_resistance.png")
-} else {
- linguisticsdown::include_graphics2("https://raw.githubusercontent.com/jvelezmagic/CellFilamentation/main/plots/r/model/incresed_time_resistance.pdf") 
-}
+(ref:increased-time-resistance-cap) `r increased_time_resistance_cap`
+(ref:increased-time-resistance-scap) `r increased_time_resistance_scap`
+  
+```{r increased-time-resistance, fig.cap='(ref:increased-time-resistance-cap)', fig.scap='(ref:increased-time-resistance-scap)'}
+include_book_model_image("05-toxin-exposure-experiment-merged-plot-1")
 ```
 
   
@@ -126,13 +156,8 @@ variability_toxin_antitoxin_scap <- "Variability in the toxin-antitoxin system p
 variability_toxin_antitoxin_cap <- paste0(variability_toxin_antitoxin_scap, " ", "Histograms represent the distribution of antitoxin quantity, while the curves represent the population's fraction over time. The cell will start to filament after reaching a certain internal toxin threshold, $T_{sos}$. Therefore, the expected global effect on the population's response times based on the amount of antitoxin is asynchronous, while at the local level, it is synchronous. Consequently, different proportions are presented in the cellular states since some cells will activate the filamentation system before and others later.")
 ```
   
-
-```{r variability-toxin-antitoxin, fig.align='center', echo=FALSE, out.width='100%', fig.pos='H', fig.cap=variability_toxin_antitoxin_cap, fig.scap=variability_toxin_antitoxin_scap}
-if(knitr::is_html_output()){
-  knitr::include_graphics("https://raw.githubusercontent.com/jvelezmagic/CellFilamentation/main/plots/r/model/variability_toxin_antitoxin.png")
-} else {
- linguisticsdown::include_graphics2("https://raw.githubusercontent.com/jvelezmagic/CellFilamentation/main/plots/r/model/variability_toxin_antitoxin.pdf") 
-}
+```{r variability-toxin-antitoxin, fig.cap=variability_toxin_antitoxin_cap, fig.scap=variability_toxin_antitoxin_scap}
+include_book_model_image("05-antitoxin-experiment-1")
 ```
 
 Considering that the toxin-antitoxin system's variability can modify the proportions of final cell states, a question arose about heterogeneity levels' global behavior. To answer this question, we evaluate the probability of survival for each population, defined by its distribution of antitoxin levels. In this way, we characterized the population survival probability function into three essential points according to its effect: negative, invariant, and positive (see Figure \@ref(fig:survival-probability)). Furthermore, these points are relative to the homogeneous population's death time in question ($\tau_{kill}$): when $t < \tau_{kill}$ will represent a detrimental effect on survival, $t = \tau_{kill}$ will be independent of variability, and $t > \tau_{kill}$ will be a beneficial point for survival. Therefore, we concluded that the effect of heterogeneity in a toxin-antitoxin system represents a double-edged sword.
@@ -143,12 +168,8 @@ survival_probability_cap <- paste0(survival_probability_scap, " ", "The color of
 ```
   
 
-```{r survival-probability, fig.align='center', echo=FALSE, out.width='100%', fig.pos='H', fig.cap=survival_probability_cap, fig.scap=survival_probability_scap}
-if(knitr::is_html_output()){
-  knitr::include_graphics("https://raw.githubusercontent.com/jvelezmagic/CellFilamentation/main/plots/r/model/survival_probability.png")
-} else {
- linguisticsdown::include_graphics2("https://raw.githubusercontent.com/jvelezmagic/CellFilamentation/main/plots/r/model/survival_probability.pdf") 
-}
+```{r survival-probability, fig.cap=survival_probability_cap, fig.scap=survival_probability_scap}
+include_book_model_image("05-survival-probability-1")
 ```
 
 ## Discussion
