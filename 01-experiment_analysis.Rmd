@@ -41,7 +41,10 @@ include_cells_image <- purrr::partial(
   url_base = paste0(main_url, "03-jvelezmagic-cell-eda_files/")
 )
 
-tracks_url <- paste0(main_url, "")
+include_tracks_image <- purrr::partial(
+  .f = custom_include,
+  url_base = paste0(main_url, "04-jvelezmagic-cell-time-eda_files/")
+)
 
 knitr::opts_chunk$set(
   fig.pos = "H",
@@ -174,9 +177,48 @@ include_cells_image("03-time-to-filamentation-include-time-to-filamentation-in-i
 include_cells_image("03-time-to-filamentation-include-time-to-filamentation-in-initial-exploration-initial-values-1")
 ```
 
-
-
-
 ### Tracks level
+
+(ref:04-metrics-over-time-1) **Population measurements over time.**
+
+```{r 04-metrics-over-time-1, fig.cap='(ref:04-metrics-over-time-1)'}
+include_tracks_image("04-metrics-over-time-1")
+```
+
+(ref:04-length-survival-probability-1) **Plasmid initial GFP survival probability.**
+
+```{r 04-length-survival-probability-1, fig.cap='(ref:04-length-survival-probability-1)'}
+include_tracks_image("04-length-survival-probability-1")
+```
+
+(ref:04-gfp-survival-probability-1) **Plasmid initial length survival probability.**
+
+```{r 04-gfp-survival-probability-1, fig.cap='(ref:04-gfp-survival-probability-1)'}
+include_tracks_image("04-gfp-survival-probability-1")
+```
+
+(ref:04-cell-status-over-time-status-without-dead-1) **Population status over time without dead.**
+
+```{r 04-cell-status-over-time-status-without-dead-1, fig.cap='(ref:04-cell-status-over-time-status-without-dead-1)'}
+include_tracks_image("04-cell-status-over-time-status-without-dead-1")
+```
+
+(ref:04-cell-status-over-time-status-with-dead-1) **Population status over time with dead.**
+
+```{r 04-cell-status-over-time-status-with-dead-1, fig.cap='(ref:04-cell-status-over-time-status-with-dead-1)'}
+include_tracks_image("04-cell-status-over-time-status-with-dead-1")
+```
+
+(ref:04-cell-status-over-time-proportion-living-cells-by-gfp-row-1) **Population survivals binned by initial GFP over time.**
+
+```{r 04-cell-status-over-time-proportion-living-cells-by-gfp-row-1, fig.cap='(ref:04-cell-status-over-time-proportion-living-cells-by-gfp-row-1)'}
+include_tracks_image("04-cell-status-over-time-proportion-living-cells-by-gfp-row-1")
+```
+
+(ref:04-cell-status-over-time-proportion-living-cells-by-gfp-point-1) **Normalized population survivals binned by initial GFP over time.**
+
+```{r 04-cell-status-over-time-proportion-living-cells-by-gfp-point-1, fig.cap='(ref:04-cell-status-over-time-proportion-living-cells-by-gfp-point-1)'}
+include_tracks_image("04-cell-status-over-time-proportion-living-cells-by-gfp-point-1")
+```
 
 ## Discussion
