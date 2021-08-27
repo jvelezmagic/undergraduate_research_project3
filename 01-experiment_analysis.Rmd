@@ -113,7 +113,7 @@ include_cells_image("03-focus-just-in-initial-values-1")
 
 (ref:03-metric-differences-1-scap) Experiment initial values differences.
 
-(ref:03-metric-differences-1-cap) **Experiment initial values differences.**
+(ref:03-metric-differences-1-cap) **Experiment initial values differences.** By comparing the metric differences of the last observation and the first observation of a cell, we can separate mainly the surviving filamented cells from those that did not do it in both experiments (green dots). Meanwhile, cells with plasmids form a small accumulation of surviving cells that did not produce filament (purple dots). However, this has made a breakthrough in understanding what is affecting cell survival. There are still variables that we can include to understand this phenomenon better.
 
 ```{r 03-metric-differences-1, fig.cap='(ref:03-metric-differences-1-cap)', fig.scap='(ref:03-metric-differences-1-scap)'}
 include_cells_image("03-metric-differences-1")
