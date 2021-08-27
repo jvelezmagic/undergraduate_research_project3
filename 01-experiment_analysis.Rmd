@@ -81,7 +81,7 @@ include_cells_image("03-cells-distribution-across-experiments-1")
 
 (ref:03-cells-life-time-classes-distribution-1-scap) Cells life time classes distribution.
 
-(ref:03-cells-life-time-classes-distribution-1-cap) **Cells life time classes distribution.**
+(ref:03-cells-life-time-classes-distribution-1-cap) **Cells life time classes distribution.** Chromosomal cells appear to show more remarkable survival by the filamented class compared to non-filamented survivors. On the other hand, in cells with plasmids, the relationship seems to be the opposite. However, this may be due to several factors. For instance, the levels of antibiotic resistance inherent in a heterogeneous population is the most simple explanation. For each cell, we calculate its lifetime, that is, the time we saw the last cell minus the time we had our first observation of it. We truncated the time to one frame (_i.e._, $10$ minutes) after finishing the antibiotic exposure. From the first appearance of green or purple color (_i.e._, surviving cells), higher lifetime values represent cells that existed long before the start of the experiment. 
 
 ```{r 03-cells-life-time-classes-distribution-1, fig.cap='(ref:03-cells-life-time-classes-distribution-1-cap)', fig.scap='(ref:03-cells-life-time-classes-distribution-1-scap)'}
 include_cells_image("03-cells-life-time-classes-distribution-1")
