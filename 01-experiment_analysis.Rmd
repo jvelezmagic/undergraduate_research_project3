@@ -89,7 +89,7 @@ include_cells_image("03-cells-life-time-classes-distribution-1")
 
 (ref:03-division-number-divisions-1-scap) Cell's number of divisions.
 
-(ref:03-division-number-divisions-1-cap) **Cell's number of divisions.**
+(ref:03-division-number-divisions-1-cap) **Cell's number of divisions.** Chromosomal cells exhibited more divisions for surviving classes and non-surviving filamented cells (_i.e._, purple, green, and red dots) relative to unchanged behavior in plasmid cells. Therefore, its contribution to filamentation remains uncertain.
 
 ```{r 03-division-number-divisions-1, fig.cap='(ref:03-division-number-divisions-1-cap)', fig.scap='(ref:03-division-number-divisions-1-scap)'}
 include_cells_image("03-division-number-divisions-1")
