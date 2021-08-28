@@ -127,9 +127,9 @@ include_cells_image("03-metric-differences-1")
 include_cells_image("03-see-datasets-individualy-pca-chromosome-points-in-new-coordinates-1")
 ```
 
-(ref:03-see-datasets-individualy-pca-chromosome-variable-contribution-1-scap) Chromosome PCA variables contribution.
+(ref:03-see-datasets-individualy-pca-chromosome-variable-contribution-1-scap) Variables contribution of Principal Component Analysis of chromosomal strain.
 
-(ref:03-see-datasets-individualy-pca-chromosome-variable-contribution-1-cap) **Chromosome PCA variables contribution.**
+(ref:03-see-datasets-individualy-pca-chromosome-variable-contribution-1-cap) **Variables contribution of Principal Component Analysis of chromosomal strain.** In the figure \@ref(fig:03-see-datasets-individualy-pca-chromosome-points-in-new-coordinates-1), we see that the classes we created manually reflected what was observed when performing a reduction of dimensions analysis. The individual contribution of each variable for the first two components is shown here. The variables that most affected components 1 and 2 (X-axis and Y-axis, respectively) are the final measurements of DS-red, GFP, length, and the initial amount of GFP. Given that they are chromosomal strains, we should note that this variability could be produced by intrinsic experimental noise that we could not remove. With that in mind, having the DS-red and the final length highlights the inherent role of cells by having increased its size.
 
 ```{r 03-see-datasets-individualy-pca-chromosome-variable-contribution-1, fig.cap='(ref:03-see-datasets-individualy-pca-chromosome-variable-contribution-1-cap)', fig.scap='(ref:03-see-datasets-individualy-pca-chromosome-variable-contribution-1-scap)'}
 include_cells_image("03-see-datasets-individualy-pca-chromosome-variable-contribution-1")
