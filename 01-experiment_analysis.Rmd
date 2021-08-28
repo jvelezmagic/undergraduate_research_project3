@@ -119,9 +119,9 @@ include_cells_image("03-focus-just-in-initial-values-1")
 include_cells_image("03-metric-differences-1")
 ```
 
-(ref:03-see-datasets-individualy-pca-chromosome-points-in-new-coordinates-1-scap) Chromosome PCA.
+(ref:03-see-datasets-individualy-pca-chromosome-points-in-new-coordinates-1-scap) Principal Component Analysis of chromosomal strain.
 
-(ref:03-see-datasets-individualy-pca-chromosome-points-in-new-coordinates-1-cap) **Chromosome PCA.**
+(ref:03-see-datasets-individualy-pca-chromosome-points-in-new-coordinates-1-cap) **Principal Component Analysis of chromosomal strain.** When integrating the information of different variables in a dimensionality reduction analysis, we observed a clear separation between the surviving cells and those that did not. The contributions that determined this phenomenon come mainly from the last amount of DS-red, GFP, and length of the cell (see Figure \@ref(fig:03-see-datasets-individualy-pca-chromosome-variable-contribution-1)). Although it seems obvious, it effectively confirms that the temporal classification that we carry out makes sense.  Thus, highlighting the importance of filamentation. Longer length represents a greater uptake of antibiotics but in a much larger volume, so the net effect is an internal reduction of antibiotics (see Figure \@ref(fig:cell-dimensions-relationship)).
 
 ```{r 03-see-datasets-individualy-pca-chromosome-points-in-new-coordinates-1, fig.cap='(ref:03-see-datasets-individualy-pca-chromosome-points-in-new-coordinates-1-cap)', fig.scap='(ref:03-see-datasets-individualy-pca-chromosome-points-in-new-coordinates-1-scap)'}
 include_cells_image("03-see-datasets-individualy-pca-chromosome-points-in-new-coordinates-1")
