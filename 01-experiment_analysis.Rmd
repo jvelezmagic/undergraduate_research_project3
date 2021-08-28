@@ -151,17 +151,17 @@ include_cells_image("03-see-datasets-individualy-pca-plasmid-points-in-new-coord
 include_cells_image("03-see-datasets-individualy-pca-plasmid-variable-contribution-1")
 ```
 
-(ref:03-see-datasets-individualy-umap-chromosome-points-in-new-coordinates-1-scap) UMAP of Chromosome experiment.
+(ref:03-see-datasets-individualy-umap-chromosome-points-in-new-coordinates-1-scap) UMAP coordinates of chromosome strain.
 
-(ref:03-see-datasets-individualy-umap-chromosome-points-in-new-coordinates-1-cap) **UMAP of Chromosome experiment.**
+(ref:03-see-datasets-individualy-umap-chromosome-points-in-new-coordinates-1-cap) **UMAP coordinates of chromosome strain.** We represented the cells in a low dimensional space. This new projection made it possible to group the cells that survived and those that did not. Therefore, as in PCA Figure \@ref(fig:03-see-datasets-individualy-pca-chromosome-points-in-new-coordinates-1), this technique supports the manual classification that we perform. However, the distance between the groups has no real meaning.
 
 ```{r 03-see-datasets-individualy-umap-chromosome-points-in-new-coordinates-1, fig.cap='(ref:03-see-datasets-individualy-umap-chromosome-points-in-new-coordinates-1-cap)', fig.scap='(ref:03-see-datasets-individualy-umap-chromosome-points-in-new-coordinates-1-scap)'}
 include_cells_image("03-see-datasets-individualy-umap-chromosome-points-in-new-coordinates-1")
 ```
 
-(ref:3-see-datasets-individualy-umap-plasmid-points-in-new-coordinates-1-scap) UMAP of Plasmid experiment.
+(ref:3-see-datasets-individualy-umap-plasmid-points-in-new-coordinates-1-scap) UMAP coordinates of plasmid strain.
 
-(ref:3-see-datasets-individualy-umap-plasmid-points-in-new-coordinates-1-cap) **UMAP of Plasmid experiment.**
+(ref:3-see-datasets-individualy-umap-plasmid-points-in-new-coordinates-1-cap) **UMAP coordinates of plasmid strain.** As in its \@ref(fig:03-see-datasets-individualy-umap-chromosome-points-in-new-coordinates-1) pair, the representation in a low-dimensional space helped classify the cells, grouping mainly into 4 groups, 2 of survivors and 2 of non-survivors. The variable "_division_" marks the separation of classes. The _division_ variable indicates whether a cell divided during its lifetime or not. Together, the UMAP represents the manually assigned classes. The distance between the groups has no real meaning.
 
 ```{r 3-see-datasets-individualy-umap-plasmid-points-in-new-coordinates-1, fig.cap='(ref:3-see-datasets-individualy-umap-plasmid-points-in-new-coordinates-1-cap)', fig.scap='(ref:3-see-datasets-individualy-umap-plasmid-points-in-new-coordinates-1-scap)'}
 include_cells_image("03-see-datasets-individualy-umap-plasmid-points-in-new-coordinates-1")
