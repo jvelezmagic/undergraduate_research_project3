@@ -135,17 +135,17 @@ include_cells_image("03-see-datasets-individualy-pca-chromosome-points-in-new-co
 include_cells_image("03-see-datasets-individualy-pca-chromosome-variable-contribution-1")
 ```
 
-(ref:03-see-datasets-individualy-pca-plasmid-points-in-new-coordinates-1-scap) Plasmid PCA.
+(ref:03-see-datasets-individualy-pca-plasmid-points-in-new-coordinates-1-scap) Principal Component Analysis of plasmid strain.
 
-(ref:03-see-datasets-individualy-pca-plasmid-points-in-new-coordinates-1-cap) **Plasmid PC**
+(ref:03-see-datasets-individualy-pca-plasmid-points-in-new-coordinates-1-cap) **Principal Component Analysis of plasmid strain.** By integrating the information from different variables in a dimensionality reduction analysis, we observed a clear separation between the filamented and non-filamented cells. Said class separation is given by component 2 (Y-axis), which is determined primarily by the initial and final lengths of the cells (see Figure \@ref(fig:03-see-datasets-individualy-pca-plasmid-variable-contribution-1)). Furthermore, the classification also allows us to separate those filamented cells that died from those that survived. Therefore, despite the increase in the complexity of the system, length continues to play a role in determining survival.
 
 ```{r 03-see-datasets-individualy-pca-plasmid-points-in-new-coordinates-1, fig.cap='(ref:03-see-datasets-individualy-pca-plasmid-points-in-new-coordinates-1-cap)', fig.scap='(ref:03-see-datasets-individualy-pca-plasmid-points-in-new-coordinates-1-scap)'}
 include_cells_image("03-see-datasets-individualy-pca-plasmid-points-in-new-coordinates-1")
 ```
 
-(ref:03-see-datasets-individualy-pca-plasmid-variable-contribution-1-scap) Plasmid PCA variables contribution.
+(ref:03-see-datasets-individualy-pca-plasmid-variable-contribution-1-scap) Variables contribution of Principal Component Analysis of plasmid strain.
 
-(ref:03-see-datasets-individualy-pca-plasmid-variable-contribution-1-cap) **Plasmid PCA variables contribution.**
+(ref:03-see-datasets-individualy-pca-plasmid-variable-contribution-1-cap) **Variables contribution of Principal Component Analysis of plasmid strain.**
 
 ```{r 03-see-datasets-individualy-pca-plasmid-variable-contribution-1, fig.cap='(ref:03-see-datasets-individualy-pca-plasmid-variable-contribution-1-cap)', fig.scap='(ref:03-see-datasets-individualy-pca-plasmid-variable-contribution-1-scap)'}
 include_cells_image("03-see-datasets-individualy-pca-plasmid-variable-contribution-1")
