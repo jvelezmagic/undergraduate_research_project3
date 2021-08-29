@@ -280,12 +280,12 @@ include_tracks_image("04-cell-status-over-time-status-with-dead-1")
 include_tracks_image("04-cell-status-over-time-proportion-living-cells-by-gfp-row-1")
 ```
 
-(ref:04-cell-status-over-time-proportion-living-cells-by-gfp-point-1-scap) Normalized population survivals binned by initial GFP over time.
+<!-- (ref:04-cell-status-over-time-proportion-living-cells-by-gfp-point-1-scap) Normalized population survivals binned by initial GFP over time. -->
 
-(ref:04-cell-status-over-time-proportion-living-cells-by-gfp-point-1-cap) **Normalized population survivals binned by initial GFP over time.**
+<!-- (ref:04-cell-status-over-time-proportion-living-cells-by-gfp-point-1-cap) **Normalized population survivals binned by initial GFP over time.** -->
 
-```{r 04-cell-status-over-time-proportion-living-cells-by-gfp-point-1, fig.cap='(ref:04-cell-status-over-time-proportion-living-cells-by-gfp-point-1-cap)', fig.scap='(ref:04-cell-status-over-time-proportion-living-cells-by-gfp-point-1-scap)'}
-include_tracks_image("04-cell-status-over-time-proportion-living-cells-by-gfp-point-1")
-```
+<!-- ```{r 04-cell-status-over-time-proportion-living-cells-by-gfp-point-1, fig.cap='(ref:04-cell-status-over-time-proportion-living-cells-by-gfp-point-1-cap)', fig.scap='(ref:04-cell-status-over-time-proportion-living-cells-by-gfp-point-1-scap)'} -->
+<!-- include_tracks_image("04-cell-status-over-time-proportion-living-cells-by-gfp-point-1") -->
+<!-- ``` -->
 
 ## Discussion

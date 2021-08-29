@@ -20,7 +20,6 @@ fig:04-length-survival-probability-1
 fig:04-gfp-survival-probability-1
 fig:04-cell-status-over-time-status-with-dead-1
 fig:04-cell-status-over-time-proportion-living-cells-by-gfp-row-1
-fig:04-cell-status-over-time-proportion-living-cells-by-gfp-point-1
 fig:cell-dimensions-relationship
 eq:model-equation
 fig:filamentation-model-ramp-signal
