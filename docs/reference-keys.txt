@@ -18,7 +18,6 @@ fig:03-time-to-filamentation-include-time-to-filamentation-in-initial-exploratio
 fig:04-metrics-over-time-1
 fig:04-length-survival-probability-1
 fig:04-gfp-survival-probability-1
-fig:04-cell-status-over-time-status-without-dead-1
 fig:04-cell-status-over-time-status-with-dead-1
 fig:04-cell-status-over-time-proportion-living-cells-by-gfp-row-1
 fig:04-cell-status-over-time-proportion-living-cells-by-gfp-point-1

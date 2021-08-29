@@ -256,17 +256,17 @@ include_tracks_image("04-length-survival-probability-1")
 include_tracks_image("04-gfp-survival-probability-1")
 ```
 
-(ref:04-cell-status-over-time-status-without-dead-1-scap) Population status over time without dead.
+<!-- (ref:04-cell-status-over-time-status-without-dead-1-scap) Population status over time without dead. -->
 
-(ref:04-cell-status-over-time-status-without-dead-1-cap) **Population status over time without dead.**
+<!-- (ref:04-cell-status-over-time-status-without-dead-1-cap) **Population status over time without dead.** -->
 
-```{r 04-cell-status-over-time-status-without-dead-1, fig.cap='(ref:04-cell-status-over-time-status-without-dead-1-cap)', fig.scap='(ref:04-cell-status-over-time-status-without-dead-1-scap)'}
-include_tracks_image("04-cell-status-over-time-status-without-dead-1")
-```
+<!-- ```{r 04-cell-status-over-time-status-without-dead-1, fig.cap='(ref:04-cell-status-over-time-status-without-dead-1-cap)', fig.scap='(ref:04-cell-status-over-time-status-without-dead-1-scap)'} -->
+<!-- include_tracks_image("04-cell-status-over-time-status-without-dead-1") -->
+<!-- ``` -->
 
-(ref:04-cell-status-over-time-status-with-dead-1-scap) Population status over time with dead.
+(ref:04-cell-status-over-time-status-with-dead-1-scap) Population status over time.
 
-(ref:04-cell-status-over-time-status-with-dead-1-cap) **Population status over time with dead.**
+(ref:04-cell-status-over-time-status-with-dead-1-cap) **Population status over time.**
 
 ```{r 04-cell-status-over-time-status-with-dead-1, fig.cap='(ref:04-cell-status-over-time-status-with-dead-1-cap)', fig.scap='(ref:04-cell-status-over-time-status-with-dead-1-scap)'}
 include_tracks_image("04-cell-status-over-time-status-with-dead-1")
