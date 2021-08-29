@@ -240,17 +240,17 @@ include_cells_image("03-time-to-filamentation-include-time-to-filamentation-in-i
 include_tracks_image("04-metrics-over-time-1")
 ```
 
-(ref:04-length-survival-probability-1-scap) Plasmid initial GFP survival probability.
+(ref:04-length-survival-probability-1-scap) Plasmid initial length survival probability.
 
-(ref:04-length-survival-probability-1-cap) **Plasmid initial GFP survival probability.**
+(ref:04-length-survival-probability-1-cap) **Plasmid initial length survival probability.** We calculated the survival probability after comparing the population distributions of length with those of the cells that managed to survive.
 
 ```{r 04-length-survival-probability-1, fig.cap='(ref:04-length-survival-probability-1-cap)', fig.scap='(ref:04-length-survival-probability-1-scap)'}
 include_tracks_image("04-length-survival-probability-1")
 ```
 
-(ref:04-gfp-survival-probability-1-scap) Plasmid initial length survival probability.
+(ref:04-gfp-survival-probability-1-scap) Plasmid initial GFP survival probability.
 
-(ref:04-gfp-survival-probability-1-cap) **Plasmid initial length survival probability.**
+(ref:04-gfp-survival-probability-1-cap) **Plasmid initial GFP survival probability.** We calculated the survival probability after comparing the population distributions of GFP with those of the cells that managed to survive. To assess survival by GFP, we only used plasmid cells. For non-filamented cells (blue dots), a bell forms with an upturned tail. On the other hand, for the filamented cells (red dots), a continuous increase in survival is shown just when it seems that the probability of the non-filamented cells has a decrease. In global, much GFP has higher resistance, but an average GFP value without filamentation also increases the probability of survival.
 
 ```{r 04-gfp-survival-probability-1, fig.cap='(ref:04-gfp-survival-probability-1-cap)', fig.scap='(ref:04-gfp-survival-probability-1-scap)'}
 include_tracks_image("04-gfp-survival-probability-1")
