@@ -214,17 +214,17 @@ include_cells_image("03-temporal-metric-distribution-length-1")
 include_cells_image("03-time-to-filamentation-filamented-once-experiment-start-1")
 ```
 
-(ref:03-time-to-filamentation-include-time-to-filamentation-in-initial-exploration-diff-values-1-scap) Experiment initial values differences with time.
+<!-- (ref:03-time-to-filamentation-include-time-to-filamentation-in-initial-exploration-diff-values-1-scap) Experiment initial values differences with time. -->
 
-(ref:03-time-to-filamentation-include-time-to-filamentation-in-initial-exploration-diff-values-1-cap) **Experiment initial values differences with time.**
+<!-- (ref:03-time-to-filamentation-include-time-to-filamentation-in-initial-exploration-diff-values-1-cap) **Experiment initial values differences with time.** -->
 
-```{r 03-time-to-filamentation-include-time-to-filamentation-in-initial-exploration-diff-values-1, fig.cap='(ref:03-time-to-filamentation-include-time-to-filamentation-in-initial-exploration-diff-values-1-cap)', fig.scap='(ref:03-time-to-filamentation-include-time-to-filamentation-in-initial-exploration-diff-values-1-scap)'}
-include_cells_image("03-time-to-filamentation-include-time-to-filamentation-in-initial-exploration-diff-values-1")
-```
+<!-- ```{r 03-time-to-filamentation-include-time-to-filamentation-in-initial-exploration-diff-values-1, fig.cap='(ref:03-time-to-filamentation-include-time-to-filamentation-in-initial-exploration-diff-values-1-cap)', fig.scap='(ref:03-time-to-filamentation-include-time-to-filamentation-in-initial-exploration-diff-values-1-scap)'} -->
+<!-- include_cells_image("03-time-to-filamentation-include-time-to-filamentation-in-initial-exploration-diff-values-1") -->
+<!-- ``` -->
 
-(ref:03-time-to-filamentation-include-time-to-filamentation-in-initial-exploration-initial-values-1-scap) Experiment initial values with time.
+(ref:03-time-to-filamentation-include-time-to-filamentation-in-initial-exploration-initial-values-1-scap) Experiment initial values with time to filamentation.
 
-(ref:03-time-to-filamentation-include-time-to-filamentation-in-initial-exploration-initial-values-1-cap) **Experiment initial values with time.**
+(ref:03-time-to-filamentation-include-time-to-filamentation-in-initial-exploration-initial-values-1-cap) **Experiment initial values with time to filamentation.** As in Figure \@ref(fig:03-focus-just-in-initial-values-1), including the time it will take for cells to filament allows us to understand the phenomenon of survival better. Cells that filamented and survived generally have a much higher delay than their non-filamented peers for both strains (see Figure \@ref(fig:03-time-to-filamentation-filamented-once-experiment-start-1)).
 
 ```{r 03-time-to-filamentation-include-time-to-filamentation-in-initial-exploration-initial-values-1, fig.cap='(ref:03-time-to-filamentation-include-time-to-filamentation-in-initial-exploration-initial-values-1-cap)', fig.scap='(ref:03-time-to-filamentation-include-time-to-filamentation-in-initial-exploration-initial-values-1-scap)'}
 include_cells_image("03-time-to-filamentation-include-time-to-filamentation-in-initial-exploration-initial-values-1")
