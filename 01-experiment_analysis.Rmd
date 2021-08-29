@@ -266,7 +266,7 @@ include_tracks_image("04-gfp-survival-probability-1")
 
 (ref:04-cell-status-over-time-status-with-dead-1-scap) Population status over time.
 
-(ref:04-cell-status-over-time-status-with-dead-1-cap) **Population status over time.**
+(ref:04-cell-status-over-time-status-with-dead-1-cap) **Population status over time.** We calculate how many cells of each type existed for each instant of time: non-filamented and filamented living cells (blue and green areas, respectively) and dead cells (red area). We considered _dead_ cells as those cells that existed at one time and then stopped tracking. The black vertical lines represent the start and end of antibiotic exposure for each experiment. The effect of filamentation and its spread after exposure to the antibiotic is evident for the chromosomal strain. The experiment was finalized with the resolution of the cells when they return to their non-filamented state. For its part, for the plasmid strain, it is observed how the filamented cells begin to appear slowly. Their proportion is as expected, given that the population had a wide distribution of GFP that allowed them to combat exposure to the antibiotic.
 
 ```{r 04-cell-status-over-time-status-with-dead-1, fig.cap='(ref:04-cell-status-over-time-status-with-dead-1-cap)', fig.scap='(ref:04-cell-status-over-time-status-with-dead-1-scap)'}
 include_tracks_image("04-cell-status-over-time-status-with-dead-1")
