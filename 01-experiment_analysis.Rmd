@@ -274,7 +274,7 @@ include_tracks_image("04-cell-status-over-time-status-with-dead-1")
 
 (ref:04-cell-status-over-time-proportion-living-cells-by-gfp-row-1-scap) Population survivals binned by initial GFP over time.
 
-(ref:04-cell-status-over-time-proportion-living-cells-by-gfp-row-1-cap) **Population survivals binned by initial GFP over time.**
+(ref:04-cell-status-over-time-proportion-living-cells-by-gfp-row-1-cap) **Population survivals binned by initial GFP over time.** We categorized the cells' GFP into ranges of proportions 0.05 concerning the maximum amount of GFP in the population. 100% cells per bin of GFP was taken as the number of cells one frame before the start of exposure to the antibiotic (minute 50). Therefore, dark to light colors represent a generation of new cells, and light to dark colors the death of cells. The black vertical bars represent the start and end of the antibiotic exposure. Bars size and color on the right represent the percentage of the living cells 10 minutes after the end of the experiment. As shown in Figure \@ref(fig:04-gfp-survival-probability-1), we showed that the surviving cells appear to follow something similar to a bimodal distribution. More cells survive with a moderate amount of GFP or with an amount close to the maximum of the population.
 
 ```{r 04-cell-status-over-time-proportion-living-cells-by-gfp-row-1, fig.cap='(ref:04-cell-status-over-time-proportion-living-cells-by-gfp-row-1-cap)', fig.scap='(ref:04-cell-status-over-time-proportion-living-cells-by-gfp-row-1-scap)'}
 include_tracks_image("04-cell-status-over-time-proportion-living-cells-by-gfp-row-1")
