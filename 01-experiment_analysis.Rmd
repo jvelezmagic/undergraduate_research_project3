@@ -242,7 +242,7 @@ include_tracks_image("04-metrics-over-time-1")
 
 (ref:04-length-survival-probability-1-scap) Plasmid initial length survival probability.
 
-(ref:04-length-survival-probability-1-cap) **Plasmid initial length survival probability.** We calculated the survival probability after comparing the population distributions of length with those of the cells that managed to survive.
+(ref:04-length-survival-probability-1-cap) **Plasmid initial length survival probability.** We calculated the survival probability after comparing the population distributions of length with those of the cells that managed to survive. For non-filamented cells (blue dots), the survival probability is higher for those cells with initial lengths and small. It seems to decrease with a more extensive initial size. For their part, for filamented cells (red dots), the probability of survival increases according to their length but then declines when the cells are too long at first (see red dotted line). Therefore, in general, a small and moderate length or an initial length already filamented from the beginning increases the chances of survival.
 
 ```{r 04-length-survival-probability-1, fig.cap='(ref:04-length-survival-probability-1-cap)', fig.scap='(ref:04-length-survival-probability-1-scap)'}
 include_tracks_image("04-length-survival-probability-1")
