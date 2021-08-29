@@ -353,11 +353,19 @@ Quite a nice prickly friend.
 \hypertarget{general-preprocessing-of-data}{%
 \subsection{General preprocessing of data}\label{general-preprocessing-of-data}}
 
-The processing of the raw data consisted mainly of creating two levels of observation for the cells of both chromosomal strains and multicopy plasmids. The first level is at a cell granularity, that is, point properties. The second level consists of the cells over time, thus observing properties at the population level. We did this because it would allow us to understand what factors are affecting filamentation and why.
+The processing of the raw data consisted mainly of creating two levels of observation for the cells of both chromosomal strains and multicopy plasmids.
+The first level is at a cell granularity, that is, point properties.
+The second level consists of the cells over time, thus observing properties at the population level.
+We did this because it would allow us to understand what factors are affecting filamentation and why.
 
-We decided to normalize the fluorescence values of DS-Red and GFP for both experiments based on the values observed before the start of the experiment. It allowed us to have a basis to work with and compare the expressions between cells. In the case of DS-Red, we also applied a logarithmic transformation to observe subtle changes that would allow us to dig deeper.
+We decided to normalize the fluorescence values of DS-Red and GFP for both experiments based on the values observed before the start of the experiment.
+It allowed us to have a basis to work with and compare the expressions between cells.
+In the case of DS-Red, we also applied a logarithmic transformation to observe subtle changes that would allow us to dig deeper.
 
-Ultimately, we decided to classify cells into four fundamental groups based on whether the cell was filamented and survived (see \ref{fig:03-cells-distribution-across-experiments}). We define a \emph{filamented cell} as a cell that is more than two standard deviations from the mean concerning the lengths observed before antibiotic entry into the system {[}{]}. On the other hand, although there are multiple ways to define death in a cell context {[}{]}, we decided to consider a \emph{cell dead or missing} when we stopped having information about it, either because of its fluorescence levels or because it left the field of experimental tracking. Therefore, a \emph{surviving cell} is one that existed before and after the exposure to the antibiotic.
+Ultimately, we decided to classify cells into four fundamental groups based on whether the cell was filamented and survived (see \ref{fig:03-cells-distribution-across-experiments}).
+We define a \emph{filamented cell} as a cell that is more than two standard deviations from the mean concerning the lengths observed before antibiotic entry into the system {[}{]}.
+On the other hand, although there are multiple ways to define death in a cell context {[}{]}, we decided to consider a \emph{cell dead or missing} when we stopped having information about it, either because of its fluorescence levels or because it left the field of experimental tracking.
+Therefore, a \emph{surviving cell} is one that existed before and after the exposure to the antibiotic.
 
 \hypertarget{cells-level}{%
 \subsection{Cells level}\label{cells-level}}
@@ -487,15 +495,7 @@ Ultimately, we decided to classify cells into four fundamental groups based on w
 
 
 \begin{figure}[H]
-\includegraphics[width=1\linewidth]{downloadFigs4latex__main/03-time-to-filamentation-all-1} \caption[Time to filamentation without filters.]{\textbf{Time to filamentation without filters.}}\label{fig:03-time-to-filamentation-all-1}
-\end{figure}
-
-
-
-
-
-\begin{figure}[H]
-\includegraphics[width=1\linewidth]{downloadFigs4latex__main/03-time-to-filamentation-filamented-once-experiment-start-1} \caption[Time to filamentation filtered.]{\textbf{Time to filamentation filtered.}}\label{fig:03-time-to-filamentation-filamented-once-experiment-start-1}
+\includegraphics[width=1\linewidth]{downloadFigs4latex__main/03-time-to-filamentation-filamented-once-experiment-start-1} \caption[Time to filamentation filtered.]{\textbf{Time to filamentation filtered.} To quantify the effect of filamenting to survive, we filtered those cells that filamented during the experiment. In this way, we normalize the start times for the calculation of the filamentation time. For both strains, the filamentation time had a more significant delay in the surviving cells.}\label{fig:03-time-to-filamentation-filamented-once-experiment-start-1}
 \end{figure}
 
 

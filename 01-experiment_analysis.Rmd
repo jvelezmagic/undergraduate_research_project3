@@ -54,7 +54,6 @@ knitr::opts_chunk$set(
 )
 ```
 
-
 ## Introduction
 
 ## Experiment design
@@ -63,17 +62,25 @@ knitr::opts_chunk$set(
 
 ### General preprocessing of data
 
-The processing of the raw data consisted mainly of creating two levels of observation for the cells of both chromosomal strains and multicopy plasmids. The first level is at a cell granularity, that is, point properties. The second level consists of the cells over time, thus observing properties at the population level. We did this because it would allow us to understand what factors are affecting filamentation and why.
+The processing of the raw data consisted mainly of creating two levels of observation for the cells of both chromosomal strains and multicopy plasmids.
+The first level is at a cell granularity, that is, point properties.
+The second level consists of the cells over time, thus observing properties at the population level.
+We did this because it would allow us to understand what factors are affecting filamentation and why.
 
-We decided to normalize the fluorescence values of DS-Red and GFP for both experiments based on the values observed before the start of the experiment. It allowed us to have a basis to work with and compare the expressions between cells. In the case of DS-Red, we also applied a logarithmic transformation to observe subtle changes that would allow us to dig deeper.
+We decided to normalize the fluorescence values of DS-Red and GFP for both experiments based on the values observed before the start of the experiment.
+It allowed us to have a basis to work with and compare the expressions between cells.
+In the case of DS-Red, we also applied a logarithmic transformation to observe subtle changes that would allow us to dig deeper.
 
-Ultimately, we decided to classify cells into four fundamental groups based on whether the cell was filamented and survived (see \@ref(fig:03-cells-distribution-across-experiments)). We define a _filamented cell_ as a cell that is more than two standard deviations from the mean concerning the lengths observed before antibiotic entry into the system []. On the other hand, although there are multiple ways to define death in a cell context [], we decided to consider a _cell dead or missing_ when we stopped having information about it, either because of its fluorescence levels or because it left the field of experimental tracking. Therefore, a _surviving cell_ is one that existed before and after the exposure to the antibiotic.
+Ultimately, we decided to classify cells into four fundamental groups based on whether the cell was filamented and survived (see \@ref(fig:03-cells-distribution-across-experiments)).
+We define a *filamented cell* as a cell that is more than two standard deviations from the mean concerning the lengths observed before antibiotic entry into the system [].
+On the other hand, although there are multiple ways to define death in a cell context [], we decided to consider a *cell dead or missing* when we stopped having information about it, either because of its fluorescence levels or because it left the field of experimental tracking.
+Therefore, a *surviving cell* is one that existed before and after the exposure to the antibiotic.
 
 ### Cells level
 
 (ref:03-cells-distribution-across-experiments-1-scap) Cell classification and its distribution across experiments.
 
-(ref:3-cells-distribution-across-experiments-1-cap) **Cell classification and its distribution across experiments.** We define a _filamented cell_ as a cell whose length exceeded two standard deviations from the mean at any time during the experiment. A _surviving cell_ is a cell that existed before and after exposure to the antibiotic. We removed from the analysis those cells that died before or were born after the exposure of the experiment. Therefore, we delimited the effect caused by the exposure to the antibiotic.
+(ref:3-cells-distribution-across-experiments-1-cap) **Cell classification and its distribution across experiments.** We define a *filamented cell* as a cell whose length exceeded two standard deviations from the mean at any time during the experiment. A *surviving cell* is a cell that existed before and after exposure to the antibiotic. We removed from the analysis those cells that died before or were born after the exposure of the experiment. Therefore, we delimited the effect caused by the exposure to the antibiotic.
 
 ```{r 03-cells-distribution-across-experiments, fig.cap='(ref:3-cells-distribution-across-experiments-1-cap)', fig.scap='(ref:03-cells-distribution-across-experiments-1-scap)'}
 include_cells_image("03-cells-distribution-across-experiments-1")
@@ -81,7 +88,7 @@ include_cells_image("03-cells-distribution-across-experiments-1")
 
 (ref:03-cells-life-time-classes-distribution-1-scap) Cells life time classes distribution.
 
-(ref:03-cells-life-time-classes-distribution-1-cap) **Cells life time classes distribution.** Chromosomal cells appear to show more remarkable survival by the filamented class compared to non-filamented survivors. On the other hand, in cells with plasmids, the relationship seems to be the opposite. However, this may be due to several factors. For instance, the levels of antibiotic resistance inherent in a heterogeneous population is the most simple explanation. For each cell, we calculate its lifetime, that is, the last time we saw the cell minus the time we had our first observation of it. We truncated the time to one frame (_i.e._, $10$ minutes) after finishing the antibiotic exposure. From the first appearance of green or purple color (_i.e._, surviving cells), higher lifetime values represent cells that existed long before the start of the experiment. 
+(ref:03-cells-life-time-classes-distribution-1-cap) **Cells life time classes distribution.** Chromosomal cells appear to show more remarkable survival by the filamented class compared to non-filamented survivors. On the other hand, in cells with plasmids, the relationship seems to be the opposite. However, this may be due to several factors. For instance, the levels of antibiotic resistance inherent in a heterogeneous population is the most simple explanation. For each cell, we calculate its lifetime, that is, the last time we saw the cell minus the time we had our first observation of it. We truncated the time to one frame (*i.e.*, $10$ minutes) after finishing the antibiotic exposure. From the first appearance of green or purple color (*i.e.*, surviving cells), higher lifetime values represent cells that existed long before the start of the experiment.
 
 ```{r 03-cells-life-time-classes-distribution-1, fig.cap='(ref:03-cells-life-time-classes-distribution-1-cap)', fig.scap='(ref:03-cells-life-time-classes-distribution-1-scap)'}
 include_cells_image("03-cells-life-time-classes-distribution-1")
@@ -89,7 +96,7 @@ include_cells_image("03-cells-life-time-classes-distribution-1")
 
 (ref:03-division-number-divisions-1-scap) Cell's number of divisions.
 
-(ref:03-division-number-divisions-1-cap) **Cell's number of divisions.** Chromosomal cells exhibited more divisions for surviving classes and non-surviving filamented cells (_i.e._, purple, green, and red dots) relative to unchanged behavior in plasmid cells. Therefore, its contribution to filamentation remains uncertain.
+(ref:03-division-number-divisions-1-cap) **Cell's number of divisions.** Chromosomal cells exhibited more divisions for surviving classes and non-surviving filamented cells (*i.e.*, purple, green, and red dots) relative to unchanged behavior in plasmid cells. Therefore, its contribution to filamentation remains uncertain.
 
 ```{r 03-division-number-divisions-1, fig.cap='(ref:03-division-number-divisions-1-cap)', fig.scap='(ref:03-division-number-divisions-1-scap)'}
 include_cells_image("03-division-number-divisions-1")
@@ -121,7 +128,7 @@ include_cells_image("03-metric-differences-1")
 
 (ref:03-see-datasets-individualy-pca-chromosome-points-in-new-coordinates-1-scap) Principal Component Analysis of chromosomal strain.
 
-(ref:03-see-datasets-individualy-pca-chromosome-points-in-new-coordinates-1-cap) **Principal Component Analysis of chromosomal strain.** When integrating the information of different variables in a dimensionality reduction analysis, we observed a clear separation between the surviving cells and those that did not. The contributions that determined this phenomenon come mainly from the last amount of DS-red, GFP, and length of the cell (see Figure \@ref(fig:03-see-datasets-individualy-pca-chromosome-variable-contribution-1)). Although it seems obvious, it effectively confirms that the temporal classification that we carry out makes sense.  Thus, highlighting the importance of filamentation. Longer length represents a greater uptake of antibiotics but in a much larger volume, so the net effect is an internal reduction of antibiotics (see Figure \@ref(fig:cell-dimensions-relationship)).
+(ref:03-see-datasets-individualy-pca-chromosome-points-in-new-coordinates-1-cap) **Principal Component Analysis of chromosomal strain.** When integrating the information of different variables in a dimensionality reduction analysis, we observed a clear separation between the surviving cells and those that did not. The contributions that determined this phenomenon come mainly from the last amount of DS-red, GFP, and length of the cell (see Figure \@ref(fig:03-see-datasets-individualy-pca-chromosome-variable-contribution-1)). Although it seems obvious, it effectively confirms that the temporal classification that we carry out makes sense. Thus, highlighting the importance of filamentation. Longer length represents a greater uptake of antibiotics but in a much larger volume, so the net effect is an internal reduction of antibiotics (see Figure \@ref(fig:cell-dimensions-relationship)).
 
 ```{r 03-see-datasets-individualy-pca-chromosome-points-in-new-coordinates-1, fig.cap='(ref:03-see-datasets-individualy-pca-chromosome-points-in-new-coordinates-1-cap)', fig.scap='(ref:03-see-datasets-individualy-pca-chromosome-points-in-new-coordinates-1-scap)'}
 include_cells_image("03-see-datasets-individualy-pca-chromosome-points-in-new-coordinates-1")
@@ -161,7 +168,7 @@ include_cells_image("03-see-datasets-individualy-umap-chromosome-points-in-new-c
 
 (ref:3-see-datasets-individualy-umap-plasmid-points-in-new-coordinates-1-scap) UMAP coordinates of plasmid strain.
 
-(ref:3-see-datasets-individualy-umap-plasmid-points-in-new-coordinates-1-cap) **UMAP coordinates of plasmid strain.** As in its \@ref(fig:03-see-datasets-individualy-umap-chromosome-points-in-new-coordinates-1) pair, the representation in a low-dimensional space helped classify the cells, grouping mainly into 4 groups, 2 of survivors and 2 of non-survivors. The variable "_division_" marks the separation of classes. The _division_ variable indicates whether a cell divided during its lifetime or not. Together, the UMAP represents the manually assigned classes. The distance between the groups has no real meaning.
+(ref:3-see-datasets-individualy-umap-plasmid-points-in-new-coordinates-1-cap) **UMAP coordinates of plasmid strain.** As in its \@ref(fig:03-see-datasets-individualy-umap-chromosome-points-in-new-coordinates-1) pair, the representation in a low-dimensional space helped classify the cells, grouping mainly into 4 groups, 2 of survivors and 2 of non-survivors. The variable "*division*" marks the separation of classes. The *division* variable indicates whether a cell divided during its lifetime or not. Together, the UMAP represents the manually assigned classes. The distance between the groups has no real meaning.
 
 ```{r 3-see-datasets-individualy-umap-plasmid-points-in-new-coordinates-1, fig.cap='(ref:3-see-datasets-individualy-umap-plasmid-points-in-new-coordinates-1-cap)', fig.scap='(ref:3-see-datasets-individualy-umap-plasmid-points-in-new-coordinates-1-scap)'}
 include_cells_image("03-see-datasets-individualy-umap-plasmid-points-in-new-coordinates-1")
@@ -191,17 +198,17 @@ include_cells_image("03-temporal-metric-distribution-gfp-1")
 include_cells_image("03-temporal-metric-distribution-length-1")
 ```
 
-(ref:03-time-to-filamentation-all-1-scap) Time to filamentation without filters.
+<!-- (ref:03-time-to-filamentation-all-1-scap) Time to filamentation without filters. -->
 
-(ref:03-time-to-filamentation-all-1-cap) **Time to filamentation without filters.**
+<!-- (ref:03-time-to-filamentation-all-1-cap) **Time to filamentation without filters.** -->
 
-```{r 03-time-to-filamentation-all-1, fig.cap='(ref:03-time-to-filamentation-all-1-cap)', fig.scap='(ref:03-time-to-filamentation-all-1-scap)'}
-include_cells_image("03-time-to-filamentation-all-1")
-```
+<!-- ```{r 03-time-to-filamentation-all-1, fig.cap='(ref:03-time-to-filamentation-all-1-cap)', fig.scap='(ref:03-time-to-filamentation-all-1-scap)'} -->
+<!-- include_cells_image("03-time-to-filamentation-all-1") -->
+<!-- ``` -->
 
 (ref:03-time-to-filamentation-filamented-once-experiment-start-1-scap) Time to filamentation filtered.
 
-(ref:03-time-to-filamentation-filamented-once-experiment-start-1-cap) **Time to filamentation filtered.**
+(ref:03-time-to-filamentation-filamented-once-experiment-start-1-cap) **Time to filamentation filtered.** To quantify the effect of filamenting to survive, we filtered those cells that filamented during the experiment. In this way, we normalize the start times for the calculation of the filamentation time. For both strains, the filamentation time had a more significant delay in the surviving cells.
 
 ```{r 03-time-to-filamentation-filamented-once-experiment-start-1, fig.cap='(ref:03-time-to-filamentation-filamented-once-experiment-start-1-cap)', fig.scap='(ref:03-time-to-filamentation-filamented-once-experiment-start-1-scap)'}
 include_cells_image("03-time-to-filamentation-filamented-once-experiment-start-1")
