@@ -188,7 +188,7 @@
 % Your full degree name.  (But remember that DPhils aren't "in" anything.  They're just DPhils.)
 \degree{Bachelor of Science}
 % Term and year of submission, or date if your board requires (eg most masters)
-\degreedate{Cuernavaca, Morelos, Mexico - 2021-08}
+\degreedate{Cuernavaca, Morelos, Mexico - 2021-09}
 
 
 %%%%% YOUR OWN PERSONAL MACROS
@@ -383,7 +383,39 @@ Therefore, a \emph{surviving cell} is one that existed before and after the expo
 
 
 \begin{figure}[H]
-\includegraphics[width=1\linewidth]{downloadFigs4latex__main/03-cells-life-time-classes-distribution-1} \caption[Cells life time classes distribution.]{\textbf{Cells life time classes distribution.} Chromosomal cells appear to show more remarkable survival by the filamented class compared to non-filamented survivors. On the other hand, in cells with plasmids, the relationship seems to be the opposite. However, this may be due to several factors. For instance, the levels of antibiotic resistance inherent in a heterogeneous population is the most simple explanation. For each cell, we calculate its lifetime, that is, the last time we saw the cell minus the time we had our first observation of it. We truncated the time to one frame (\emph{i.e.}, \(10\) minutes) after finishing the antibiotic exposure. From the first appearance of green or purple color (\emph{i.e.}, surviving cells), higher lifetime values represent cells that existed long before the start of the experiment.}\label{fig:03-cells-life-time-classes-distribution-1}
+\includegraphics[width=1\linewidth]{downloadFigs4latex__main/03-temporal-metric-distribution-ds-red-1} \caption[DS-red temporal distribution.]{\textbf{DS-red temporal distribution.} To evaluate the incident effect of the antibiotic marked by DS-red on cells by class, we show its values \hspace{0pt}\hspace{0pt}at three key moments: start, filamentation (SOS), and end. The upper asterisks represent the significance value when comparing a group X to the filamented and surviving cell reference. Asterisks in a line indicate whether or not there is a significant difference in the survival of non-filamented cells. The black dots represent the mean of each group, and the lines that join them are a comparative guide. The extent of the black bars represents the distribution of the data. Although, at the initial time, we observe multiple significant differences, this is likely due to the intrinsic noise of the system since, as expected, the values \hspace{0pt}\hspace{0pt}are close to zero. We observed a difference between the surviving and non-filamented cells for the chromosomal strain for the SOS time, but the same did not occur for the plasmid strain. The final amount of DS-red makes a clear difference between survival and death.}\label{fig:03-temporal-metric-distribution-ds-red-1}
+\end{figure}
+
+
+
+
+
+\begin{figure}[H]
+\includegraphics[width=1\linewidth]{downloadFigs4latex__main/03-temporal-metric-distribution-gfp-1} \caption[GFP temporal distribution.]{\textbf{GFP temporal distribution.} To evaluate the incident effect of the GFP on cells by class we used the same notation as in Figure \ref{fig:03-temporal-metric-distribution-ds-red-1}. The chromosomal strain has significant values of GFP \hspace{0pt}\hspace{0pt}at different times. However, these differences can be mainly due to experimental noise. We appreciated in the plasmid strain that the filamented cells had a lower amount of initial GFP as expected. At the time of filamentation, there is no difference between the survivors and the dead. However, in the end time, we observed that the surviving non-filamented cells have less GFP than the dead non-filamented and the living filamented cells.}\label{fig:03-temporal-metric-distribution-gfp-1}
+\end{figure}
+
+
+
+
+
+\begin{figure}[H]
+\includegraphics[width=1\linewidth]{downloadFigs4latex__main/03-temporal-metric-distribution-length-1} \caption[Length temporal distribution.]{\textbf{Length temporal distribution.} To evaluate the incident effect of length on cells by class, we use the same notation as in Figure \ref{fig:03-temporal-metric-distribution-ds-red-1}. The observations for both strains, chromosomal or plasmid, are the same. In the beginning, the surviving filamented cells already have a difference in length concerning the rest of the classes. At the time of filamentation, there is no difference to help determine whether the cell will survive or not. Finally, in the final time, it seems that the surviving filamented cells have a greater length than the rest of the groups. However, this length is moderate compared to the excess length shown by non-surviving filamented cells. On the other hand, we highlighted the growth of the surviving non-filamented cells. Therefore, although they did not reach a length for us to classify as filamented, the cells did resort to filamentation.}\label{fig:03-temporal-metric-distribution-length-1}
+\end{figure}
+
+
+
+
+
+\begin{figure}[H]
+\includegraphics[width=1\linewidth]{downloadFigs4latex__main/03-focus-just-in-initial-values-1} \caption[Experiment initial values.]{\textbf{Experiment initial values.} By positioning a cell in space based on its initial length and GFP values, we can see that class separation occurs, but not as a strong signal. Therefore, we concluded that although the initial state influences the result, this is not everything. For this, we have the example of the length changes throughout the experiment caused by filamentation. In this graph, the GFP scale is at log10 to help us observe those minor differences between the experiments.}\label{fig:03-focus-just-in-initial-values-1}
+\end{figure}
+
+
+
+
+
+\begin{figure}[H]
+\includegraphics[width=1\linewidth]{downloadFigs4latex__main/03-metric-differences-1} \caption[Experiment initial values differences.]{\textbf{Experiment initial values differences.} By comparing the metric differences of the last observation and the first observation of a cell, we can separate mainly the surviving filamented cells from those that did not do it in both experiments (green dots). Meanwhile, cells with plasmids form a small accumulation of surviving cells that did not produce filament (purple dots). However, this has made a breakthrough in understanding what is affecting cell survival. There are still variables that we can include to understand this phenomenon better.}\label{fig:03-metric-differences-1}
 \end{figure}
 
 
@@ -407,7 +439,7 @@ Therefore, a \emph{surviving cell} is one that existed before and after the expo
 
 
 \begin{figure}[H]
-\includegraphics[width=1\linewidth]{downloadFigs4latex__main/03-focus-just-in-initial-values-1} \caption[Experiment initial values.]{\textbf{Experiment initial values.} By positioning a cell in space based on its initial length and GFP values, we can see that class separation occurs, but not as a strong signal. Therefore, we concluded that although the initial state influences the result, this is not everything. For this, we have the example of the length changes throughout the experiment caused by filamentation. In this graph, the GFP scale is at log10 to help us observe those minor differences between the experiments.}\label{fig:03-focus-just-in-initial-values-1}
+\includegraphics[width=1\linewidth]{downloadFigs4latex__main/03-time-to-filamentation-filamented-once-experiment-start-1} \caption[Time to filamentation filtered.]{\textbf{Time to filamentation filtered.} To quantify the effect of filamenting to survive, we filtered those cells that filamented during the experiment. In this way, we normalize the start times for the calculation of the filamentation time. For both strains, the filamentation time had a more significant delay in the surviving cells.}\label{fig:03-time-to-filamentation-filamented-once-experiment-start-1}
 \end{figure}
 
 
@@ -415,7 +447,7 @@ Therefore, a \emph{surviving cell} is one that existed before and after the expo
 
 
 \begin{figure}[H]
-\includegraphics[width=1\linewidth]{downloadFigs4latex__main/03-metric-differences-1} \caption[Experiment initial values differences.]{\textbf{Experiment initial values differences.} By comparing the metric differences of the last observation and the first observation of a cell, we can separate mainly the surviving filamented cells from those that did not do it in both experiments (green dots). Meanwhile, cells with plasmids form a small accumulation of surviving cells that did not produce filament (purple dots). However, this has made a breakthrough in understanding what is affecting cell survival. There are still variables that we can include to understand this phenomenon better.}\label{fig:03-metric-differences-1}
+\includegraphics[width=1\linewidth]{downloadFigs4latex__main/03-time-to-filamentation-include-time-to-filamentation-in-initial-exploration-initial-values-1} \caption[Experiment initial values with time to filamentation.]{\textbf{Experiment initial values with time to filamentation.} As in Figure \ref{fig:03-focus-just-in-initial-values-1}, including the time it will take for cells to filament allows us to understand the phenomenon of survival better. Cells that filamented and survived generally have a much higher delay than their non-filamented peers for both strains (see Figure \ref{fig:03-time-to-filamentation-filamented-once-experiment-start-1}).}\label{fig:03-time-to-filamentation-include-time-to-filamentation-in-initial-exploration-initial-values-1}
 \end{figure}
 
 
@@ -466,46 +498,6 @@ Therefore, a \emph{surviving cell} is one that existed before and after the expo
 \includegraphics[width=1\linewidth]{downloadFigs4latex__main/3-see-datasets-individualy-umap-plasmid-points-in-new-coordinates-1} \caption[UMAP coordinates of plasmid strain.]{\textbf{UMAP coordinates of plasmid strain.} As in its \ref{fig:03-see-datasets-individualy-umap-chromosome-points-in-new-coordinates-1} pair, the representation in a low-dimensional space helped classify the cells, grouping mainly into 4 groups, 2 of survivors and 2 of non-survivors. The variable ``\emph{division}'' marks the separation of classes. The \emph{division} variable indicates whether a cell divided during its lifetime or not. Together, the UMAP represents the manually assigned classes. The distance between the groups has no real meaning.}\label{fig:3-see-datasets-individualy-umap-plasmid-points-in-new-coordinates-1}
 \end{figure}
 
-
-
-
-
-\begin{figure}[H]
-\includegraphics[width=1\linewidth]{downloadFigs4latex__main/03-temporal-metric-distribution-ds-red-1} \caption[DS-red temporal distribution.]{\textbf{DS-red temporal distribution.} To evaluate the incident effect of the antibiotic marked by DS-red on cells by class, we show its values \hspace{0pt}\hspace{0pt}at three key moments: start, filamentation (SOS), and end. The upper asterisks represent the significance value when comparing a group X to the filamented and surviving cell reference. Asterisks in a line indicate whether or not there is a significant difference in the survival of non-filamented cells. The black dots represent the mean of each group, and the lines that join them are a comparative guide. The extent of the black bars represents the distribution of the data. Although, at the initial time, we observe multiple significant differences, this is likely due to the intrinsic noise of the system since, as expected, the values \hspace{0pt}\hspace{0pt}are close to zero. We observed a difference between the surviving and non-filamented cells for the chromosomal strain for the SOS time, but the same did not occur for the plasmid strain. The final amount of DS-red makes a clear difference between survival and death.}\label{fig:03-temporal-metric-distribution-ds-red-1}
-\end{figure}
-
-
-
-
-
-\begin{figure}[H]
-\includegraphics[width=1\linewidth]{downloadFigs4latex__main/03-temporal-metric-distribution-gfp-1} \caption[GFP temporal distribution.]{\textbf{GFP temporal distribution.} To evaluate the incident effect of the GFP on cells by class we used the same notation as in Figure \ref{fig:03-temporal-metric-distribution-ds-red-1}. The chromosomal strain has significant values of GFP \hspace{0pt}\hspace{0pt}at different times. However, these differences can be mainly due to experimental noise. We appreciated in the plasmid strain that the filamented cells had a lower amount of initial GFP as expected. At the time of filamentation, there is no difference between the survivors and the dead. However, in the end time, we observed that the surviving non-filamented cells have less GFP than the dead non-filamented and the living filamented cells.}\label{fig:03-temporal-metric-distribution-gfp-1}
-\end{figure}
-
-
-
-
-
-\begin{figure}[H]
-\includegraphics[width=1\linewidth]{downloadFigs4latex__main/03-temporal-metric-distribution-length-1} \caption[Length temporal distribution.]{\textbf{Length temporal distribution.} To evaluate the incident effect of length on cells by class, we use the same notation as in Figure \ref{fig:03-temporal-metric-distribution-ds-red-1}. The observations for both strains, chromosomal or plasmid, are the same. In the beginning, the surviving filamented cells already have a difference in length concerning the rest of the classes. At the time of filamentation, there is no difference to help determine whether the cell will survive or not. Finally, in the final time, it seems that the surviving filamented cells have a greater length than the rest of the groups. However, this length is moderate compared to the excess length shown by non-surviving filamented cells. On the other hand, we highlighted the growth of the surviving non-filamented cells. Therefore, although they did not reach a length for us to classify as filamented, the cells did resort to filamentation.}\label{fig:03-temporal-metric-distribution-length-1}
-\end{figure}
-
-
-
-
-
-\begin{figure}[H]
-\includegraphics[width=1\linewidth]{downloadFigs4latex__main/03-time-to-filamentation-filamented-once-experiment-start-1} \caption[Time to filamentation filtered.]{\textbf{Time to filamentation filtered.} To quantify the effect of filamenting to survive, we filtered those cells that filamented during the experiment. In this way, we normalize the start times for the calculation of the filamentation time. For both strains, the filamentation time had a more significant delay in the surviving cells.}\label{fig:03-time-to-filamentation-filamented-once-experiment-start-1}
-\end{figure}
-
-
-
-
-
-\begin{figure}[H]
-\includegraphics[width=1\linewidth]{downloadFigs4latex__main/03-time-to-filamentation-include-time-to-filamentation-in-initial-exploration-initial-values-1} \caption[Experiment initial values with time to filamentation.]{\textbf{Experiment initial values with time to filamentation.} As in Figure \ref{fig:03-focus-just-in-initial-values-1}, including the time it will take for cells to filament allows us to understand the phenomenon of survival better. Cells that filamented and survived generally have a much higher delay than their non-filamented peers for both strains (see Figure \ref{fig:03-time-to-filamentation-filamented-once-experiment-start-1}).}\label{fig:03-time-to-filamentation-include-time-to-filamentation-in-initial-exploration-initial-values-1}
-\end{figure}
-
 \hypertarget{tracks-level}{%
 \subsection{Tracks level}\label{tracks-level}}
 
@@ -514,7 +506,23 @@ Therefore, a \emph{surviving cell} is one that existed before and after the expo
 
 
 \begin{figure}[H]
+\includegraphics[width=1\linewidth]{downloadFigs4latex__main/04-cell-status-over-time-status-with-dead-1} \caption[Population status over time.]{\textbf{Population status over time.} We calculate how many cells of each type existed for each instant of time: non-filamented and filamented living cells (blue and green areas, respectively) and dead cells (red area). We considered \emph{dead} cells as those cells that existed at one time and then stopped tracking. The black vertical lines represent the start and end of antibiotic exposure for each experiment. The effect of filamentation and its spread after exposure to the antibiotic is evident for the chromosomal strain. The experiment was finalized with the resolution of the cells when they return to their non-filamented state. For its part, for the plasmid strain, it is observed how the filamented cells begin to appear slowly. Their proportion is as expected, given that the population had a wide distribution of GFP that allowed them to combat exposure to the antibiotic.}\label{fig:04-cell-status-over-time-status-with-dead-1}
+\end{figure}
+
+
+
+
+
+\begin{figure}[H]
 \includegraphics[width=1\linewidth]{downloadFigs4latex__main/04-metrics-over-time-1} \caption[Population measurements over time.]{\textbf{Population measurements over time.} The colored lines symbolize the average value of each metric at each instant of time, while its surrounded gray shaded area represents the 95\% confidence interval. The vertical lines represent the start and end of antibiotic exposure. The horizontal line in the length metric symbolizes the threshold to consider a cell filament. We observed a faster increase of DS-red for the non-surviving populations in both experiments. Regarding the GFP metric, the behavior is relatively stable for the chromosomal strain. In contrast, for the plasmid strain, a decline in GFP is observed for the population that did not survive. For the length metric, it is interesting to note how the chromosome cells that did not filament continued to grow past the filamentation threshold once the exposure to the antibiotic in the chromosomal strain had ended. On the other hand, the filamented and dead cells seem to have a greater length from the beginning for the plasmid strain.}\label{fig:04-metrics-over-time-1}
+\end{figure}
+
+
+
+
+
+\begin{figure}[H]
+\includegraphics[width=1\linewidth]{downloadFigs4latex__main/04-cell-status-over-time-proportion-living-cells-by-gfp-row-1} \caption[Population survivals binned by initial GFP over time.]{\textbf{Population survivals binned by initial GFP over time.} We categorized the cells' GFP into ranges of proportions 0.05 concerning the maximum amount of GFP in the population. 100\% cells per bin of GFP was taken as the number of cells one frame before the start of exposure to the antibiotic (minute 50). Therefore, dark to light colors represent a generation of new cells, and light to dark colors the death of cells. The black vertical bars represent the start and end of the antibiotic exposure. Bars size and color on the right represent the percentage of the living cells 10 minutes after the end of the experiment. As shown in Figure \ref{fig:04-gfp-survival-probability-1}, we showed that the surviving cells appear to follow something similar to a bimodal distribution. More cells survive with a moderate amount of GFP or with an amount close to the maximum of the population.}\label{fig:04-cell-status-over-time-proportion-living-cells-by-gfp-row-1}
 \end{figure}
 
 
@@ -531,22 +539,6 @@ Therefore, a \emph{surviving cell} is one that existed before and after the expo
 
 \begin{figure}[H]
 \includegraphics[width=1\linewidth]{downloadFigs4latex__main/04-gfp-survival-probability-1} \caption[Plasmid initial GFP survival probability.]{\textbf{Plasmid initial GFP survival probability.} We calculated the survival probability after comparing the population distributions of GFP with those of the cells that managed to survive. To assess survival by GFP, we only used plasmid cells. For non-filamented cells (blue dots), a bell forms with an upturned tail. On the other hand, for the filamented cells (red dots), a continuous increase in survival is shown just when it seems that the probability of the non-filamented cells has a decrease. In global, much GFP has higher resistance, but an average GFP value without filamentation also increases the probability of survival.}\label{fig:04-gfp-survival-probability-1}
-\end{figure}
-
-
-
-
-
-\begin{figure}[H]
-\includegraphics[width=1\linewidth]{downloadFigs4latex__main/04-cell-status-over-time-status-with-dead-1} \caption[Population status over time.]{\textbf{Population status over time.} We calculate how many cells of each type existed for each instant of time: non-filamented and filamented living cells (blue and green areas, respectively) and dead cells (red area). We considered \emph{dead} cells as those cells that existed at one time and then stopped tracking. The black vertical lines represent the start and end of antibiotic exposure for each experiment. The effect of filamentation and its spread after exposure to the antibiotic is evident for the chromosomal strain. The experiment was finalized with the resolution of the cells when they return to their non-filamented state. For its part, for the plasmid strain, it is observed how the filamented cells begin to appear slowly. Their proportion is as expected, given that the population had a wide distribution of GFP that allowed them to combat exposure to the antibiotic.}\label{fig:04-cell-status-over-time-status-with-dead-1}
-\end{figure}
-
-
-
-
-
-\begin{figure}[H]
-\includegraphics[width=1\linewidth]{downloadFigs4latex__main/04-cell-status-over-time-proportion-living-cells-by-gfp-row-1} \caption[Population survivals binned by initial GFP over time.]{\textbf{Population survivals binned by initial GFP over time.} We categorized the cells' GFP into ranges of proportions 0.05 concerning the maximum amount of GFP in the population. 100\% cells per bin of GFP was taken as the number of cells one frame before the start of exposure to the antibiotic (minute 50). Therefore, dark to light colors represent a generation of new cells, and light to dark colors the death of cells. The black vertical bars represent the start and end of the antibiotic exposure. Bars size and color on the right represent the percentage of the living cells 10 minutes after the end of the experiment. As shown in Figure \ref{fig:04-gfp-survival-probability-1}, we showed that the surviving cells appear to follow something similar to a bimodal distribution. More cells survive with a moderate amount of GFP or with an amount close to the maximum of the population.}\label{fig:04-cell-status-over-time-proportion-living-cells-by-gfp-row-1}
 \end{figure}
 
 \hypertarget{discussion}{%
