@@ -56,11 +56,8 @@ knitr::opts_chunk$set(
 
 ## Introduction
 
-## Experiment design
 
-## Exploratory Data Analysis
-
-### General preprocessing of data
+## General preprocessing of data
 
 The processing of the raw data consisted mainly of creating two levels of observation for the cells of both chromosomal strains and multicopy plasmids.
 The first level is at a cell granularity, that is, point properties.
@@ -76,8 +73,6 @@ We define a *filamented cell* as a cell that is more than two standard deviation
 On the other hand, although there are multiple ways to define death in a cell context [], we decided to consider a *cell dead or missing* when we stopped having information about it, either because of its fluorescence levels or because it left the field of experimental tracking.
 Therefore, a *surviving cell* is one that existed before and after the exposure to the antibiotic.
 
-### Cells level
-
 (ref:03-cells-distribution-across-experiments-1-scap) Cell classification and its distribution across experiments.
 
 (ref:3-cells-distribution-across-experiments-1-cap) **Cell classification and its distribution across experiments.** We define a *filamented cell* as a cell whose length exceeded two standard deviations from the mean at any time during the experiment. A *surviving cell* is a cell that existed before and after exposure to the antibiotic. We removed from the analysis those cells that died before or were born after the exposure of the experiment. Therefore, we delimited the effect caused by the exposure to the antibiotic.
@@ -85,6 +80,10 @@ Therefore, a *surviving cell* is one that existed before and after the exposure 
 ```{r 03-cells-distribution-across-experiments, fig.cap='(ref:3-cells-distribution-across-experiments-1-cap)', fig.scap='(ref:03-cells-distribution-across-experiments-1-scap)'}
 include_cells_image("03-cells-distribution-across-experiments-1")
 ```
+
+## Results
+
+### Cell length and the amount of GFP are crucial in determining cell survival
 
 (ref:03-temporal-metric-distribution-ds-red-1-scap) DS-red temporal distribution.
 
@@ -110,6 +109,8 @@ include_cells_image("03-temporal-metric-distribution-gfp-1")
 include_cells_image("03-temporal-metric-distribution-length-1")
 ```
 
+
+
 (ref:03-focus-just-in-initial-values-1-scap) Experiment initial values.
 
 (ref:03-focus-just-in-initial-values-1-cap) **Experiment initial values.** By positioning a cell in space based on its initial length and GFP values, we can see that class separation occurs, but not as a strong signal. Therefore, we concluded that although the initial state influences the result, this is not everything. For this, we have the example of the length changes throughout the experiment caused by filamentation. In this graph, the GFP scale is at log10 to help us observe those minor differences between the experiments.
@@ -134,6 +135,8 @@ include_cells_image("03-metric-differences-1")
 <!-- include_cells_image("03-cells-life-time-classes-distribution-1") -->
 <!-- ``` -->
 
+### Number of divisions and cell age do not appear to play a clear role in determining cell survival
+
 (ref:03-division-number-divisions-1-scap) Cell's number of divisions.
 
 (ref:03-division-number-divisions-1-cap) **Cell's number of divisions.** Chromosomal cells exhibited more divisions for surviving classes and non-surviving filamented cells (*i.e.*, purple, green, and red dots) relative to unchanged behavior in plasmid cells. Therefore, its contribution to filamentation remains uncertain.
@@ -149,6 +152,8 @@ include_cells_image("03-division-number-divisions-1")
 ```{r 03-division-time-since-last-division-1, fig.cap='(ref:03-division-time-since-last-division-1-cap)', fig.scap='(ref:03-division-time-since-last-division-1-scap)'}
 include_cells_image("03-division-time-since-last-division-1")
 ```
+
+### Time to reach filamentation matters in determining cell survival
 
 <!-- (ref:03-time-to-filamentation-all-1-scap) Time to filamentation without filters. -->
 
@@ -182,6 +187,9 @@ include_cells_image("03-time-to-filamentation-filamented-once-experiment-start-1
 include_cells_image("03-time-to-filamentation-include-time-to-filamentation-in-initial-exploration-initial-values-1")
 ```
 
+### Increasing the complexity of the system in an unsupervised way allows a correct classification of cell states
+
+#### Principal Component Analysis (PCA) emphasizes the importance of cell length and its GFP in cell survival
 
 (ref:03-see-datasets-individualy-pca-chromosome-points-in-new-coordinates-1-scap) Principal Component Analysis of chromosomal strain.
 
@@ -215,6 +223,8 @@ include_cells_image("03-see-datasets-individualy-pca-plasmid-points-in-new-coord
 include_cells_image("03-see-datasets-individualy-pca-plasmid-variable-contribution-1")
 ```
 
+#### Uniform Manifold Approximation and Projection (UMAP) correctly represents the local structure of cell states
+
 (ref:03-see-datasets-individualy-umap-chromosome-points-in-new-coordinates-1-scap) UMAP coordinates of chromosome strain.
 
 (ref:03-see-datasets-individualy-umap-chromosome-points-in-new-coordinates-1-cap) **UMAP coordinates of chromosome strain.** We represented the cells in a low dimensional space. This new projection made it possible to group the cells that survived and those that did not. Therefore, as in PCA Figure \@ref(fig:03-see-datasets-individualy-pca-chromosome-points-in-new-coordinates-1), this technique supports the manual classification that we perform. However, the distance between the groups has no real meaning.
@@ -232,7 +242,7 @@ include_cells_image("03-see-datasets-individualy-umap-plasmid-points-in-new-coor
 ```
 
 
-### Tracks level
+### Population dynamics reveal how filamentation helps cell survival
 
 <!-- (ref:04-cell-status-over-time-status-without-dead-1-scap) Population status over time without dead. -->
 
@@ -259,6 +269,8 @@ include_tracks_image("04-cell-status-over-time-status-with-dead-1")
 include_tracks_image("04-metrics-over-time-1")
 ```
 
+### Heterogeneity of cell GFP allows various forms of survival and addition to filamentation
+
 (ref:04-cell-status-over-time-proportion-living-cells-by-gfp-row-1-scap) Population survivals binned by initial GFP over time.
 
 (ref:04-cell-status-over-time-proportion-living-cells-by-gfp-row-1-cap) **Population survivals binned by initial GFP over time.** We categorized the cells' GFP into ranges of proportions 0.05 concerning the maximum amount of GFP in the population. 100% cells per bin of GFP was taken as the number of cells one frame before the start of exposure to the antibiotic (minute 50). Therefore, dark to light colors represent a generation of new cells, and light to dark colors the death of cells. The black vertical bars represent the start and end of the antibiotic exposure. Bars size and color on the right represent the percentage of the living cells 10 minutes after the end of the experiment. As shown in Figure \@ref(fig:04-gfp-survival-probability-1), we showed that the surviving cells appear to follow something similar to a bimodal distribution. More cells survive with a moderate amount of GFP or with an amount close to the maximum of the population.
@@ -275,20 +287,20 @@ include_tracks_image("04-cell-status-over-time-proportion-living-cells-by-gfp-ro
 <!-- include_tracks_image("04-cell-status-over-time-proportion-living-cells-by-gfp-point-1") -->
 <!-- ``` -->
 
-(ref:04-length-survival-probability-1-scap) Plasmid initial length survival probability.
-
-(ref:04-length-survival-probability-1-cap) **Plasmid initial length survival probability.** We calculated the survival probability after comparing the population distributions of length with those of the cells that managed to survive. For non-filamented cells (blue dots), the survival probability is higher for those cells with initial lengths and small. It seems to decrease with a more extensive initial size. For their part, for filamented cells (red dots), the probability of survival increases according to their length but then declines when the cells are too long at first (see red dotted line). Therefore, in general, a small and moderate length or an initial length already filamented from the beginning increases the chances of survival.
-
-```{r 04-length-survival-probability-1, fig.cap='(ref:04-length-survival-probability-1-cap)', fig.scap='(ref:04-length-survival-probability-1-scap)'}
-include_tracks_image("04-length-survival-probability-1")
-```
-
 (ref:04-gfp-survival-probability-1-scap) Plasmid initial GFP survival probability.
 
 (ref:04-gfp-survival-probability-1-cap) **Plasmid initial GFP survival probability.** We calculated the survival probability after comparing the population distributions of GFP with those of the cells that managed to survive. To assess survival by GFP, we only used plasmid cells. For non-filamented cells (blue dots), a bell forms with an upturned tail. On the other hand, for the filamented cells (red dots), a continuous increase in survival is shown just when it seems that the probability of the non-filamented cells has a decrease. In global, much GFP has higher resistance, but an average GFP value without filamentation also increases the probability of survival.
 
 ```{r 04-gfp-survival-probability-1, fig.cap='(ref:04-gfp-survival-probability-1-cap)', fig.scap='(ref:04-gfp-survival-probability-1-scap)'}
 include_tracks_image("04-gfp-survival-probability-1")
+```
+
+(ref:04-length-survival-probability-1-scap) Plasmid initial length survival probability.
+
+(ref:04-length-survival-probability-1-cap) **Plasmid initial length survival probability.** We calculated the survival probability after comparing the population distributions of length with those of the cells that managed to survive. For non-filamented cells (blue dots), the survival probability is higher for those cells with initial lengths and small. It seems to decrease with a more extensive initial size. For their part, for filamented cells (red dots), the probability of survival increases according to their length but then declines when the cells are too long at first (see red dotted line). Therefore, in general, a small and moderate length or an initial length already filamented from the beginning increases the chances of survival.
+
+```{r 04-length-survival-probability-1, fig.cap='(ref:04-length-survival-probability-1-cap)', fig.scap='(ref:04-length-survival-probability-1-scap)'}
+include_tracks_image("04-length-survival-probability-1")
 ```
 
 ## Discussion
