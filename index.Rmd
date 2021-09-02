@@ -147,7 +147,7 @@ output:
       - templates/bs4_style.css
       - templates/corrections.css # remove to stop highlighting corrections
     theme:
-      primary: "#274E82"
+      primary: "#516db0"
     repo:
       base: https://github.com/jvelezmagic/undergraduate_research_project
       branch: main
