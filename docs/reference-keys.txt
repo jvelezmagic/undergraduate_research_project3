@@ -32,7 +32,7 @@ results
 cell-length-and-the-amount-of-gfp-are-crucial-in-determining-cell-survival
 number-of-divisions-and-cell-age-do-not-appear-to-play-a-clear-role-in-determining-cell-survival
 time-to-reach-filamentation-matters-in-determining-cell-survival
-increasing-the-complexity-of-the-system-in-an-unsupervised-way-allows-a-correct-classification-of-cell-states
+increasing-the-complexity-of-the-system-and-analyzing-it-in-an-unsupervised-way-allows-a-correct-classification-of-cell-states
 principal-component-analysis-pca-emphasizes-the-importance-of-cell-length-and-its-gfp-in-cell-survival
 uniform-manifold-approximation-and-projection-umap-correctly-represents-the-local-structure-of-cell-states
 population-dynamics-reveal-how-filamentation-helps-cell-survival
