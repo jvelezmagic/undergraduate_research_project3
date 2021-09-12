@@ -347,19 +347,19 @@ Quite a nice prickly friend.
 \hypertarget{general-preprocessing-of-data}{%
 \section{General preprocessing of data}\label{general-preprocessing-of-data}}
 
-The processing of the raw data consisted mainly of creating two levels of observation for the cells of both chromosomal strains and multicopy plasmids.
+The raw data processing consisted mainly of creating two levels of observation for the cells of both chromosomal strains and multicopy plasmids.
 The first level is at a cell granularity, that is, point properties.
 The second level consists of the cells over time, thus observing properties at the population level.
 We did this because it would allow us to understand what factors are affecting filamentation and why.
 
-We decided to normalize the fluorescence values of DS-Red and GFP for both experiments based on the values observed before the start of the experiment.
+We decided to normalize the fluorescence values of DS-Red and GFP for both experiments based on the values observed before the beginning of the exposure to antibiotics.
 It allowed us to have a basis to work with and compare the expressions between cells.
 In the case of DS-Red, we also applied a logarithmic transformation to observe subtle changes that would allow us to dig deeper.
 
 Ultimately, we decided to classify cells into four fundamental groups based on whether the cell was filamented and survived (see \ref{fig:03-cells-distribution-across-experiments}).
-We define a \emph{filamented cell} as a cell that is more than two standard deviations from the mean concerning the lengths observed before antibiotic entry into the system {[}{]}.
+We define a \emph{filamented cell} as a cell with more than two standard deviations from the mean concerning the lengths observed before antibiotic entry into the system {[}{]}.
 On the other hand, although there are multiple ways to define death in a cell context {[}{]}, we decided to consider a \emph{cell dead or missing} when we stopped having information about it, either because of its fluorescence levels or because it left the field of experimental tracking.
-Therefore, a \emph{surviving cell} is one that existed before and after the exposure to the antibiotic.
+Therefore, a \emph{surviving cell} is one that existed before and after exposure to the antibiotic.
 
 
 
@@ -405,7 +405,7 @@ Meanwhile, for the filamented cells, whether surviving or dead, their GFP measur
 
 
 \begin{figure}[H]
-\includegraphics[width=1\linewidth]{downloadFigs4latex__main/03-temporal-metric-distribution-gfp-1} \caption[GFP temporal distribution.]{\textbf{GFP temporal distribution.} To evaluate the incident effect of the GFP on cells by class we used the same notation as in Figure \ref{fig:03-temporal-metric-distribution-ds-red-1}. The chromosomal strain has significant values of GFP at different times. However, these differences can be mainly due to experimental noise. We appreciated in the plasmid strain that the filamented cells had a lower amount of initial GFP as expected. At the time of filamentation, there is no difference between the survivors and the dead. However, in the end time, we observed that the surviving non-filamented cells have less GFP than the dead non-filamented and the living filamented cells.}\label{fig:03-temporal-metric-distribution-gfp-1}
+\includegraphics[width=1\linewidth]{downloadFigs4latex__main/03-temporal-metric-distribution-gfp-1} \caption[GFP temporal distribution.]{\textbf{GFP temporal distribution.} To evaluate the incident effect of the GFP on cells by class, we used the same notation as in Figure \ref{fig:03-temporal-metric-distribution-ds-red-1}. The chromosomal strain has significant values of GFP at different times. However, these differences can be mainly due to experimental noise. We appreciated in the plasmid strain that the filamented cells had a lower amount of initial GFP as expected. At the time of filamentation, there is no difference between the survivors and the dead. However, in the end time, we observed that the surviving non-filamented cells have less GFP than the dead non-filamented and the living filamented cells.}\label{fig:03-temporal-metric-distribution-gfp-1}
 \end{figure}
 
 Cell length was one of the factors that GFP expression levels could not explain for cell survival.
@@ -428,9 +428,9 @@ Nevertheless, we had no information to evaluate such a hypothesis.
 \end{figure}
 
 Once we observed the effects of GFP expression levels and lengths in determining whether a cell lives or dies, we decided to project the cells onto the plane and paint them with their class color to determine whether these two variables contained the necessary information to cluster the data correctly.
-In Figure \ref{fig:03-focus-just-in-initial-values-1}, we show the projection of the initial GFP and length values.
+In Figure \ref{fig:03-focus-just-in-initial-values-1}, we show the initial GFP and length values projection.
 While, with some work, we could contextually place the results in Figures \ref{fig:03-temporal-metric-distribution-gfp-1} and \ref{fig:03-temporal-metric-distribution-length-1}, the initial values did not appear to determine the classes.
-Therefore, we explored the differences of the final versus initial values in Figure \ref{fig:03-metric-differences-1}.
+Therefore, we explored the final versus initial values differences in Figure \ref{fig:03-metric-differences-1}.
 With this new representation of the cells in the plane, we contextualized the statistical results presented in Figures \ref{fig:03-temporal-metric-distribution-gfp-1} and \ref{fig:03-temporal-metric-distribution-length-1}.
 Besides, it showed us that differences in length (\emph{i.e.}, filamentation) and reductions in GFP expression are essential in determining cell survival.
 Though, cell sorting is not entirely separate, which means that other variables are affecting the experimental results in cell survival.
@@ -477,7 +477,7 @@ So it gives us a more generalized picture of the contribution of division to cel
 
 
 \begin{figure}[H]
-\includegraphics[width=1\linewidth]{downloadFigs4latex__main/03-division-time-since-last-division-1} \caption[Time elapsed since the last division at the beginning of the experiment.]{\textbf{Time elapsed since the last division at the beginning of the experiment.} The mean time of the last division before starting the experiment indicates that it did not influence the final result for chromosomal cells. There is a slight difference between the filamented-not survived cells and the rest of the classes for cells with plasmids. However, the signal does not appear to be strong on the survival role. Therefore, we conclude that we have no evidence to support that the time of the last division at the beginning of the experiment influences the final classification results.}\label{fig:03-division-time-since-last-division-1}
+\includegraphics[width=1\linewidth]{downloadFigs4latex__main/03-division-time-since-last-division-1} \caption[Time elapsed since the last division at the beginning of the experiment.]{\textbf{Time elapsed since the last division at the beginning of the experiment.} The mean time of the last division before starting the experiment indicates that it did not influence the final result for chromosomal cells. There is a slight difference between the filamented-not survived cells and the rest for cells with plasmids. However, the signal does not appear to be strong on the survival role. Therefore, we conclude that we have no evidence to support that the time of the last division at the beginning of the experiment influences the final classification results.}\label{fig:03-division-time-since-last-division-1}
 \end{figure}
 
 \hypertarget{time-to-reach-filamentation-matters-in-determining-cell-survival}{%
@@ -488,7 +488,7 @@ Therefore, we hypothesized that a possible variable that could determine cell su
 Furthermore, we also guided our hypothesis by previous reports showing us how the gene expression level can induce filamentation with tight temporal coordination {[}x{]}.
 
 While, for our analyses, we did not measure the concentration of antibiotic that triggers filamentation per se, we indirectly quantified its effect by using the time it took for a cell to reach a length at which it is already considered a filamentating cell.
-Furthermore, to recognize that the observed effect was a product of the experiment, we decided to keep only cells that filamented just once antibiotic exposure began.
+Furthermore, to recognize that the observed effect was a product of the experiment, we decided to keep only filamented cells just once antibiotic exposure began.
 
 Figure \ref{fig:03-time-to-filamentation-filamented-once-experiment-start-1} shows how filamentation times are much narrower for chromosome cells than for plasmid cells.
 Then, we hypothesize that the effect could come from the heterogeneity in the plasmid copy number in the population.
@@ -548,7 +548,7 @@ However, for Figure \ref{fig:03-see-datasets-individualy-pca-plasmid-points-in-n
 
 
 \begin{figure}[H]
-\includegraphics[width=1\linewidth]{downloadFigs4latex__main/03-see-datasets-individualy-pca-chromosome-points-in-new-coordinates-1} \caption[Principal Component Analysis of chromosomal strain.]{\textbf{Principal Component Analysis of chromosomal strain.} When integrating the information of different variables in a dimensionality reduction analysis, we observed a clear separation between the surviving cells and those that did not. The contributions that determined this phenomenon come mainly from the last amount of DS-red, GFP, and length of the cell (see Figure \ref{fig:03-see-datasets-individualy-pca-chromosome-variable-contribution-1}). Although it seems obvious, it effectively confirms that the temporal classification that we carry out makes sense. Thus, highlighting the importance of filamentation. Longer length represents a greater uptake of antibiotics but in a much larger volume, so the net effect is an internal reduction of antibiotics (see Figure \ref{fig:cell-dimensions-relationship}).}\label{fig:03-see-datasets-individualy-pca-chromosome-points-in-new-coordinates-1}
+\includegraphics[width=1\linewidth]{downloadFigs4latex__main/03-see-datasets-individualy-pca-chromosome-points-in-new-coordinates-1} \caption[Principal Component Analysis of chromosomal strain.]{\textbf{Principal Component Analysis of chromosomal strain.} When integrating the information of different variables in a dimensionality reduction analysis, we observed a clear separation between the surviving cells and those that did not. The contributions that determined this phenomenon come mainly from the last amount of DS-red, GFP, and cell length (see Figure \ref{fig:03-see-datasets-individualy-pca-chromosome-variable-contribution-1}). Although it seems obvious, it effectively confirms that the temporal classification that we carry out makes sense. Thus, highlighting the importance of filamentation. Longer length represents a greater uptake of antibiotics, but in a much larger volume, so the net effect is an internal reduction of antibiotics (see Figure \ref{fig:cell-dimensions-relationship}).}\label{fig:03-see-datasets-individualy-pca-chromosome-points-in-new-coordinates-1}
 \end{figure}
 
 
@@ -556,7 +556,7 @@ However, for Figure \ref{fig:03-see-datasets-individualy-pca-plasmid-points-in-n
 
 
 \begin{figure}[H]
-\includegraphics[width=1\linewidth]{downloadFigs4latex__main/03-see-datasets-individualy-pca-chromosome-variable-contribution-1} \caption[Variables contribution of Principal Component Analysis of chromosomal strain.]{\textbf{Variables contribution of Principal Component Analysis of chromosomal strain.} In the figure \ref{fig:03-see-datasets-individualy-pca-chromosome-points-in-new-coordinates-1}, we see that the classes we created manually reflected what was observed when performing a reduction of dimensions analysis. The individual contribution of each variable for the first two components is shown here. The variables that most affected components 1 and 2 (X-axis and Y-axis, respectively) are the final measurements of DS-red, GFP, length, and the initial amount of GFP. Given that they are chromosomal strains, we should note that this variability could be produced by intrinsic experimental noise that we could not remove. With that in mind, having the DS-red and the final length highlights the inherent role of cells by having increased its size.}\label{fig:03-see-datasets-individualy-pca-chromosome-variable-contribution-1}
+\includegraphics[width=1\linewidth]{downloadFigs4latex__main/03-see-datasets-individualy-pca-chromosome-variable-contribution-1} \caption[Variables contribution of Principal Component Analysis of chromosomal strain.]{\textbf{Variables contribution of Principal Component Analysis of chromosomal strain.} In the figure \ref{fig:03-see-datasets-individualy-pca-chromosome-points-in-new-coordinates-1}, we see that the classes we created manually reflected what we observed when performing a reduction of dimensions analysis. Here we show the individual contribution of each variable for the first two components. The variables that most affected components 1 and 2 (X-axis and Y-axis, respectively) are the final measurements of DS-red, GFP, length, and the initial amount of GFP. Given that they are chromosomal strains, we should note that this variability could be produced by intrinsic experimental noise that we could not remove. With that in mind, having the DS-red and the final length highlights the inherent role of cells by having increased its size.}\label{fig:03-see-datasets-individualy-pca-chromosome-variable-contribution-1}
 \end{figure}
 
 For their part, in Figures \ref{fig:03-see-datasets-individualy-pca-chromosome-variable-contribution-1} and \ref{fig:03-see-datasets-individualy-pca-plasmid-variable-contribution-1}, we show the total contribution of each variable per PC for the chromosomal and plasmid strain, respectively.
@@ -569,7 +569,7 @@ So we can support that filamentation has a role in moving cells away from having
 
 
 \begin{figure}[H]
-\includegraphics[width=1\linewidth]{downloadFigs4latex__main/03-see-datasets-individualy-pca-plasmid-points-in-new-coordinates-1} \caption[Principal Component Analysis of plasmid strain.]{\textbf{Principal Component Analysis of plasmid strain.} By integrating the information from different variables in a dimensionality reduction analysis, we observed a clear separation between the filamented and non-filamented cells. Said class separation is given by component 2 (Y-axis), which is determined primarily by the initial and final lengths of the cells (see Figure \ref{fig:03-see-datasets-individualy-pca-plasmid-variable-contribution-1}). Furthermore, the classification also allows us to separate those filamented cells that died from those that survived. Therefore, despite the increase in the complexity of the system, length continues to play a role in determining survival.}\label{fig:03-see-datasets-individualy-pca-plasmid-points-in-new-coordinates-1}
+\includegraphics[width=1\linewidth]{downloadFigs4latex__main/03-see-datasets-individualy-pca-plasmid-points-in-new-coordinates-1} \caption[Principal Component Analysis of plasmid strain.]{\textbf{Principal Component Analysis of plasmid strain.} By integrating the information from different variables in a dimensionality reduction analysis, we observed a clear separation between the filamented and non-filamented cells. Said class separation is given by component 2 (Y-axis), which is determined primarily by the initial and final lengths of the cells (see Figure \ref{fig:03-see-datasets-individualy-pca-plasmid-variable-contribution-1}). Furthermore, the classification also allows us to separate those filamented cells that died from those that survived. Therefore, despite the increase in the system's complexity, length plays a role in determining survival.}\label{fig:03-see-datasets-individualy-pca-plasmid-points-in-new-coordinates-1}
 \end{figure}
 
 
@@ -598,7 +598,7 @@ So, in a way, the division also has a role in determining survival, but it is no
 
 
 \begin{figure}[H]
-\includegraphics[width=1\linewidth]{downloadFigs4latex__main/03-see-datasets-individualy-umap-chromosome-points-in-new-coordinates-1} \caption[UMAP coordinates of chromosome strain.]{\textbf{UMAP coordinates of chromosome strain.} We represented the cells in a low dimensional space. This new projection made it possible to group the cells that survived and those that did not. Therefore, as in PCA Figure \ref{fig:03-see-datasets-individualy-pca-chromosome-points-in-new-coordinates-1}, this technique supports the manual classification that we perform.}\label{fig:03-see-datasets-individualy-umap-chromosome-points-in-new-coordinates-1}
+\includegraphics[width=1\linewidth]{downloadFigs4latex__main/03-see-datasets-individualy-umap-chromosome-points-in-new-coordinates-1} \caption[UMAP coordinates of chromosome strain.]{\textbf{UMAP coordinates of chromosome strain.} We represented the cells in a low dimensional space. This new projection made it possible to group the cells that survived and those that did not. Therefore, as in PCA Figure \ref{fig:03-see-datasets-individualy-pca-chromosome-points-in-new-coordinates-1}, this technique supports the manual classification that we carry out.}\label{fig:03-see-datasets-individualy-umap-chromosome-points-in-new-coordinates-1}
 \end{figure}
 
 
@@ -606,7 +606,7 @@ So, in a way, the division also has a role in determining survival, but it is no
 
 
 \begin{figure}[H]
-\includegraphics[width=1\linewidth]{downloadFigs4latex__main/3-see-datasets-individualy-umap-plasmid-points-in-new-coordinates-1} \caption[UMAP coordinates of plasmid strain.]{\textbf{UMAP coordinates of plasmid strain.} As in its \ref{fig:03-see-datasets-individualy-umap-chromosome-points-in-new-coordinates-1} pair, the representation in a low-dimensional space helped classify the cells, grouping mainly into 4 groups, 2 of survivors and 2 of non-survivors. The variable \emph{division} marks the separation of classes. The \emph{division} variable indicates whether a cell divided during its lifetime or not. Together, the UMAP represents the manually assigned classes.}\label{fig:3-see-datasets-individualy-umap-plasmid-points-in-new-coordinates-1}
+\includegraphics[width=1\linewidth]{downloadFigs4latex__main/3-see-datasets-individualy-umap-plasmid-points-in-new-coordinates-1} \caption[UMAP coordinates of plasmid strain.]{\textbf{UMAP coordinates of plasmid strain.} As in its \ref{fig:03-see-datasets-individualy-umap-chromosome-points-in-new-coordinates-1} pair, the representation in a low-dimensional space helped classify the cells, grouping mainly into 4 groups, 2 of survivors and 2 of non-survivors. The variable \emph{division} marks the separation of classes. The \emph{division} variable indicates whether a cell is divided during its lifetime or not. Together, the UMAP represents the manually assigned classes.}\label{fig:3-see-datasets-individualy-umap-plasmid-points-in-new-coordinates-1}
 \end{figure}
 
 \hypertarget{population-dynamics-reveal-how-filamentation-helps-cell-survival}{%
@@ -629,7 +629,7 @@ However, by experimental design, the number of filament cells expected was much 
 
 
 \begin{figure}[H]
-\includegraphics[width=1\linewidth]{downloadFigs4latex__main/04-cell-status-over-time-status-with-dead-1} \caption[Population status over time.]{\textbf{Population status over time.} We calculate how many cells of each type existed for each instant of time: non-filamented and filamented living cells (blue and green areas, respectively) and dead cells (red area). We considered \emph{dead} cells as those cells that existed at one time and then stopped tracking. The black vertical lines represent the start and end of antibiotic exposure for each experiment. The effect of filamentation and its spread after exposure to the antibiotic is evident for the chromosomal strain. The experiment was finalized with the resolution of the cells when they return to their non-filamented state. For its part, for the plasmid strain, it is observed how the filamented cells begin to appear slowly. Their proportion is as expected, given that the population had a wide distribution of GFP that allowed them to combat exposure to the antibiotic.}\label{fig:04-cell-status-over-time-status-with-dead-1}
+\includegraphics[width=1\linewidth]{downloadFigs4latex__main/04-cell-status-over-time-status-with-dead-1} \caption[Population status over time.]{\textbf{Population status over time.} We calculate how many cells of each type existed for each instant of time: non-filamented and filamented living cells (blue and green areas, respectively) and dead cells (red area). We considered \emph{dead} cells as those cells that existed at one time and then stopped tracking. The black vertical lines represent the start and end of antibiotic exposure for each experiment. The effect of filamentation and its spread after exposure to the antibiotic is evident for the chromosomal strain. The experiment was finalized with the resolution of the cells when they returned to their non-filamented state. For its part, for the plasmid strain, it is observed how the filamented cells begin to appear slowly. Their proportion is as expected, given that the population had a wide distribution of GFP that allowed them to combat exposure to the antibiotic.}\label{fig:04-cell-status-over-time-status-with-dead-1}
 \end{figure}
 
 In Figure \ref{fig:04-metrics-over-time-1}, we showed how once antibiotics exposure began, those cells that died had a much faster increase in DS-Red than those that did manage to live, regardless of whether they filamented or not.
