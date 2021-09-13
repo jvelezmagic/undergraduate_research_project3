@@ -297,7 +297,7 @@ include_cells_image("03-see-datasets-individualy-pca-chromosome-variable-contrib
 For their part, in Figures \@ref(fig:03-see-datasets-individualy-pca-chromosome-variable-contribution-1) and \@ref(fig:03-see-datasets-individualy-pca-plasmid-variable-contribution-1), we show the total contribution of each variable per PC for the chromosomal and plasmid strain, respectively.
 Finding that, indeed, filamentation plays a crucial role in determining cell survival.
 For example, for PC2, we appreciated how the variable end DS-Red directed the dots to the positive side, while the variable end and start length directed the dots to the opposing side.
-So we can support that filamentation has a role in moving cells away from having higher amounts of DS-Red.
+Theresfore, we can support that filamentation has a role in moving cells away from having higher amounts of DS-Red.
 
 (ref:03-see-datasets-individualy-pca-plasmid-points-in-new-coordinates-1-scap) Principal Component Analysis of plasmid strain.
 
