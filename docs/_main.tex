@@ -562,7 +562,7 @@ However, for Figure \ref{fig:03-see-datasets-individualy-pca-plasmid-points-in-n
 For their part, in Figures \ref{fig:03-see-datasets-individualy-pca-chromosome-variable-contribution-1} and \ref{fig:03-see-datasets-individualy-pca-plasmid-variable-contribution-1}, we show the total contribution of each variable per PC for the chromosomal and plasmid strain, respectively.
 Finding that, indeed, filamentation plays a crucial role in determining cell survival.
 For example, for PC2, we appreciated how the variable end DS-Red directed the dots to the positive side, while the variable end and start length directed the dots to the opposing side.
-Theresfore, we can support that filamentation has a role in moving cells away from having higher amounts of DS-Red.
+Therefore, we can support that filamentation has a role in moving cells away from having higher amounts of DS-Red.
 
 
 
@@ -698,6 +698,19 @@ However, it is noteworthy that the probability of survival had a limit in which 
 
 \hypertarget{discussion}{%
 \section{Discussion}\label{discussion}}
+
+Here, we evaluated different variables that could determine cell survival upon exposure to toxic agents by studying two experimental populations of E.
+coli, one strain with a resistance gene on the chromosome and the other on multicopy plasmids.
+We identified two variables that are predominantly responsible for cell survival: cell length and GFP amount related to the cell's inherent resistance to the toxic agent and heterogeneity in response times.
+
+On the other hand, as other studies have already mentioned {[}x{]}, we examined cell activity and youth in a minimalistic way.
+While the distribution of the number of divisions exemplifies a broader and more uniform range for the surviving cells, the cells that died showed a tendency to a lower number of divisions.
+However, for the study of cellular youth at the time of exposure to the toxic agent, the results did not show a clear pattern of behavior for cell fate determination.
+Therefore, it would be interesting to study cellular youth at a higher level of complexity in future studies to understand its contribution to cell survival.
+
+Interestingly, when we used temporal measurements of cell length, GFP, DS-Red, and if a cell divided, we could recapitulate, for the most part, the fates of cellular states (see Sections \ref{cell-length-and-the-amount-of-gfp-are-crucial-in-determining-cell-survival} and \ref{increasing-the-complexity-of-the-system-and-analyzing-it-in-an-unsupervised-way-allows-a-correct-classification-of-cell-states}).
+Thus, increasing the system's complexity led to better clustering cell states, but not how these factors interact biologically in determining cell survival.
+Therefore, we decided to postulate a mathematical model that helps us understand the critical components in cell survival.
 
 \hypertarget{filamentation-abstraction}{%
 \chapter{Models to the rescue; filamentation abstraction}\label{filamentation-abstraction}}
