@@ -64,13 +64,13 @@ The second level consists of the cells over time, thus observing properties at t
 We did this because it would allow us to understand what factors are affecting filamentation and why.
 
 We normalized the fluorescence values of DS-Red and GFP for both experiments based on the values observed before exposure to antibiotics.
-It allowed us to have a basis to work with and compare the expressions between cells.
-In the case of DS-Red, we also applied a logarithmic transformation to observe subtle changes in fluorescence intensity.
+It allowed us to have a basis to work with and compare expressions between cells.
+In the case of DS-Red environment drug concentration, we also applied a logarithmic transformation to observe subtle changes in fluorescence intensity that would allow us to detect cell dead.
 
-Ultimately, we decided to classify cells into four fundamental groups based on whether the cell was filamented and survived (see \@ref(fig:03-cells-distribution-across-experiments)).
+Ultimately, we decided to classify cells into four fundamental groups based on whether the cell filamented and survived (see \@ref(fig:03-cells-distribution-across-experiments)).
 We define a *filamented cell* as a cell with more than two standard deviations from the mean concerning the lengths observed before introducing antibiotics into the system [].
 On the other hand, although there are multiple ways to define death from single-cell observations [], we considered a *cell dead or missing* when we stopped having information about it, either because of fluorescence in the red channel was above a given threshold (resulting from an increase in cell membrane permeability and the introduction of fluorescent dye into the cell) or because it left the field of observation.
-Therefore, a *surviving cell* is defined as a cell observed before and after exposure to the antibiotic.
+Therefore, a *surviving cell* is defined as a cell observed before and after exposure to the antibiotic and does not surpass the DS-Red threshold.
 
 (ref:03-cells-distribution-across-experiments-1-scap) Cell classification and its distribution across experiments.
 
@@ -93,7 +93,8 @@ We defined the *end time* as the time of the last observation of the cell.
 We decided to bound the end time for surviving cells to one frame (10 min) after the end of antibiotic exposure so that the observed signal would reflect the final stress responses.
 
 When we compared the distributions of DS-Red, GFP, and length for both experiments, we observed its changes in its role for cell survival.
-In Figure \@ref(fig:03-temporal-metric-distribution-ds-red-1), we show that indistinctly and as expected, surviving cells managed to eliminate the antibiotic by the end time. In contrast, dead cells presented higher levels of antibiotics (measured by proxy through the mean DsRed intensity of the cell).
+In Figure \@ref(fig:03-temporal-metric-distribution-ds-red-1), we show that indistinctly and, as expected, surviving cells managed to eliminate the antibiotic by the end time.
+In contrast, dead cells presented higher levels of antibiotics (measured by proxy through the mean DS-Red intensity of the cell).
 
 (ref:03-temporal-metric-distribution-ds-red-1-scap) DS-Red temporal distribution.
 
@@ -103,8 +104,7 @@ In Figure \@ref(fig:03-temporal-metric-distribution-ds-red-1), we show that indi
 include_cells_image("03-temporal-metric-distribution-ds-red-1")
 ```
 
-On the other hand, GFP observations in Figure \@ref(fig:03-temporal-metric-distribution-gfp-1) showed us two essential things for cell classification:
-1) The chromosomal strain did not exhibit noticeable changes in GFP levels, and 2) filamented cells were those that had low fluorescent intensities (low plasmid copy-number) at the beginning of the experiment.
+On the other hand, GFP observations in Figure \@ref(fig:03-temporal-metric-distribution-gfp-1) showed us two essential things for cell classification: 1) The chromosomal strain did not exhibit noticeable changes in GFP levels, and 2) filamented cells were those that had low fluorescent intensities (low plasmid copy-number) at the beginning of the experiment.
 For the final observation times, GFP measurements indicated that among the cells that did not filament, the ones that survived exhibited a reduced GFP expression concerning cells killed by the antibiotic.
 Meanwhile, for the filamented cells, whether surviving or dead, their GFP measurements indicated no difference at the beginning or the end of the experiment, suggesting the presence of other determinants of cell survival.
 
@@ -135,13 +135,13 @@ Nevertheless, we had no information to evaluate such a hypothesis.
 include_cells_image("03-temporal-metric-distribution-length-1")
 ```
 
-Once we observed the effects of GFP expression levels and lengths in determining whether a cell lives or dies, we decided to project the cells onto the plane and paint them with their class color to determine whether these two variables contained the necessary information to cluster the data correctly.
+Once we observed the effects of GFP expression levels and lengths in determining whether a cell lives or dies, we projected the cells onto the plane and painted them with their class status (See Figure \@ref(fig:03-cells-distribution-across-experiments)) to determine whether these two variables contained the necessary information to cluster the data correctly.
 In Figure \@ref(fig:03-focus-just-in-initial-values-1), we show the initial GFP and length values projection.
 While, with some work, we could contextually place the results in Figures \@ref(fig:03-temporal-metric-distribution-gfp-1) and \@ref(fig:03-temporal-metric-distribution-length-1), the initial values did not appear to determine the classes.
 Therefore, we explored the final versus initial values differences in Figure \@ref(fig:03-metric-differences-1).
 With this new representation of the cells in the plane, we contextualized the statistical results presented in Figures \@ref(fig:03-temporal-metric-distribution-gfp-1) and \@ref(fig:03-temporal-metric-distribution-length-1).
 Besides, it showed us that differences in length (*i.e.*, filamentation) and reductions in GFP expression are essential in determining cell survival.
-Though, cell sorting is not entirely separate, which means that other variables are affecting the experimental results in cell survival.
+Though, the clustering of cells by state is not completely separated, which means that other variables are affection the experimental results in cell survival.
 
 (ref:03-focus-just-in-initial-values-1-scap) Experiment initial values.
 
@@ -171,13 +171,13 @@ include_cells_image("03-metric-differences-1")
 
 ### Number of divisions and cell age do not appear to play a clear role in determining cell survival
 
-In the \@ref(cell-length-and-the-amount-of-gfp-are-crucial-in-determining-cell-survival) section, we explored how GFP variability and cell length help in determining cell survival.
+In Section \@ref(cell-length-and-the-amount-of-gfp-are-crucial-in-determining-cell-survival), we explored how GFP variability and cell length influence cell survival.
 However, Figures \@ref(fig:03-focus-just-in-initial-values-1) and \@ref(fig:03-metric-differences-1) showed us the possibility of other factors relevant to the phenomenon under study.
 As some papers in the literature suggest, some of these other factors may be cell division and chronological age(*i.e.*, how much time has passed since the last cell division at the time of exposure to a toxic agent) [x, x, x].
 Therefore, we chose to observe these two metrics in experiments at a purely qualitative level, i.e., without the inclusion of, e.g., metrics of membrane or cell cycle properties [x, x].
 
 Although we expected to see a small contribution, either by the number of divisions or cell age, in Figures \@ref(fig:03-division-number-divisions-1) and \@ref(fig:03-division-time-since-last-division-1), we could not observe a precise effect of these variables on cell survival.
-Patterns that, although they could have an explanation or biological significance, we decided to omit as relevant in the characterization of our cells.
+Patterns that, although they could have an explanation or biological significance, we decided to omit as relevant in the characterization of our cells, since the signal was not clear.
 However, we derived from this analysis a slightly simpler variable that tells us whether a cell underwent a cell division event or not.
 So it gives us a more generalized picture of the contribution of division to cell survival (see Figure \@ref(fig:03-see-datasets-individually-pca-plasmid-variable-contribution-1)).
 
@@ -241,7 +241,7 @@ include_cells_image("03-time-to-filamentation-filamented-once-experiment-start-1
 
 In Figure \@ref(fig:03-time-to-filamentation-include-time-to-filamentation-in-initial-exploration-initial-values-1), we decided to project the results of Figure \@ref(fig:03-time-to-filamentation-filamented-once-experiment-start-1) in a space similar to the one described in Figure \@ref(fig:03-focus-just-in-initial-values-1).
 Thus, we separated our data into cells that survived and cells that did not, and painted them when it took them to reach their filamented state.
-With that fact, we realized that, indeed, by adding this temporal component to the initial variables of length and GFP, we could separate surviving cells from dead cells to a greater degree.
+We realized that, indeed, by adding this temporal component to the initial variables of length and GFP, we could separate surviving cells from dead cells to a greater degree.
 However, it may still not be enough, and there are still many other variables that play a crucial role in understanding the ecology of stress and how some cells will be survivors or not.
 
 (ref:03-time-to-filamentation-include-time-to-filamentation-in-initial-exploration-initial-values-1-scap) Experiment initial values with time to filamentation.
@@ -259,8 +259,8 @@ Similarly, we realized that other variables must be affecting the final results.
 Filamentation and GFP variability alone did not fully recapitulate the expected behavior of the data.
 That is, the target variables did not capture the heterogeneity of the system.
 
-The inability to reproduce cell sorting led us to question two things: 1) the possibility that our sorting was wrong beforehand and 2) we did not have enough variables to capture the study phenomenon.
-We decided to take the unsupervised learning way to answer these subjects because it allows us to project our data without a priori knowledge [x].
+The inability to reproduce cell classification led us to question two things: 1) the possibility that our sorting was wrong beforehand and 2) we did not have enough variables to capture the study phenomenon.
+We decided to take the unsupervised learning way to answer these subjects because it allows us to project our data without a *priori* knowledge [x].
 
 We opted for the path of dimensionality reduction techniques where each variable or feature is equivalent to one dimension.
 The essence of dimensionality reduction is that it is not feasible to analyze each dimension with many dimensions.
@@ -322,7 +322,7 @@ UMAP has certain advantages for these purposes, e.g., it preserves the global st
 
 In Figures \@ref(fig:03-see-datasets-individually-umap-chromosome-points-in-new-coordinates-1) and \@ref(fig:3-see-datasets-individually-umap-plasmid-points-in-new-coordinates-1), we show how, using the same variables used in the "PCA" section, UMAP was able to cluster the four proposed classes correctly.
 Interestingly, in Figure \@ref(fig:03-see-datasets-individually-umap-chromosome-points-in-new-coordinates-1), UMAP formed three general groups and four for Figure \@ref(fig:3-see-datasets-individually-umap-plasmid-points-in-new-coordinates-1).
-However, in general, UMAP clustered the surviving cells from those that did not make it.
+However, in general, UMAP clustered the surviving cells from those that did not survived.
 On investigating why this separation occurred, we found that the large groups coalesced into one another if we eliminated the division variable.
 So, in a way, the division also has a role in determining survival, but it is not essential or at least not over-represented in our data.
 
@@ -342,9 +342,9 @@ include_cells_image("03-see-datasets-individually-umap-chromosome-points-in-new-
 include_cells_image("03-see-datasets-individually-umap-plasmid-points-in-new-coordinates-1")
 ```
 
-### Population dynamics reveal how filamentation helps cell survival
+### Population dynamics reveal how filamentation contributes cell survival
 
-From the full tracking dataset, we decided to show how the different cell states behaved over time---for example, understanding how the cells concentrated antibiotics inside or how they increased in length for each instant.
+From the full tracking dataset, we evaluated how the different cell states behaved over time---for example, understanding how the cells absorbed antibiotics or how they elongated in time.
 In contrast to the dataset generated in the \@ref(cell-length-and-the-amount-of-gfp-are-crucial-in-determining-cell-survival) section, we did not truncate the results 10 minutes after the antibiotic exposure.
 In this way, we were able to observe cell behavior before and after the presence of the toxic agent.
 
@@ -360,22 +360,22 @@ In this way, we were able to observe cell behavior before and after the presence
 
 In Figure \@ref(fig:04-cell-status-over-time-status-with-dead-1), we observed a small fraction of cells that were already filamentous without exposure to the toxic agent in both cell strains.
 However, after the onset of antibiotic exposure at minute 60, we observed increases in the proportion of filamented cells.
-It is interesting to note how filament cells grew after antibiotic exposure for the chromosomal strain.
-We believe that this post-antibiotic growth exists because, once the SOS system that triggers filamentation is activated, the system continues to grow until it reaches a limit regardless of whether the damaging agent is still present or not.
+It is interesting to note how filamented cells grew after antibiotic exposure for the chromosomal strain.
+We believe that this post-antibiotic growth exists because, once the SOS system that triggers filamentation is activated, the system continues to grow until it reaches a limit regardless of whether the damaging agent is still present or not [x, x, x].
 Moreover, we observed how the cells start to divide again after some time because the proportion of non-filament cells starts to grow while the filament cells start to divide.
 We observed the same effects for the plasmid strain.
 However, by experimental design, the number of filament cells expected was much lower.
 
 (ref:04-cell-status-over-time-status-with-dead-1-scap) Population status over time.
 
-(ref:04-cell-status-over-time-status-with-dead-1-cap) **Population status over time.** We calculate how many cells of each type existed for each instant of time: non-filamented and filamented living cells (blue and green areas, respectively) and dead cells (red area). We considered *dead* cells as those cells that existed at one time and then stopped tracking. The black vertical lines represent the start and end of antibiotic exposure for each experiment. The effect of filamentation and its spread after exposure to the antibiotic is evident for the chromosomal strain. The experiment was finalized with the resolution of the cells when they returned to their non-filamented state. For its part, for the plasmid strain, it is observed how the filamented cells begin to appear slowly. Their proportion is as expected, given that the population had a wide distribution of GFP that allowed them to combat exposure to the antibiotic.
+(ref:04-cell-status-over-time-status-with-dead-1-cap) **Population status over time.** We calculate how many cells of each type existed for each time point: non-filamented and filamented living cells (blue and green areas, respectively) and dead cells (red area; we considered *dead* cells as those cells that existed at one time and then stopped tracking). The black vertical lines represent the start and end of antibiotic exposure for each experiment. The effect of filamentation and its spread after exposure to the antibiotic is evident for the chromosomal strain. The experiment was finalized with the resolution of the cells when they returned to their non-filamented state. For its part, for the plasmid strain, it is observed how the filamented cells begin to appear slowly. Their proportion is as expected, given that the population had a wide distribution of GFP that allowed them to combat exposure to the antibiotic.
 
 ```{r 04-cell-status-over-time-status-with-dead-1, fig.cap='(ref:04-cell-status-over-time-status-with-dead-1-cap)', fig.scap='(ref:04-cell-status-over-time-status-with-dead-1-scap)'}
 include_tracks_image("04-cell-status-over-time-status-with-dead-1")
 ```
 
 In Figure \@ref(fig:04-metrics-over-time-1), we showed how once antibiotics exposure began, those cells that died had a much faster increase in DS-Red than those that did manage to live, regardless of whether they filamented or not.
-On the other hand, the surviving cells managed to maintain their DS-Red levels relatively stable.
+On the other hand, surviving cells managed to maintain their DS-Red levels relatively stable.
 We noted that length was critical for the surviving cells for the chromosomal strain by turning to the GFP and length variables for a temporal explanation.
 Even cells categorized as non-filamented reached the filamentation threshold minutes after antibiotic exposure.
 However, the distinction of live or dead filamented cells was not as evident as expected.
@@ -390,18 +390,18 @@ For the filament cells that died, we showed that they had, on average, a much lo
 include_tracks_image("04-metrics-over-time-1")
 ```
 
-### Heterogeneity of cell GFP allows various forms of survival and addition to filamentation
+### Heterogeneity in plasmid copy-number allows various forms of survival in addition to filamentation
 
 We are confident that filamentation has a fundamental role in determining cell survival, with what we have shown so far.
 However, for plasmid cells, we have a component that is of our complete interest; heterogeneity.
-Each cell can possess a different plasmids number; thus, each could show a different behavior under stress [x, x].
+Each cell can possess a different plasmid copy-number; thus, each could show a different behavior under stress [x, x].
 For example, heterogeneity can produce resistant cells that do not suffer damage, susceptible cells, and cells that form filaments to mitigate environmental stress.
 
-To understand the variability in plasmid copy number in the population, we decided to group cells by the proportion of initial GFP regarding the population maximum.
-Furthermore, we defined 100% of the population as the number of total cells at the onset of antibiotic exposure.
+To study the effect of variability in plasmid copy number in the survival probability of the population, we decided to group cells by the proportion of initial GFP with respect to the population maximum.
+We defined 100% of the population as the number of total cells at the onset of antibiotic exposure.
 Figure \@ref(fig:04-cell-status-over-time-proportion-living-cells-by-gfp-row-1) shows how the cells with the highest amount of GFP remained unchanged once antibiotic exposure began, while the rest of the cells started to decrease their percentage of surviving cells.
 However, the decrease was not linear.
-On the contrary, we observed a normal distribution in terms of the reduction of live cells.
+On the contrary, we observed a bi-modal distribution on the reduction of live cells.
 An average GFP point provided higher survival than a point below or above the average (except for cells very close to the population maximum).
 
 (ref:04-cell-status-over-time-proportion-living-cells-by-gfp-row-1-scap) Population survivals binned by initial GFP over time.
