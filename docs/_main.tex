@@ -353,13 +353,13 @@ The second level consists of the cells over time, thus observing properties at t
 We did this because it would allow us to understand what factors are affecting filamentation and why.
 
 We normalized the fluorescence values of DS-Red and GFP for both experiments based on the values observed before exposure to antibiotics.
-It allowed us to have a basis to work with and compare the expressions between cells.
-In the case of DS-Red, we also applied a logarithmic transformation to observe subtle changes in fluorescence intensity.
+It allowed us to have a basis to work with and compare expressions between cells.
+In the case of DS-Red environment drug concentration, we also applied a logarithmic transformation to observe subtle changes in fluorescence intensity that would allow us to detect cell dead.
 
-Ultimately, we decided to classify cells into four fundamental groups based on whether the cell was filamented and survived (see \ref{fig:03-cells-distribution-across-experiments}).
+Ultimately, we decided to classify cells into four fundamental groups based on whether the cell filamented and survived (see \ref{fig:03-cells-distribution-across-experiments}).
 We define a \emph{filamented cell} as a cell with more than two standard deviations from the mean concerning the lengths observed before introducing antibiotics into the system {[}{]}.
 On the other hand, although there are multiple ways to define death from single-cell observations {[}{]}, we considered a \emph{cell dead or missing} when we stopped having information about it, either because of fluorescence in the red channel was above a given threshold (resulting from an increase in cell membrane permeability and the introduction of fluorescent dye into the cell) or because it left the field of observation.
-Therefore, a \emph{surviving cell} is defined as a cell observed before and after exposure to the antibiotic.
+Therefore, a \emph{surviving cell} is defined as a cell observed before and after exposure to the antibiotic and does not surpass the DS-Red threshold.
 
 
 
@@ -384,7 +384,8 @@ We defined the \emph{end time} as the time of the last observation of the cell.
 We decided to bound the end time for surviving cells to one frame (10 min) after the end of antibiotic exposure so that the observed signal would reflect the final stress responses.
 
 When we compared the distributions of DS-Red, GFP, and length for both experiments, we observed its changes in its role for cell survival.
-In Figure \ref{fig:03-temporal-metric-distribution-ds-red-1}, we show that indistinctly and as expected, surviving cells managed to eliminate the antibiotic by the end time. In contrast, dead cells presented higher levels of antibiotics (measured by proxy through the mean DsRed intensity of the cell).
+In Figure \ref{fig:03-temporal-metric-distribution-ds-red-1}, we show that indistinctly and, as expected, surviving cells managed to eliminate the antibiotic by the end time.
+In contrast, dead cells presented higher levels of antibiotics (measured by proxy through the mean DS-Red intensity of the cell).
 
 
 
@@ -394,8 +395,7 @@ In Figure \ref{fig:03-temporal-metric-distribution-ds-red-1}, we show that indis
 \includegraphics[width=1\linewidth]{downloadFigs4latex__main/03-temporal-metric-distribution-ds-red-1} \caption[DS-Red temporal distribution.]{\textbf{DS-Red temporal distribution.} To evaluate the incident effect of the antibiotic marked by Ds-Red on cells by class, we show its values at three key moments: start, filamentation (SOS), and end. The upper asterisks represent the significance value when comparing a group X to the filamented and surviving cell reference. Asterisks in a line indicate whether or not there is a significant difference in the survival of non-filamented cells. The black dots represent the mean of each group, and the lines that join them are a comparative guide. The extent of the black bars represents the distribution of the data. Although, at the initial time, we observe multiple significant differences, this is likely due to the intrinsic noise of the system since, as expected, the values are close to zero. We observed a difference between the surviving and non-filamented cells for the chromosomal strain for the SOS time, but the same did not occur for the plasmid strain. The final amount of Ds-Red makes a clear difference between survival and death.}\label{fig:03-temporal-metric-distribution-ds-red-1}
 \end{figure}
 
-On the other hand, GFP observations in Figure \ref{fig:03-temporal-metric-distribution-gfp-1} showed us two essential things for cell classification:
-1) The chromosomal strain did not exhibit noticeable changes in GFP levels, and 2) filamented cells were those that had low fluorescent intensities (low plasmid copy-number) at the beginning of the experiment.
+On the other hand, GFP observations in Figure \ref{fig:03-temporal-metric-distribution-gfp-1} showed us two essential things for cell classification: 1) The chromosomal strain did not exhibit noticeable changes in GFP levels, and 2) filamented cells were those that had low fluorescent intensities (low plasmid copy-number) at the beginning of the experiment.
 For the final observation times, GFP measurements indicated that among the cells that did not filament, the ones that survived exhibited a reduced GFP expression concerning cells killed by the antibiotic.
 Meanwhile, for the filamented cells, whether surviving or dead, their GFP measurements indicated no difference at the beginning or the end of the experiment, suggesting the presence of other determinants of cell survival.
 
@@ -426,13 +426,13 @@ Nevertheless, we had no information to evaluate such a hypothesis.
 \includegraphics[width=1\linewidth]{downloadFigs4latex__main/03-temporal-metric-distribution-length-1} \caption[Length temporal distribution.]{\textbf{Length temporal distribution.} To evaluate the incident effect of length on cells by class, we use the same notation as in Figure \ref{fig:03-temporal-metric-distribution-ds-red-1}. The observations for both strains, chromosomal or plasmid, are the same. In the beginning, the surviving filamented cells already have a difference in length concerning the rest of the classes. At the time of filamentation, there is no difference to help determine whether the cell will survive or not. Finally, in the final time, it seems that the surviving filamented cells have a greater length than the rest of the groups. However, this length is moderate compared to the excess length shown by non-surviving filamented cells. On the other hand, we highlighted the growth of the surviving non-filamented cells. Therefore, although they did not reach a length for us to classify as filamented, the cells did resort to filamentation.}\label{fig:03-temporal-metric-distribution-length-1}
 \end{figure}
 
-Once we observed the effects of GFP expression levels and lengths in determining whether a cell lives or dies, we decided to project the cells onto the plane and paint them with their class color to determine whether these two variables contained the necessary information to cluster the data correctly.
+Once we observed the effects of GFP expression levels and lengths in determining whether a cell lives or dies, we projected the cells onto the plane and painted them with their class status (See Figure \ref{fig:03-cells-distribution-across-experiments}) to determine whether these two variables contained the necessary information to cluster the data correctly.
 In Figure \ref{fig:03-focus-just-in-initial-values-1}, we show the initial GFP and length values projection.
 While, with some work, we could contextually place the results in Figures \ref{fig:03-temporal-metric-distribution-gfp-1} and \ref{fig:03-temporal-metric-distribution-length-1}, the initial values did not appear to determine the classes.
 Therefore, we explored the final versus initial values differences in Figure \ref{fig:03-metric-differences-1}.
 With this new representation of the cells in the plane, we contextualized the statistical results presented in Figures \ref{fig:03-temporal-metric-distribution-gfp-1} and \ref{fig:03-temporal-metric-distribution-length-1}.
 Besides, it showed us that differences in length (\emph{i.e.}, filamentation) and reductions in GFP expression are essential in determining cell survival.
-Though, cell sorting is not entirely separate, which means that other variables are affecting the experimental results in cell survival.
+Though, the clustering of cells by state is not completely separated, which means that other variables are affection the experimental results in cell survival.
 
 
 
@@ -453,13 +453,13 @@ Though, cell sorting is not entirely separate, which means that other variables 
 \hypertarget{number-of-divisions-and-cell-age-do-not-appear-to-play-a-clear-role-in-determining-cell-survival}{%
 \subsection{Number of divisions and cell age do not appear to play a clear role in determining cell survival}\label{number-of-divisions-and-cell-age-do-not-appear-to-play-a-clear-role-in-determining-cell-survival}}
 
-In the \ref{cell-length-and-the-amount-of-gfp-are-crucial-in-determining-cell-survival} section, we explored how GFP variability and cell length help in determining cell survival.
+In Section \ref{cell-length-and-the-amount-of-gfp-are-crucial-in-determining-cell-survival}, we explored how GFP variability and cell length influence cell survival.
 However, Figures \ref{fig:03-focus-just-in-initial-values-1} and \ref{fig:03-metric-differences-1} showed us the possibility of other factors relevant to the phenomenon under study.
 As some papers in the literature suggest, some of these other factors may be cell division and chronological age(\emph{i.e.}, how much time has passed since the last cell division at the time of exposure to a toxic agent) {[}x, x, x{]}.
 Therefore, we chose to observe these two metrics in experiments at a purely qualitative level, i.e., without the inclusion of, e.g., metrics of membrane or cell cycle properties {[}x, x{]}.
 
 Although we expected to see a small contribution, either by the number of divisions or cell age, in Figures \ref{fig:03-division-number-divisions-1} and \ref{fig:03-division-time-since-last-division-1}, we could not observe a precise effect of these variables on cell survival.
-Patterns that, although they could have an explanation or biological significance, we decided to omit as relevant in the characterization of our cells.
+Patterns that, although they could have an explanation or biological significance, we decided to omit as relevant in the characterization of our cells, since the signal was not clear.
 However, we derived from this analysis a slightly simpler variable that tells us whether a cell underwent a cell division event or not.
 So it gives us a more generalized picture of the contribution of division to cell survival (see Figure \ref{fig:03-see-datasets-individually-pca-plasmid-variable-contribution-1}).
 
@@ -504,7 +504,7 @@ These differences in response times suggest the following: 1) if the cell grows 
 
 In Figure \ref{fig:03-time-to-filamentation-include-time-to-filamentation-in-initial-exploration-initial-values-1}, we decided to project the results of Figure \ref{fig:03-time-to-filamentation-filamented-once-experiment-start-1} in a space similar to the one described in Figure \ref{fig:03-focus-just-in-initial-values-1}.
 Thus, we separated our data into cells that survived and cells that did not, and painted them when it took them to reach their filamented state.
-With that fact, we realized that, indeed, by adding this temporal component to the initial variables of length and GFP, we could separate surviving cells from dead cells to a greater degree.
+We realized that, indeed, by adding this temporal component to the initial variables of length and GFP, we could separate surviving cells from dead cells to a greater degree.
 However, it may still not be enough, and there are still many other variables that play a crucial role in understanding the ecology of stress and how some cells will be survivors or not.
 
 
@@ -523,8 +523,8 @@ Similarly, we realized that other variables must be affecting the final results.
 Filamentation and GFP variability alone did not fully recapitulate the expected behavior of the data.
 That is, the target variables did not capture the heterogeneity of the system.
 
-The inability to reproduce cell sorting led us to question two things: 1) the possibility that our sorting was wrong beforehand and 2) we did not have enough variables to capture the study phenomenon.
-We decided to take the unsupervised learning way to answer these subjects because it allows us to project our data without a priori knowledge {[}x{]}.
+The inability to reproduce cell classification led us to question two things: 1) the possibility that our sorting was wrong beforehand and 2) we did not have enough variables to capture the study phenomenon.
+We decided to take the unsupervised learning way to answer these subjects because it allows us to project our data without a \emph{priori} knowledge {[}x{]}.
 
 We opted for the path of dimensionality reduction techniques where each variable or feature is equivalent to one dimension.
 The essence of dimensionality reduction is that it is not feasible to analyze each dimension with many dimensions.
@@ -588,7 +588,7 @@ UMAP has certain advantages for these purposes, e.g., it preserves the global st
 
 In Figures \ref{fig:03-see-datasets-individually-umap-chromosome-points-in-new-coordinates-1} and \ref{fig:3-see-datasets-individually-umap-plasmid-points-in-new-coordinates-1}, we show how, using the same variables used in the ``PCA'' section, UMAP was able to cluster the four proposed classes correctly.
 Interestingly, in Figure \ref{fig:03-see-datasets-individually-umap-chromosome-points-in-new-coordinates-1}, UMAP formed three general groups and four for Figure \ref{fig:3-see-datasets-individually-umap-plasmid-points-in-new-coordinates-1}.
-However, in general, UMAP clustered the surviving cells from those that did not make it.
+However, in general, UMAP clustered the surviving cells from those that did not survived.
 On investigating why this separation occurred, we found that the large groups coalesced into one another if we eliminated the division variable.
 So, in a way, the division also has a role in determining survival, but it is not essential or at least not over-represented in our data.
 
@@ -608,17 +608,17 @@ So, in a way, the division also has a role in determining survival, but it is no
 \includegraphics[width=1\linewidth]{downloadFigs4latex__main/3-see-datasets-individually-umap-plasmid-points-in-new-coordinates-1} \caption[UMAP coordinates of plasmid strain.]{\textbf{UMAP coordinates of plasmid strain.} As in its \ref{fig:03-see-datasets-individually-umap-chromosome-points-in-new-coordinates-1} pair, the representation in a low-dimensional space helped classify the cells, grouping mainly into four groups, two of survivors and two of non-survivors. The variable \emph{division} marks the separation of classes. The \emph{division} variable indicates whether a cell is divided during its lifetime or not. Together, the UMAP represents the manually assigned classes.}\label{fig:3-see-datasets-individually-umap-plasmid-points-in-new-coordinates-1}
 \end{figure}
 
-\hypertarget{population-dynamics-reveal-how-filamentation-helps-cell-survival}{%
-\subsection{Population dynamics reveal how filamentation helps cell survival}\label{population-dynamics-reveal-how-filamentation-helps-cell-survival}}
+\hypertarget{population-dynamics-reveal-how-filamentation-contributes-cell-survival}{%
+\subsection{Population dynamics reveal how filamentation contributes cell survival}\label{population-dynamics-reveal-how-filamentation-contributes-cell-survival}}
 
-From the full tracking dataset, we decided to show how the different cell states behaved over time---for example, understanding how the cells concentrated antibiotics inside or how they increased in length for each instant.
+From the full tracking dataset, we evaluated how the different cell states behaved over time---for example, understanding how the cells absorbed antibiotics or how they elongated in time.
 In contrast to the dataset generated in the \ref{cell-length-and-the-amount-of-gfp-are-crucial-in-determining-cell-survival} section, we did not truncate the results 10 minutes after the antibiotic exposure.
 In this way, we were able to observe cell behavior before and after the presence of the toxic agent.
 
 In Figure \ref{fig:04-cell-status-over-time-status-with-dead-1}, we observed a small fraction of cells that were already filamentous without exposure to the toxic agent in both cell strains.
 However, after the onset of antibiotic exposure at minute 60, we observed increases in the proportion of filamented cells.
-It is interesting to note how filament cells grew after antibiotic exposure for the chromosomal strain.
-We believe that this post-antibiotic growth exists because, once the SOS system that triggers filamentation is activated, the system continues to grow until it reaches a limit regardless of whether the damaging agent is still present or not.
+It is interesting to note how filamented cells grew after antibiotic exposure for the chromosomal strain.
+We believe that this post-antibiotic growth exists because, once the SOS system that triggers filamentation is activated, the system continues to grow until it reaches a limit regardless of whether the damaging agent is still present or not {[}x, x, x{]}.
 Moreover, we observed how the cells start to divide again after some time because the proportion of non-filament cells starts to grow while the filament cells start to divide.
 We observed the same effects for the plasmid strain.
 However, by experimental design, the number of filament cells expected was much lower.
@@ -628,11 +628,11 @@ However, by experimental design, the number of filament cells expected was much 
 
 
 \begin{figure}[H]
-\includegraphics[width=1\linewidth]{downloadFigs4latex__main/04-cell-status-over-time-status-with-dead-1} \caption[Population status over time.]{\textbf{Population status over time.} We calculate how many cells of each type existed for each instant of time: non-filamented and filamented living cells (blue and green areas, respectively) and dead cells (red area). We considered \emph{dead} cells as those cells that existed at one time and then stopped tracking. The black vertical lines represent the start and end of antibiotic exposure for each experiment. The effect of filamentation and its spread after exposure to the antibiotic is evident for the chromosomal strain. The experiment was finalized with the resolution of the cells when they returned to their non-filamented state. For its part, for the plasmid strain, it is observed how the filamented cells begin to appear slowly. Their proportion is as expected, given that the population had a wide distribution of GFP that allowed them to combat exposure to the antibiotic.}\label{fig:04-cell-status-over-time-status-with-dead-1}
+\includegraphics[width=1\linewidth]{downloadFigs4latex__main/04-cell-status-over-time-status-with-dead-1} \caption[Population status over time.]{\textbf{Population status over time.} We calculate how many cells of each type existed for each time point: non-filamented and filamented living cells (blue and green areas, respectively) and dead cells (red area; we considered \emph{dead} cells as those cells that existed at one time and then stopped tracking). The black vertical lines represent the start and end of antibiotic exposure for each experiment. The effect of filamentation and its spread after exposure to the antibiotic is evident for the chromosomal strain. The experiment was finalized with the resolution of the cells when they returned to their non-filamented state. For its part, for the plasmid strain, it is observed how the filamented cells begin to appear slowly. Their proportion is as expected, given that the population had a wide distribution of GFP that allowed them to combat exposure to the antibiotic.}\label{fig:04-cell-status-over-time-status-with-dead-1}
 \end{figure}
 
 In Figure \ref{fig:04-metrics-over-time-1}, we showed how once antibiotics exposure began, those cells that died had a much faster increase in DS-Red than those that did manage to live, regardless of whether they filamented or not.
-On the other hand, the surviving cells managed to maintain their DS-Red levels relatively stable.
+On the other hand, surviving cells managed to maintain their DS-Red levels relatively stable.
 We noted that length was critical for the surviving cells for the chromosomal strain by turning to the GFP and length variables for a temporal explanation.
 Even cells categorized as non-filamented reached the filamentation threshold minutes after antibiotic exposure.
 However, the distinction of live or dead filamented cells was not as evident as expected.
@@ -647,19 +647,19 @@ For the filament cells that died, we showed that they had, on average, a much lo
 \includegraphics[width=1\linewidth]{downloadFigs4latex__main/04-metrics-over-time-1} \caption[Population measurements over time.]{\textbf{Population measurements over time.} The colored lines symbolize the average value of each metric at each instant of time, while its surrounded gray shaded area represents the 95\% confidence interval. The vertical lines represent the start and end of antibiotic exposure. The horizontal line in the length metric symbolizes the threshold to consider a cell filament. We observed a faster increase of DS-red for the non-surviving populations in both experiments. Regarding the GFP metric, the behavior is relatively stable for the chromosomal strain. In contrast, for the plasmid strain, a decline in GFP is observed for the population that did not survive. For the length metric, it is interesting to note how the chromosome cells that did not filament continued to grow past the filamentation threshold once the exposure to the antibiotic in the chromosomal strain had ended. On the other hand, the filamented and dead cells seem to have a greater length from the beginning for the plasmid strain.}\label{fig:04-metrics-over-time-1}
 \end{figure}
 
-\hypertarget{heterogeneity-of-cell-gfp-allows-various-forms-of-survival-and-addition-to-filamentation}{%
-\subsection{Heterogeneity of cell GFP allows various forms of survival and addition to filamentation}\label{heterogeneity-of-cell-gfp-allows-various-forms-of-survival-and-addition-to-filamentation}}
+\hypertarget{heterogeneity-in-plasmid-copy-number-allows-various-forms-of-survival-in-addition-to-filamentation}{%
+\subsection{Heterogeneity in plasmid copy-number allows various forms of survival in addition to filamentation}\label{heterogeneity-in-plasmid-copy-number-allows-various-forms-of-survival-in-addition-to-filamentation}}
 
 We are confident that filamentation has a fundamental role in determining cell survival, with what we have shown so far.
 However, for plasmid cells, we have a component that is of our complete interest; heterogeneity.
-Each cell can possess a different plasmids number; thus, each could show a different behavior under stress {[}x, x{]}.
+Each cell can possess a different plasmid copy-number; thus, each could show a different behavior under stress {[}x, x{]}.
 For example, heterogeneity can produce resistant cells that do not suffer damage, susceptible cells, and cells that form filaments to mitigate environmental stress.
 
-To understand the variability in plasmid copy number in the population, we decided to group cells by the proportion of initial GFP regarding the population maximum.
-Furthermore, we defined 100\% of the population as the number of total cells at the onset of antibiotic exposure.
+To study the effect of variability in plasmid copy number in the survival probability of the population, we decided to group cells by the proportion of initial GFP with respect to the population maximum.
+We defined 100\% of the population as the number of total cells at the onset of antibiotic exposure.
 Figure \ref{fig:04-cell-status-over-time-proportion-living-cells-by-gfp-row-1} shows how the cells with the highest amount of GFP remained unchanged once antibiotic exposure began, while the rest of the cells started to decrease their percentage of surviving cells.
 However, the decrease was not linear.
-On the contrary, we observed a normal distribution in terms of the reduction of live cells.
+On the contrary, we observed a bi-modal distribution on the reduction of live cells.
 An average GFP point provided higher survival than a point below or above the average (except for cells very close to the population maximum).
 
 
@@ -715,14 +715,26 @@ Therefore, we decided to postulate a mathematical model that helps us understand
 
 \minitoc 
 
-\noindent Scientists have extensively studied the mechanisms that orchestrate the growth and division of bacterial cells. Cells adapt their shape and dimensions in response to variations in the intracellular and extracellular environments by integrating information about the presence of nutrients or harmful agents in the decision to grow or divide. Filamentation is a process that occurs when rod-shaped cells stop dividing but continue to grow, thus producing elongated cells. Some cells can naturally grow as filamentous, while others only do so under stressful conditions. Here we use mathematical modeling and computational simulations to evaluate a toxic agent's intracellular concentration as a function of cell length. We show that filamentation can act as a strategy that promotes the resilience of a bacterial population under stressful environmental conditions.
+\noindent Scientists have extensively studied the mechanisms that orchestrate the growth and division of bacterial cells.
+Cells adapt their shape and dimensions in response to variations in the intracellular and extracellular environments by integrating information about the presence of nutrients or harmful agents in the decision to grow or divide.
+Filamentation is a process that occurs when rod-shaped cells stop dividing but continue to grow, thus producing elongated cells.
+Some cells can naturally grow as filamentous, while others only do so under stressful conditions {[}x, x{]}.
+Here we use mathematical modeling and computational simulations to evaluate a toxic agent's intracellular concentration as a function of cell length.
+We show that filamentation can act as a strategy that promotes the resilience of a bacterial population under stressful environmental conditions.
 
 \hypertarget{introduction-2}{%
 \section{Introduction}\label{introduction-2}}
 
-By integrating information from the environment, cells can alter their cell cycle. For instance, some cells arrest the cell division in the presence of toxic agents but continue to grow. Previous studies have shown that this filamentation phenomenon provides a mechanism that enables cells to cope with stress, which leads to an increase in the probability of survival \autocite{justiceMorphologicalPlasticityBacterial2008}. For example, filamentation can be a process capable of subverting innate defenses during urinary tract infection, facilitating the transition of additional rounds of intracellular bacterial community formation \autocite{justiceFilamentationEscherichiaColi2006}.
+By integrating information from the environment, cells can alter their cell cycle.
+For instance, some cells arrest the cell division in the presence of toxic agents but continue to grow.
+Previous studies have shown that this filamentation phenomenon provides a mechanism that enables cells to cope with stress, which leads to an increase in the probability of survival \autocite{justiceMorphologicalPlasticityBacterial2008}.
+For example, filamentation can be a process capable of subverting innate defenses during urinary tract infection, facilitating the transition of additional rounds of intracellular bacterial community formation \autocite{justiceFilamentationEscherichiaColi2006}.
 
-Although filament growth can help mitigate environmental stress (e.g., by activating the SOS response system \autocite{justiceMorphologicalPlasticityBacterial2008}), the evolutionary benefits of producing elongated cells that do not divide are unclear. Here, we proposed a mathematical model based on ordinary differential equations that explicitly considers the concentration of intracellular toxin as a function of the cell's length (see Equation \eqref{eq:model-equation}). The model is built based on the growth ratio of measurements of the surface area (\(SA\)) and the cell volume (\(V\)), whereby the uptake rate of the toxin depends on the \(SA\). However, \(V's\) rate of change for \(SA\) is higher than \(SA\) for \(V\), which results in a transient reduction in the intracellular toxin concentration (see Figure \ref{fig:cell-dimensions-relationship}). Therefore, we hypothesized that this geometric interpretation of filamentation represents a biophysical defense line to increase the probability of a bacterial population's survival in response to stressful environments.
+Although filament growth can help mitigate environmental stress (e.g., by activating the SOS response system \autocite{justiceMorphologicalPlasticityBacterial2008}), the evolutionary benefits of producing elongated cells that do not divide are unclear.
+Here, we proposed a mathematical model based on ordinary differential equations that explicitly considers the concentration of intracellular toxin as a function of the cell's length (see Equation \eqref{eq:model-equation}).
+The model is built based on the growth ratio of measurements of the surface area (\(SA\)) and the cell volume (\(V\)), whereby the uptake rate of the toxin depends on the \(SA\).
+However, \(V's\) rate of change for \(SA\) is higher than \(SA\) for \(V\), which results in a transient reduction in the intracellular toxin concentration (see Figure \ref{fig:cell-dimensions-relationship}).
+Therefore, we hypothesized that this geometric interpretation of filamentation represents a biophysical defense line to increase the probability of a bacterial population's survival in response to stressful environments.
 
 
 
@@ -735,7 +747,8 @@ Although filament growth can help mitigate environmental stress (e.g., by activa
 \hypertarget{filamentation-model}{%
 \section{Filamentation model}\label{filamentation-model}}
 
-Let us assume the shape of cells is a cylinder with hemispherical ends. Based on this geometric structure, a nonlinear system of differential equations governing filamentation can be written as follows:
+Let us assume the shape of cells is a cylinder with hemispherical ends.
+Based on this geometric structure, a nonlinear system of differential equations governing filamentation can be written as follows:
 
 \begin{equation}
 \begin{split}
@@ -749,19 +762,40 @@ Let us assume the shape of cells is a cylinder with hemispherical ends. Based on
 \label{eq:model-equation}
 \end{equation}
 
-It considers the internal toxin (\(T_{int}\)) and the cell length (\(L\)) as variables. \(T_{sa}\) and \(T_{vol}\) represent the surface area and volume of the toxin in the cell, respectively. \(T_{ext}(t)\) is a function that returns the amount of toxin in the cell medium. \(T_{anti}\) and \(\alpha\) symbolize the amount of antitoxin and its efficiency rate, respectively. \(\beta\) as the rate of filamentation. \(L_{max}\) is the maximum size that the cell can reach when filamentation is on. \(T_{sos}\) and \(T_{kill}\) are thresholds for filamentation and death, respectively. Finally, \(\tau_{delay}\) is the amount of time required to activate filamentation after reaching the \(T_{sos}\) threshold.
+It considers the internal toxin (\(T_{int}\)) and the cell length (\(L\)) as variables.
+\(T_{sa}\) and \(T_{vol}\) represent the surface area and volume of the toxin in the cell, respectively.
+\(T_{ext}(t)\) is a function that returns the amount of toxin in the cell medium.
+\(T_{anti}\) and \(\alpha\) symbolize the amount of antitoxin and its efficiency rate, respectively.
+\(\beta\) as the rate of filamentation.
+\(L_{max}\) is the maximum size that the cell can reach when filamentation is on.
+\(T_{sos}\) and \(T_{kill}\) are thresholds for filamentation and death, respectively.
+Finally, \(\tau_{delay}\) is the amount of time required to activate filamentation after reaching the \(T_{sos}\) threshold.
 
-\hypertarget{results-1}{%
-\section{Results}\label{results-1}}
+\hypertarget{numerical-results}{%
+\section{Numerical results}\label{numerical-results}}
 
-\hypertarget{filamentation-provides-transient-resistance-under-stressful-conditions}{%
-\subsection{Filamentation provides transient resistance under stressful conditions}\label{filamentation-provides-transient-resistance-under-stressful-conditions}}
+\hypertarget{filamentation-provides-transient-resistance-to-stressful-conditions}{%
+\subsection{Filamentation provides transient resistance to stressful conditions}\label{filamentation-provides-transient-resistance-to-stressful-conditions}}
 
-When growing rod-shaped bacterial cells under constant conditions, the distribution of lengths and radii is narrow \autocite{schaechterGrowthCellNuclear1962}. However, when growing under stress conditions, some cells produce filaments \autocite{schaechterDependencyMediumTemperature1958}. This phenomenon may depend on the SOS response system \autocite{bosEmergenceAntibioticResistance2015}, which can repair DNA damage, giving the cell greater chances of recovering and surviving under stress conditions. Besides, the SOS response has been reported to have precise temporal coordination in individual bacteria \autocite{friedmanPreciseTemporalModulation2005}. Among the stress conditions that can trigger the SOS response is exposure to beta-lactam antibiotics \autocite{millerSOSResponseInduction2004}.
+When growing rod-shaped bacterial cells under constant conditions, the distribution of lengths and radii is narrow \autocite{schaechterGrowthCellNuclear1962}.
+However, when growing under stress conditions, some cells produce filaments \autocite{schaechterDependencyMediumTemperature1958}.
+This phenomenon may depend on the SOS response system \autocite{bosEmergenceAntibioticResistance2015}, which can repair DNA damage, giving the cell greater chances of recovering and surviving under stress conditions.
+Besides, the SOS response has been reported to have precise temporal coordination in individual bacteria \autocite{friedmanPreciseTemporalModulation2005}.
+Among the stress conditions that can trigger the SOS response is exposure to beta-lactam antibiotics \autocite{millerSOSResponseInduction2004}.
 
-In general, filamentation has been studied as an unavoidable consequence of stress. However, we considered filamentation an active process that produces the first line of defense against toxic agents. Therefore, a differential equation model was proposed that assesses the change in the amount of internal toxin as a function of cell length. At the core of this model, we include the intrinsic relationship between the surface area and the capsule volume since it is vital in determining cell size \autocite{harrisRelativeRatesSurface2016}.
+In general, filamentation has been studied as an unavoidable consequence of stress.
+However, we considered filamentation an active process that produces the first line of defense against toxic agents.
+Therefore, a differential equation model was proposed that assesses the change in the amount of internal toxin as a function of cell length.
+At the core of this model, we include the intrinsic relationship between the surface area and the capsule volume since it is vital in determining cell size \autocite{harrisRelativeRatesSurface2016}.
 
-In figure \ref{fig:filamentation-model-ramp-signal}, cells grow in a ramp-shaped external toxin signal without considering a toxin-antitoxin system. As time progresses, the toxin in the external environment increases, so the cell raises its internal toxin levels. At approximately time \(22\), any cell reaches \(T_{sos}\). The control cell (unable to filament) and the average cell (capable of filamenting) reach the death threshold, \(T_{kill}\), at times \(31\) and \(93\) (hatched and solid black lines), respectively. Therefore, under this example, the cell has increased its life span three times more than in control by growing as a filament (green shaded area versus orange shaded area). In turn, figure \ref{fig:filamentation-model-ramp-signal} also shows stochastic simulations of the system in the intake of internal toxins. Considering that cell growth and death processes are inherently stochastic, stochastic simulations would be a better approximation. However, from now on, we will continue with the study of the deterministic model.
+In figure \ref{fig:filamentation-model-ramp-signal}, cells grow in a ramp-shaped external toxin signal without considering a toxin-antitoxin system.
+As time progresses, the toxin in the external environment increases, so the cell raises its internal toxin levels.
+At approximately time \(22\), any cell reaches \(T_{sos}\).
+The control cell (unable to filament) and the average cell (capable of filamenting) reach the death threshold, \(T_{kill}\), at times \(31\) and \(93\) (hatched and solid black lines), respectively.
+Therefore, under this example, the cell has increased its life span three times more than in control by growing as a filament (green shaded area versus orange shaded area).
+In turn, figure \ref{fig:filamentation-model-ramp-signal} also shows stochastic simulations of the system in the intake of internal toxins.
+Considering that cell growth and death processes are inherently stochastic, stochastic simulations would be a better approximation.
+However, from now on, we will continue with the study of the deterministic model.
 
 
 
@@ -774,11 +808,18 @@ In figure \ref{fig:filamentation-model-ramp-signal}, cells grow in a ramp-shaped
 \hypertarget{filamentation-increases-the-minimum-inhibitory-concentration}{%
 \subsection{Filamentation increases the minimum inhibitory concentration}\label{filamentation-increases-the-minimum-inhibitory-concentration}}
 
-Antimicrobial resistance (AMR) can be considered one of the most critical health problems of the century. That is, microorganisms' ability to grow despite exposure to substances designed to inhibit their growth or kill them. In April 2014, the World Health Organization (WHO) published its first global report on AMR surveillance \autocite{EditorialBoard2014}. Taking out of the darkness a common fear, a possible post-antibiotic future in which common infections or minor injuries can kill. Therefore, understanding the mechanisms of avoiding antibiotic action is essential for producing knowledge and developing strategies that reduce the generation of resistant bacteria.
+Antimicrobial resistance (AMR) can be considered one of the most critical health problems of the century.
+That is, microorganisms' ability to grow despite exposure to substances designed to inhibit their growth or kill them.
+In April 2014, the World Health Organization (WHO) published its first global report on AMR surveillance \autocite{EditorialBoard2014}.
+Taking out of the darkness a common fear, a possible post-antibiotic future in which common infections or minor injuries can kill.
+Therefore, understanding the mechanisms of avoiding antibiotic action is essential for producing knowledge and developing strategies that reduce the generation of resistant bacteria.
 
-A classic experiment in laboratories finds the concentration that inhibits bacterial growth through exposure to different toxin doses. The concentration found is known as the minimum inhibitory concentration (MIC) \autocite{andrewsDeterminationMinimumInhibitory2002}. Bacteria are capable of modifying their MIC through various mechanisms, for example, mutations \autocite{lambertBacterialResistanceAntibiotics2005}, impaired membrane permeability \autocite{satoOuterMembranePermeability1991}, flux pumps \autocite{webberImportanceEffluxPumps2003}, toxin-inactivating enzymes \autocite{wrightBacterialResistanceAntibiotics2005}, and plasticity phenotypic \autocite{justiceMorphologicalPlasticityBacterial2008}. The latter is our phenomenon of interest because it considers the change in shape and size, allowing us to study it as a strategy to promote bacterial survival.
+In other to characterize the degree of resistance, dose-response experiments determine the Minimum Inhibitory Concentration (MIC) \autocite{andrewsDeterminationMinimumInhibitory2002}. Bacteria are capable of modifying their MIC through various mechanisms, for example, mutations \autocite{lambertBacterialResistanceAntibiotics2005}, impaired membrane permeability \autocite{satoOuterMembranePermeability1991}, flux pumps \autocite{webberImportanceEffluxPumps2003}, toxin-inactivating enzymes \autocite{wrightBacterialResistanceAntibiotics2005}, and plasticity phenotypic \autocite{justiceMorphologicalPlasticityBacterial2008}.
+The latter is our phenomenon of interest because it considers the change in shape and size, allowing us to study it as a strategy to promote bacterial survival.
 
-We decided to analyze the MIC change caused by filamentation through stable exposure experiments of different toxin amounts at other exposure times. Computational simulations show that when comparing cells unable to filament with those that can, there is an increase in the capacity to tolerate more generous amounts of toxin, increasing their MIC (see Figure \ref{fig:increased-time-resistance}). Therefore, it confers a gradual increase in resistance beyond filamentation's role in improving the cell's life span as the exposure time is longer.
+We decided to analyze the MIC change caused by filamentation through stable exposure experiments of different toxin amounts at other exposure times.
+Computational simulations show that when comparing cells unable to filament with those that can, there is an increase in the capacity to tolerate more generous amounts of toxin, increasing their MIC (see Figure \ref{fig:increased-time-resistance}).
+Therefore, it confers a gradual increase in resistance beyond filamentation's role in improving the cell's life span as the exposure time is longer.
 
 
 
@@ -791,11 +832,19 @@ We decided to analyze the MIC change caused by filamentation through stable expo
 \hypertarget{heterogeneity-in-the-toxin-antitoxin-system-represents-a-double-edged-sword-in-survival-probability}{%
 \subsection{Heterogeneity in the toxin-antitoxin system represents a double-edged sword in survival probability}\label{heterogeneity-in-the-toxin-antitoxin-system-represents-a-double-edged-sword-in-survival-probability}}
 
-One of the SOS response system properties is that it presents synchronous activation times within homogeneous populations \autocite{friedmanPreciseTemporalModulation2005}. It has constant gene expression rates that help it cope with stress; however, it is possible to introduce variability by considering having multicopy resistance plasmids \autocite{million-weaverMechanismsPlasmidSegregation2014}. Therefore, the response times would have an asynchronous behavior at the global level but synchronous at the local level.
+One of the SOS response system properties is that it presents synchronous activation times within homogeneous populations \autocite{friedmanPreciseTemporalModulation2005}.
+It has constant gene expression rates that help it cope with stress; however, it is possible to introduce variability by considering having multicopy resistance plasmids \autocite{million-weaverMechanismsPlasmidSegregation2014}.
+Therefore, the response times would have an asynchronous behavior at the global level but synchronous at the local level.
 
-To include this observation into the model, we include a negative term to the internal toxin representing a toxin-antitoxin system. Therefore, the model now has an efficiency rate of the antitoxin and a stable amount per cell. We simulate the effect of the toxin-antitoxin system variation within a \(1000\) cell population; we initialize each one with similar initial conditions, except for the amount of internal antitoxin, defined as \(T_{anti} \sim N(\mu, \sigma)\). Considering that \(T_{anti}\) values \(< 0\) are equal to \(0\). For each experiment,\(\mu = 25\), while it was evaluated in the range \([0-20]\). For the generation of pseudo-random numbers and to ensure the results' reproducibility, the number \(42\) was considered seed.
+To include this observation into the model, we include a negative term to the internal toxin representing a toxin-antitoxin system.
+Therefore, the model now has an efficiency rate of the antitoxin and a stable amount per cell.
+We simulate the effect of the toxin-antitoxin system variation within a \(1000\)-cell population; we initialize each one with similar initial conditions, except for the amount of internal antitoxin, defined as \(T_{anti} \sim N(\mu, \sigma)\).
+Considering that \(T_{anti}\) values \(< 0\) are equal to \(0\).
+For each experiment, \(\mu = 25\), while it was evaluated in the range \([0-20]\).
+For the generation of pseudo-random numbers and to ensure the results' reproducibility, the number \(42\) was considered seed.
 
-As shown in Figure \ref{fig:variability-toxin-antitoxin}, when we compare heterogeneous populations in their toxin-antitoxin system, we can achieve different population dynamics, that is, changes in the final proportions of cell states; normal, stressed, and dead. This difference is because the cell sometimes has more or less antitoxin to handle the incoming stress situation.
+As shown in Figure \ref{fig:variability-toxin-antitoxin}, when we compare heterogeneous populations in their toxin-antitoxin system, we can achieve different population dynamics, that is, changes in the final proportions of cell states; normal, stressed, and dead.
+This difference is because the cell sometimes has more or less antitoxin to handle the incoming stress situation.
 
 
 
@@ -805,7 +854,11 @@ As shown in Figure \ref{fig:variability-toxin-antitoxin}, when we compare hetero
 \includegraphics[width=1\linewidth]{downloadFigs4latex__main/variability-toxin-antitoxin} \caption[Variability in the toxin-antitoxin system produces different proportions of cell states.]{\textbf{Variability in the toxin-antitoxin system produces different proportions of cell states.} Histograms represent the distribution of antitoxin quantity, while the curves represent the population's fraction over time. The cell will start to filament after reaching a certain internal toxin threshold, \(T_{sos}\). Therefore, the expected global effect on the population's response times based on the amount of antitoxin is asynchronous, while at the local level, it is synchronous. Consequently, different proportions are presented in the cellular states since some cells will activate the filamentation system before and others later.}\label{fig:variability-toxin-antitoxin}
 \end{figure}
 
-Considering that the toxin-antitoxin system's variability can modify the proportions of final cell states, a question arose about heterogeneity levels' global behavior. To answer this question, we evaluate the probability of survival for each population, defined by its distribution of antitoxin levels. In this way, we characterized the population survival probability function into three essential points according to its effect: negative, invariant, and positive (see Figure \ref{fig:survival-probability}). Furthermore, these points are relative to the homogeneous population's death time in question (\(\tau_{kill}\)): when \(t < \tau_{kill}\) will represent a detrimental effect on survival, \(t = \tau_{kill}\) will be independent of variability, and \(t > \tau_{kill}\) will be a beneficial point for survival. Therefore, we concluded that the effect of heterogeneity in a toxin-antitoxin system represents a double-edged sword.
+Considering that the toxin-antitoxin system's variability can modify the proportions of final cell states, a question arose about heterogeneity levels' global behavior.
+To answer this question, we evaluate the probability of survival for each population, defined by its distribution of antitoxin levels.
+In this way, we characterized the population survival probability function into three essential points according to its effect: negative, invariant, and positive (see Figure \ref{fig:survival-probability}).
+Furthermore, these points are relative to the homogeneous population's death time in question (\(\tau_{kill}\)): when \(t < \tau_{kill}\) will represent a detrimental effect on survival, \(t = \tau_{kill}\) will be independent of variability, and \(t > \tau_{kill}\) will be a beneficial point for survival.
+Therefore, we concluded that the effect of heterogeneity in a toxin-antitoxin system represents a double-edged sword.
 
 
 
@@ -815,14 +868,20 @@ Considering that the toxin-antitoxin system's variability can modify the proport
 \includegraphics[width=1\linewidth]{downloadFigs4latex__main/survival-probability} \caption[Effect of variability on the toxin-antitoxin system.]{\textbf{Effect of variability on the toxin-antitoxin system.} The color of the heatmap is representative of the fraction of living cells at exposure time. The white vertical line represents the death time of the homogeneous population (\(\tau_{kill}\)). At \(t < \tau_{kill}\), it is shown that the fraction of survivors decreases as the variability in the population increases. When \(t = \tau_{kill}\), the variability does not affect the fraction of survivors, but it represents a percentage improvement for the homogeneous population. Finally, when \(t > \tau_{kill}\), the heterogeneity of the population favors survival.}\label{fig:survival-probability}
 \end{figure}
 
-\hypertarget{discussion-1}{%
-\section{Discussion}\label{discussion-1}}
+\hypertarget{benefits-and-limitations-of-the-model}{%
+\section{Benefits and limitations of the model}\label{benefits-and-limitations-of-the-model}}
 
-Today, there have been advancements in the number of techniques that have allowed it to extend quantitative analyses to individual cells' dynamic observations \autocite{camposConstantSizeExtension2014,meldrumFacultyOpinionsRecommendation2005,sliusarenkoHighthroughputSubpixelPrecision2011,taheri-araghiCellSizeControlHomeostasis2017,ursellRapidPreciseQuantification2017}. Therefore, studying their cellular behavior every day from medium to medium can be somewhat reproducible, facilitating the association of complex biological functions in simple mathematical equations \autocite{neidhardtBacterialGrowthConstant1999}.
+Today, there have been advancements in the number of techniques that have allowed it to extend quantitative analyses to individual cells' dynamic observations \autocite{camposConstantSizeExtension2014,meldrumFacultyOpinionsRecommendation2005,sliusarenkoHighthroughputSubpixelPrecision2011,taheri-araghiCellSizeControlHomeostasis2017,ursellRapidPreciseQuantification2017}.
+Therefore, studying their cellular behavior every day from medium to medium can be somewhat reproducible, facilitating the association of complex biological functions in simple mathematical equations \autocite{neidhardtBacterialGrowthConstant1999}.
 
-Here, we proposed a mathematical model showing that filamentation could serve as a population's resilience mechanism to stress conditions. Finding that filamentation's net effect generates an additional window of time for the cell to survive, decreasing the toxin's intracellular concentration. However, we also found that a side effect of filamentation is to increase the cell's minimum inhibitory concentration. On the other hand, when we introduce variability in the amount of antitoxin in a cell population, we found that heterogeneity can be a double-edged sword, sometimes detrimental and sometimes beneficial, depending on the time of exposure to the toxic agent.
+Here, we proposed a mathematical model showing that filamentation could serve as a population's resilience mechanism to stress conditions.
+Finding that filamentation's net effect generates an additional window of time for the cell to survive, decreasing the toxin's intracellular concentration.
+However, we also found that a side effect of filamentation is to increase the cell's minimum inhibitory concentration.
+On the other hand, when we introduce variability in the amount of antitoxin in a cell population, we found that heterogeneity can be a double-edged sword, sometimes detrimental and sometimes beneficial, depending on the time of exposure to the toxic agent.
 
-Due to the above, despite being simple, the model could have the ability to recapitulate the behavior seen in nature from variables that we can calculate easily with single-cell measurements. However, in other situations, it could be helpful to consider the addition of variables such as cell wall production and peptidoglycans' accumulation, among others. Notwithstanding the lack of parameters that are a little closer to reality, confirming that the model can work under experimental conditions would represent an achievement due to its explanatory simplicity, starting, in this way, the path of the study of filamentation oriented to the ecology of stress.
+Due to the above, despite being simple, the model could have the ability to recapitulate the behavior seen in nature from variables that we can calculate easily with single-cell measurements.
+However, in other situations, it could be helpful to consider the addition of variables such as cell wall production and peptidoglycans' accumulation, among others.
+Notwithstanding the lack of parameters that are a little closer to reality, confirming that the model can work under experimental conditions would represent an achievement due to its explanatory simplicity, starting, in this way, the path of the study of filamentation oriented to the ecology of stress.
 
 \hypertarget{chapter-discussion}{%
 \chapter{Discussion}\label{chapter-discussion}}
